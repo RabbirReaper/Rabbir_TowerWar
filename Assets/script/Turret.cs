@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 public class Turret : MonoBehaviour{
     [SerializeField] float AttackRange;
+    [SerializeField] GameObject barrel;
     [SerializeField] LayerMask EnemyMask;
     [SerializeField] float RotationSpeed;
     [SerializeField] GameObject bulletPrefab;
@@ -47,9 +48,9 @@ public class Turret : MonoBehaviour{
     }
 
     void RotateTowards(){
-        float angle = Mathf.Atan2(target.position.y - transform.position.y,target.position.x - transform.position.x)*Mathf.Rad2Deg-90f;
+        float angle = Mathf.Atan2(target.position.y - barrel.transform.position.y,target.position.x - barrel.transform.position.x)*Mathf.Rad2Deg-90f;
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0f,0f,angle));
-        transform.rotation = Quaternion.RotateTowards(transform.rotation,targetRotation,RotationSpeed*Time.deltaTime);
+        barrel.transform.rotation = Quaternion.RotateTowards(barrel.transform.rotation,targetRotation,RotationSpeed*Time.deltaTime);
     }
 
     private void OnDrawGizmosSelected() {

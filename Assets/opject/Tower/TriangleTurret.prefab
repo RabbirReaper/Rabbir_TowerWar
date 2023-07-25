@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 469338643776026395}
   - component: {fileID: 469338643776026396}
-  - component: {fileID: 469338643776026397}
   m_Layer: 0
   m_Name: towerpicture
   m_TagString: Untagged
@@ -86,26 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &469338643776026397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469338643776026394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7297ac9cc61be419851f72dcc35f3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttackRange: 5
-  EnemyMask:
-    serializedVersion: 2
-    m_Bits: 64
-  RotationSpeed: 200
-  bulletPrefab: {fileID: 2757682174209815250, guid: dc4b80171769e0941a5ee2adacd24e15, type: 3}
-  firingPoint: {fileID: 7851320638776863337}
-  bps: 2
 --- !u!1 &469338644438002304
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,6 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 469338644438002306}
+  - component: {fileID: 4494936006682799765}
   m_Layer: 0
   m_Name: TriangleTurret
   m_TagString: Untagged
@@ -138,6 +118,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4494936006682799765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469338644438002304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7297ac9cc61be419851f72dcc35f3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackRange: 5
+  barrel: {fileID: 469338643776026394}
+  EnemyMask:
+    serializedVersion: 2
+    m_Bits: 64
+  RotationSpeed: 200
+  bulletPrefab: {fileID: 2757682174209815250, guid: dc4b80171769e0941a5ee2adacd24e15, type: 3}
+  firingPoint: {fileID: 7851320638776863337}
+  bps: 2
 --- !u!1 &7480194473823253173
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,6 @@ public class buildManager : MonoBehaviour{
     public static buildManager main;
 
     [Header("References")]
-    // [SerializeField] GameObject[] towerPrefabs;
     [SerializeField] private Tower[] towers;
     int SelectTower = 0;
     private void Awake() {
