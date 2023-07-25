@@ -10,7 +10,7 @@ public class LevelManager_script : MonoBehaviour{
         main = this;    
     }
     private void Start() {
-        currency = 100;
+        currency = 200;
     }
     public void IncreaseCurrency(float amount){
         currency+=amount;

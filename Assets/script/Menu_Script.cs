@@ -15,7 +15,5 @@ public class Menu_Script : MonoBehaviour{
     private void OnGUI() {
         currencyUI.text = LevelManager_script.main.currency.ToString();
     }
-    public void SetSelected(){
-        
-    }
+    
 }
