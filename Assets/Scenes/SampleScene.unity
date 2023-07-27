@@ -16265,7 +16265,7 @@ GameObject:
   - component: {fileID: 1759764414}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16287,7 +16287,7 @@ Camera:
   m_GameObject: {fileID: 1759764413}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.08472028, g: 0.07956566, b: 0.11320752, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -16306,7 +16306,7 @@ Camera:
   field of view: 179
   orthographic: 1
   orthographic size: 9
-  m_Depth: 0
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 2147483647
@@ -16315,10 +16315,10 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &1759764416
@@ -17340,6 +17340,7 @@ GameObject:
   - component: {fileID: 1882255479}
   - component: {fileID: 1882255481}
   - component: {fileID: 1882255482}
+  - component: {fileID: 1882255483}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -17426,10 +17427,22 @@ MonoBehaviour:
   towers:
   - name: towerpicture
     cost: 100
-    towerPrefab: {fileID: 469338644438002304, guid: faa806dee24def74c967cd82200fc13c, type: 3}
+    towerPrefab: {fileID: 6886352582088729161, guid: aa654a703ffae744395f05708011759d, type: 3}
   - name: test
     cost: 200
     towerPrefab: {fileID: 469338644438002304, guid: 5e4b176df80a3a84685366b0c45614fe, type: 3}
+--- !u!114 &1882255483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882255478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cabc61c8c24d644086aee9551f1c33b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1883915828
 PrefabInstance:
   m_ObjectHideFlags: 0

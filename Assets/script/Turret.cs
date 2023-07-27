@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEditor;
 public class Turret : MonoBehaviour{
-    [SerializeField] float AttackRange;
+
     [SerializeField] GameObject barrel;
-    [SerializeField] LayerMask EnemyMask;
-    [SerializeField] float RotationSpeed;
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] GameObject upgradeUI;
+    [SerializeField] Button upgradeButton;
+    [SerializeField] LayerMask EnemyMask;
+    
     [SerializeField] Transform firingPoint;
+    [SerializeField] float AttackRange;
+    [SerializeField] float RotationSpeed;
     [SerializeField] float bps; // Bullets per second
+    [SerializeField] int level;
     Transform target;
+    
     float timeUntilFire;
     private void Update() {
         if(target == null){
@@ -53,6 +60,16 @@ public class Turret : MonoBehaviour{
         barrel.transform.rotation = Quaternion.RotateTowards(barrel.transform.rotation,targetRotation,RotationSpeed*Time.deltaTime);
     }
 
+    public void OpenUpgradeUI(){
+        upgradeUI.SetActive(true);
+    }
+    public void CloseUpgradeUI(){
+        upgradeUI.SetActive(false);
+    }
+
+    public void Upgrade(){
+
+    }
     private void OnDrawGizmosSelected() {
         Handles.color=Color.blue;
         Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);

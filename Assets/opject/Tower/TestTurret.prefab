@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469338644438002304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -130,15 +130,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7297ac9cc61be419851f72dcc35f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackRange: 10
   barrel: {fileID: 469338643776026394}
+  bulletPrefab: {fileID: 2757682174209815250, guid: 74ac0a140a7c5bf41a4393e738ee3d11, type: 3}
+  upgradeUI: {fileID: 0}
+  upgradeButton: {fileID: 0}
   EnemyMask:
     serializedVersion: 2
     m_Bits: 64
-  RotationSpeed: 300
-  bulletPrefab: {fileID: 2757682174209815250, guid: 74ac0a140a7c5bf41a4393e738ee3d11, type: 3}
   firingPoint: {fileID: 7851320638776863337}
+  AttackRange: 10
+  RotationSpeed: 300
   bps: 1
+  level: 1
 --- !u!1 &7480194473823253173
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,8 @@ public class Plot : MonoBehaviour{
     
     [SerializeField] SpriteRenderer SR; 
     [SerializeField] Color hoverColor;
-    GameObject tower;
+    GameObject towerObj;
+    Turret turret;
     Color startColor;
     private void Start() {
         startColor=SR.color;
@@ -18,14 +19,19 @@ public class Plot : MonoBehaviour{
         SR.color=startColor;
     }
     private void OnMouseDown() {
-        if(tower != null) return;
+        if(UIManager.main.IsHoveringUI()) return;
+
+        if(towerObj != null) {
+            turret.OpenUpgradeUI();
+            return;
+        }
         Tower tempTower = buildManager.main.GetSelectTower();
         if(tempTower.cost > LevelManager_script.main.currency){
             Debug.Log("you not have enough money!");
             return;
         }
         LevelManager_script.main.SpendCurrency(tempTower.cost);
-        tower = Instantiate(tempTower.towerPrefab,transform.position,Quaternion.identity);
-        
+        towerObj = Instantiate(tempTower.towerPrefab,transform.position,Quaternion.identity);
+        turret = towerObj.GetComponent<Turret>(); 
     }
 }
