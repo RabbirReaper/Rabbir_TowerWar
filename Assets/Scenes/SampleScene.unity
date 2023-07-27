@@ -17429,7 +17429,7 @@ MonoBehaviour:
     towerPrefab: {fileID: 469338644438002304, guid: faa806dee24def74c967cd82200fc13c, type: 3}
   - name: test
     cost: 200
-    towerPrefab: {fileID: 469338644438002304, guid: 39746fba9b6010441b9feef0f8446a03, type: 3}
+    towerPrefab: {fileID: 469338644438002304, guid: 5e4b176df80a3a84685366b0c45614fe, type: 3}
 --- !u!1001 &1883915828
 PrefabInstance:
   m_ObjectHideFlags: 0
