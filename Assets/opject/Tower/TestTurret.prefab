@@ -133,6 +133,7 @@ MonoBehaviour:
   barrel: {fileID: 469338643776026394}
   bulletPrefab: {fileID: 2757682174209815250, guid: 74ac0a140a7c5bf41a4393e738ee3d11, type: 3}
   upgradeUI: {fileID: 0}
+  nextLevelTower: {fileID: 0}
   upgradeButton: {fileID: 0}
   EnemyMask:
     serializedVersion: 2
@@ -141,7 +142,8 @@ MonoBehaviour:
   AttackRange: 10
   RotationSpeed: 300
   bps: 1
-  level: 1
+  level: 2
+  baseUpGradeCost: 0
 --- !u!1 &7480194473823253173
 GameObject:
   m_ObjectHideFlags: 0

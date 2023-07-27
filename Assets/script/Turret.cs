@@ -8,6 +8,7 @@ public class Turret : MonoBehaviour{
     [SerializeField] GameObject barrel;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject upgradeUI;
+    [SerializeField] GameObject nextLevelTower;
     [SerializeField] Button upgradeButton;
     [SerializeField] LayerMask EnemyMask;
     
@@ -16,6 +17,7 @@ public class Turret : MonoBehaviour{
     [SerializeField] float RotationSpeed;
     [SerializeField] float bps; // Bullets per second
     [SerializeField] int level;
+    [SerializeField] float baseUpGradeCost;
     Transform target;
     
     float timeUntilFire;
@@ -68,7 +70,12 @@ public class Turret : MonoBehaviour{
     }
 
     public void Upgrade(){
-
+        if(level >= 2) return;
+        if(baseUpGradeCost > LevelManager_script.main.currency) return;
+        LevelManager_script.main.SpendCurrency(baseUpGradeCost);
+        GetComponentInParent<Plot>().TowerUpdate(nextLevelTower);
+        UIManager.main.SetHoveringStatie(false);
+        Destroy(gameObject);
     }
     private void OnDrawGizmosSelected() {
         Handles.color=Color.blue;
