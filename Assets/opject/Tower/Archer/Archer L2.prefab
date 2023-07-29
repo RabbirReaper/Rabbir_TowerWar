@@ -34,7 +34,6 @@ RectTransform:
   m_Children:
   - {fileID: 7796484936763932214}
   m_Father: {fileID: 5721783999316987178}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -58,7 +57,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1671620367
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -146,7 +147,6 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2209644893233405352}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -274,14 +274,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2527887398834315687}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4158264148134828056}
   m_Father: {fileID: 5721783999316987178}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5667625343857220306
 SpriteRenderer:
@@ -325,7 +325,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8fb2267ff9dc09449aba6760e740541d, type: 3}
-  m_Color: {r: 0.086507656, g: 0.115906104, b: 0.6792453, a: 1}
+  m_Color: {r: 0, g: 0.07410216, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -358,13 +358,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4162980912176208674}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.48, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 242875911472927548}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6329908225827024544
 GameObject:
@@ -399,7 +399,6 @@ RectTransform:
   m_Children:
   - {fileID: 9047724102649747758}
   m_Father: {fileID: 7796484936763932214}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -511,7 +510,7 @@ GameObject:
   - component: {fileID: 5721783999316987178}
   - component: {fileID: 4531542335940674625}
   m_Layer: 0
-  m_Name: triangleTurret
+  m_Name: Archer L2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,15 +523,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6886352582088729161}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.303083, y: -9.534717, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 242875911472927548}
   - {fileID: 2902647602979932884}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4531542335940674625
 MonoBehaviour:
@@ -547,18 +546,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrel: {fileID: 2527887398834315687}
-  bulletPrefab: {fileID: 2757682174209815250, guid: dc4b80171769e0941a5ee2adacd24e15, type: 3}
+  bulletPrefab: {fileID: 2757682174209815250, guid: b2b143841f66160459587371ee62af97, type: 3}
   upgradeUI: {fileID: 74906148311249462}
-  nextLevelTower: {fileID: 6886352582088729161, guid: 26615209a42f48049b9192a50116bad8, type: 3}
+  nextLevelTower: {fileID: 6886352582088729161, guid: 7c5702c3ba189fe4884ace603b4b3401, type: 3}
   upgradeButton: {fileID: 7701376229736240225}
   EnemyMask:
     serializedVersion: 2
     m_Bits: 64
   firingPoint: {fileID: 4158264148134828056}
-  AttackRange: 5
-  RotationSpeed: 200
+  AttackRange: 4
+  RotationSpeed: 275
   bps: 2
-  level: 1
+  level: 2
   baseUpGradeCost: 200
 --- !u!1 &7021464189751788408
 GameObject:
@@ -592,7 +591,6 @@ RectTransform:
   m_Children:
   - {fileID: 2209644893233405352}
   m_Father: {fileID: 2902647602979932884}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

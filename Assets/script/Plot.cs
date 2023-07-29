@@ -37,6 +37,7 @@ public class Plot : MonoBehaviour{
     }
     public void TowerUpdate(GameObject levelUpTower){
         towerObj = Instantiate(levelUpTower,transform.position,Quaternion.identity);
+        towerObj.transform.SetParent(transform);
         turret = towerObj.GetComponent<Turret>(); 
     }
 }

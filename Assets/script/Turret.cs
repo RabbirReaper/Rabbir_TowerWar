@@ -70,7 +70,7 @@ public class Turret : MonoBehaviour{
     }
 
     public void Upgrade(){
-        if(level >= 2) return;
+        if(level >= 3) return;
         if(baseUpGradeCost > LevelManager_script.main.currency) return;
         LevelManager_script.main.SpendCurrency(baseUpGradeCost);
         GetComponentInParent<Plot>().TowerUpdate(nextLevelTower);
