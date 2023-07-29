@@ -71,7 +71,7 @@ public class Turret : MonoBehaviour{
 
     public void Upgrade(){
         if(level >= 3) return;
-        if(baseUpGradeCost > LevelManager_script.main.currency) return;
+        if(baseUpGradeCost > LevelManager_script.main.Gold) return;
         LevelManager_script.main.SpendCurrency(baseUpGradeCost);
         GetComponentInParent<Plot>().TowerUpdate(nextLevelTower);
         UIManager.main.SetHoveringStatie(false);

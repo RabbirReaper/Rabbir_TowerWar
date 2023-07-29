@@ -26,7 +26,7 @@ public class Plot : MonoBehaviour{
             return;
         }
         Tower tempTower = buildManager.main.GetSelectTower();
-        if(tempTower.cost > LevelManager_script.main.currency){
+        if(tempTower.cost > LevelManager_script.main.Gold){
             Debug.Log("you not have enough money!");
             return;
         }
