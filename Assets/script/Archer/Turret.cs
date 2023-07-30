@@ -26,13 +26,14 @@ public class Turret : MonoBehaviour{
             FindTarget();
             return;
         }
+        timeUntilFire += Time.deltaTime;
         RotateTowards();
         if(!CheckTargetinRange()){
             target=null;
         }else{
-            timeUntilFire += Time.deltaTime;
             if(timeUntilFire >= 1f/bps){
                 Shoot();
+                Debug.Log(timeUntilFire);
                 timeUntilFire=0f;
             }
         }
@@ -40,7 +41,7 @@ public class Turret : MonoBehaviour{
 
     void Shoot(){
         GameObject bulletobj = Instantiate(bulletPrefab,firingPoint.position,Quaternion.identity);
-        Bullet_Normal bulletScript = bulletobj.GetComponent<Bullet_Normal>();
+        Bullet bulletScript = bulletobj.GetComponent<Bullet>();
         bulletScript.SetTarget(target);
     }
 
