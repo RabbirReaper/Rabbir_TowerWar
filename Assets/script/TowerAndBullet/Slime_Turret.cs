@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
-public class Turret : MonoBehaviour{
-
+public class Slime_Turret : MonoBehaviour{
     [SerializeField] GameObject barrel;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject upgradeUI;
@@ -22,10 +21,8 @@ public class Turret : MonoBehaviour{
     
     float timeUntilFire;
     private void Update() {
-        if(target == null){
-            FindTarget();
-            return;
-        }
+        FindTarget();
+        if(target == null) return;
         timeUntilFire += Time.deltaTime;
         RotateTowards();
         if(!CheckTargetinRange()){
@@ -33,7 +30,6 @@ public class Turret : MonoBehaviour{
         }else{
             if(timeUntilFire >= 1f/bps){
                 Shoot();
-                // Debug.Log(timeUntilFire);
                 timeUntilFire=0f;
             }
         }
@@ -41,7 +37,7 @@ public class Turret : MonoBehaviour{
 
     void Shoot(){
         GameObject bulletobj = Instantiate(bulletPrefab,firingPoint.position,Quaternion.identity);
-        Bullet bulletScript = bulletobj.GetComponent<Bullet>();
+        Slime_Bullet bulletScript = bulletobj.GetComponent<Slime_Bullet>();
         bulletScript.SetTarget(target);
     }
 
@@ -52,15 +48,21 @@ public class Turret : MonoBehaviour{
 
     void FindTarget(){
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position,AttackRange,(Vector2)transform.position,0f,EnemyMask);
-        if(hits.Length > 0){
-            target = hits[0].transform;
+        bool nerverIsSlowed = true;
+        for(int i=0;i<(int)hits.Length;i++){
+            if(hits[i].transform.GetComponent<Enemy_Script>().isSlowed == false){
+                target = hits[i].transform;
+                nerverIsSlowed = false;
+                break;
+            }
         }
+        if(nerverIsSlowed && hits.Length > 0) target = hits[0].transform;
     }
 
     void RotateTowards(){
-        float angle = Mathf.Atan2(target.position.y - barrel.transform.position.y,target.position.x - barrel.transform.position.x)*Mathf.Rad2Deg-90f;
+        float angle = Mathf.Atan2(target.position.y - transform.position.y,target.position.x - transform.position.x)*Mathf.Rad2Deg-90f;
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0f,0f,angle));
-        barrel.transform.rotation = Quaternion.RotateTowards(barrel.transform.rotation,targetRotation,RotationSpeed*Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation,targetRotation,RotationSpeed*Time.deltaTime);
     }
 
     public void OpenUpgradeUI(){
@@ -82,5 +84,5 @@ public class Turret : MonoBehaviour{
         Handles.color=Color.blue;
         Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);
     }
-
+    
 }
