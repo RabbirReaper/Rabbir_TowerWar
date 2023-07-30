@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
-{
+public class Health : MonoBehaviour{
     [SerializeField] float HealthPoint;
     [SerializeField] float currencyWorth;
     bool isDestory = false;
