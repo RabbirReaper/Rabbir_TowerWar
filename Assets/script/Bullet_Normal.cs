@@ -22,7 +22,7 @@ public class Bullet_Normal : MonoBehaviour{
     private void OnCollisionEnter2D(Collision2D other) {
         if(!isDestory){
             isDestory=true;
-            other.gameObject.GetComponent<Health>().TakeDamage(Bullet_Damage);
+            other.gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
             Destroy(gameObject);
         }
         

@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move_first : MonoBehaviour
-{
+public class Enemy_Script : MonoBehaviour{//
+    [Header("Enemy References")]
+    [SerializeField] float health;
+    [SerializeField] int currencyWorth;
+    [SerializeField] float speed;
+    bool isDestory = false;
     Transform target;
     int WayPointidx=0;
-    [SerializeField] float speed;
     private void Start() {
         target = LevelManager_script.main.WayPoints_list[0];
     }
@@ -20,6 +23,15 @@ public class Move_first : MonoBehaviour
                 transform.position=LevelManager_script.main.WayPoints_list[0].position;
                 target=LevelManager_script.main.WayPoints_list[WayPointidx];
             }
+        }
+    }
+    public void TakeDamage(float dmg){
+        health -= dmg;
+        if(!isDestory && health <= 0){
+            isDestory=true;
+            LevelManager_script.main.IncreaseCurrency(currencyWorth);
+            EnemySpawn.onEnemyDestory.Invoke();
+            Destroy(gameObject);
         }
     }
 }
