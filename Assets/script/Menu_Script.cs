@@ -21,7 +21,6 @@ public class Menu_Script : MonoBehaviour{
     public void SwitchTowerAndEnemyShop(bool t){
         Tower_Shop.gameObject.SetActive(t);
         Enemy_Shop.gameObject.SetActive(!t);
-        Debug.Log("11");
     }
     private void OnGUI() {
         IncomeGI.text = LevelManager_script.main.Income.ToString();
