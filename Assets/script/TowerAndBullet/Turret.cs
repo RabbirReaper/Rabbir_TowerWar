@@ -21,6 +21,9 @@ public class Turret : MonoBehaviour{
     Transform target;
     
     float timeUntilFire;
+    private void Start() {
+        upgradeButton.onClick.AddListener(Upgrade);
+    }
     private void Update() {
         if(target == null){
             FindTarget();

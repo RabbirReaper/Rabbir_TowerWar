@@ -32,7 +32,7 @@ public class Plot : MonoBehaviour{
         }
         LevelManager_script.main.SpendCurrency(tempTower.cost);
         towerObj = Instantiate(tempTower.towerPrefab,transform.position,Quaternion.identity);
-        turret = towerObj.GetComponent<Turret>(); 
+        turret = towerObj.GetComponent<Turret>(); //
         towerObj.transform.SetParent(transform);
     }
     public void TowerUpdate(GameObject levelUpTower){

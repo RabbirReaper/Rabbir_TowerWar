@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 2871768730972604516}
   - component: {fileID: 5630527622020842355}
   m_Layer: 0
-  m_Name: Slime L1
+  m_Name: Slime L2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,18 +298,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrel: {fileID: 5104866624119840742}
-  bulletPrefab: {fileID: 2757682174209815250, guid: 082d0678da0303f41b603027b92b5bcf, type: 3}
+  bulletPrefab: {fileID: 2757682174209815250, guid: aff4e1a73f202aa4b99a44bfe19bb056, type: 3}
   upgradeUI: {fileID: 7264995651036136402}
-  nextLevelTower: {fileID: 5425770091273798401, guid: b2c74fc8d7e568b4d8f4c7e6abbfc06d, type: 3}
+  nextLevelTower: {fileID: 5425770091273798401, guid: 4f80fff76c5ca5b4693a5a7bf38e25a4, type: 3}
   upgradeButton: {fileID: 2894386665628616558}
   EnemyMask:
     serializedVersion: 2
     m_Bits: 64
   firingPoint: {fileID: 7645419958237979238}
-  AttackRange: 3
-  RotationSpeed: 220
+  AttackRange: 3.5
+  RotationSpeed: 250
   bps: 2
-  level: 1
+  level: 2
   baseUpGradeCost: 200
 --- !u!1 &5522754639439517041
 GameObject:
@@ -710,7 +710,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.2599814, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
