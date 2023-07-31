@@ -19894,7 +19894,7 @@ MonoBehaviour:
   - {fileID: 346464064}
   Interval: 10
   Income: 50
-  Gold: 200
+  Gold: 1000
   Next_Income: 0
 --- !u!4 &1882255480
 Transform:

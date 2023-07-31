@@ -7,37 +7,29 @@ public class Turret : MonoBehaviour{
 
     [SerializeField] GameObject barrel;
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] GameObject upgradeUI;
-    [SerializeField] GameObject nextLevelTower;
-    [SerializeField] Button upgradeButton;
+    // [SerializeField] GameObject nextLevelTower;
     [SerializeField] LayerMask EnemyMask;
     
     [SerializeField] Transform firingPoint;
     [SerializeField] float AttackRange;
     [SerializeField] float RotationSpeed;
-    [SerializeField] float bps; // Bullets per second
-    [SerializeField] int level;
-    [SerializeField] float baseUpGradeCost;
+    [SerializeField] float reload;
     Transform target;
-    
-    float timeUntilFire;
-    private void Start() {
-        upgradeButton.onClick.AddListener(Upgrade);
-    }
+    float timeUntilFire=0;
+   
     private void Update() {
         if(target == null){
             FindTarget();
             return;
         }
-        timeUntilFire += Time.deltaTime;
+        timeUntilFire -= Time.deltaTime;
         RotateTowards();
         if(!CheckTargetinRange()){
             target=null;
         }else{
-            if(timeUntilFire >= 1f/bps){
+            if(timeUntilFire <= 0){
                 Shoot();
-                // Debug.Log(timeUntilFire);
-                timeUntilFire=0f;
+                timeUntilFire=reload;
             }
         }
     }
@@ -52,7 +44,6 @@ public class Turret : MonoBehaviour{
         return Vector2.Distance(target.position,transform.position) <= AttackRange;
     }
 
-
     void FindTarget(){
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position,AttackRange,(Vector2)transform.position,0f,EnemyMask);
         if(hits.Length > 0){
@@ -66,21 +57,6 @@ public class Turret : MonoBehaviour{
         barrel.transform.rotation = Quaternion.RotateTowards(barrel.transform.rotation,targetRotation,RotationSpeed*Time.deltaTime);
     }
 
-    public void OpenUpgradeUI(){
-        upgradeUI.SetActive(true);
-    }
-    public void CloseUpgradeUI(){
-        upgradeUI.SetActive(false);
-    }
-
-    public void Upgrade(){
-        if(level >= 3) return;
-        if(baseUpGradeCost > LevelManager_script.main.Gold) return;
-        LevelManager_script.main.SpendCurrency(baseUpGradeCost);
-        GetComponentInParent<Plot>().TowerUpdate(nextLevelTower);
-        UIManager.main.SetHoveringStatie(false);
-        Destroy(gameObject);
-    }
     private void OnDrawGizmosSelected() {
         Handles.color=Color.blue;
         Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);

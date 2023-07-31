@@ -140,9 +140,9 @@ MonoBehaviour:
     m_Bits: 64
   Bullet_speed: 6
   Bullet_Damage: 15
-  slowRate: 45
+  slowRate: 50
   slowTime: 2
-  slowRange: 1.3
+  slowRange: 1.5
 --- !u!50 &590622883776554821
 Rigidbody2D:
   serializedVersion: 4

@@ -7,7 +7,7 @@ public class Plot : MonoBehaviour{
     [SerializeField] SpriteRenderer SR; 
     [SerializeField] Color hoverColor;
     GameObject towerObj;
-    Turret turret;
+    UpGradeUpdateTower UpGrade_Script;
     Color startColor;
     private void Start() {
         startColor=SR.color;
@@ -22,7 +22,7 @@ public class Plot : MonoBehaviour{
         if(UIManager.main.IsHoveringUI()) return;
 
         if(towerObj != null) {
-            turret.OpenUpgradeUI();
+            UpGrade_Script.OpenUpgradeUI();
             return;
         }
         Tower tempTower = buildManager.main.GetSelectTower();
@@ -32,12 +32,12 @@ public class Plot : MonoBehaviour{
         }
         LevelManager_script.main.SpendCurrency(tempTower.cost);
         towerObj = Instantiate(tempTower.towerPrefab,transform.position,Quaternion.identity);
-        turret = towerObj.GetComponent<Turret>(); //
+        UpGrade_Script = towerObj.GetComponent<UpGradeUpdateTower>(); //
         towerObj.transform.SetParent(transform);
     }
     public void TowerUpdate(GameObject levelUpTower){
         towerObj = Instantiate(levelUpTower,transform.position,Quaternion.identity);
         towerObj.transform.SetParent(transform);
-        turret = towerObj.GetComponent<Turret>(); 
+        UpGrade_Script = towerObj.GetComponent<UpGradeUpdateTower>(); 
     }
 }

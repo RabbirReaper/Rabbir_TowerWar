@@ -487,8 +487,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4531542335940674625}
-        m_TargetAssemblyTypeName: Turret, Assembly-CSharp
+      - m_Target: {fileID: -3936533003070748790}
+        m_TargetAssemblyTypeName: UpGradeUpdateTower, Assembly-CSharp
         m_MethodName: Upgrade
         m_Mode: 1
         m_Arguments:
@@ -509,6 +509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5721783999316987178}
   - component: {fileID: 4531542335940674625}
+  - component: {fileID: -3936533003070748790}
   m_Layer: 0
   m_Name: Archer L3
   m_TagString: Untagged
@@ -547,18 +548,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 2527887398834315687}
   bulletPrefab: {fileID: 2757682174209815250, guid: db81491f49c7d104683c28717293f1bb, type: 3}
-  upgradeUI: {fileID: 74906148311249462}
-  nextLevelTower: {fileID: 6886352582088729161, guid: e20fd69e12cc5704cbddb35b0dc0817b, type: 3}
-  upgradeButton: {fileID: 7701376229736240225}
   EnemyMask:
     serializedVersion: 2
     m_Bits: 64
   firingPoint: {fileID: 4158264148134828056}
   AttackRange: 4.5
   RotationSpeed: 300
-  bps: 4
+  reload: 0.7
+--- !u!114 &-3936533003070748790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6886352582088729161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0475b3f118dae3445b0890b485518c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevelTower: {fileID: 0}
+  upgradeUI: {fileID: 74906148311249462}
   level: 3
-  baseUpGradeCost: 200
+  baseUpGradeCost: 0
 --- !u!1 &7021464189751788408
 GameObject:
   m_ObjectHideFlags: 0

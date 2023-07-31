@@ -29,7 +29,7 @@ public class Enemy_Script : MonoBehaviour{//
         }
         if(isSlowed){
             timer-=Time.deltaTime;
-            if(timer<0) ResetSpeed();
+            if(timer<=0) ResetSpeed();
         }
     }
     public void TakeDamage(float dmg){
