@@ -2256,7 +2256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &241709975
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17608,6 +17608,8 @@ MonoBehaviour:
   Next_IncomeUI: {fileID: 1635143731}
   Tower_Shop: {fileID: 1515342197}
   Enemy_Shop: {fileID: 612664076}
+  towerButton: {fileID: 241709976}
+  enemyButton: {fileID: 19993522}
   anim: {fileID: 1716673558}
 --- !u!95 &1716673558
 Animator:

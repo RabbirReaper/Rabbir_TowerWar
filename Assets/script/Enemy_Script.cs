@@ -45,8 +45,8 @@ public class Enemy_Script : MonoBehaviour{//
     public void UpdateSpeed(float x,float waitTime){
         x= 1 - x/100;
         nowSpeed = speed*x;
-        isSlowed = true;
         timer=waitTime;
+        isSlowed = true;
     }
     public void ResetSpeed(){
         Debug.Log(nowSpeed);

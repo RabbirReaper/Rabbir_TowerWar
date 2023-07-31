@@ -10,6 +10,8 @@ public class Menu_Script : MonoBehaviour{
     [SerializeField] TextMeshProUGUI Next_IncomeUI;
     [SerializeField] GridLayoutGroup Tower_Shop;  //UnityEngine.UI
     [SerializeField] GridLayoutGroup Enemy_Shop;  //UnityEngine.UI
+    [SerializeField] Button towerButton;
+    [SerializeField] Button enemyButton;
     [SerializeField] Animator anim;
     
     bool isMenuOpen = true;
@@ -21,6 +23,8 @@ public class Menu_Script : MonoBehaviour{
     public void SwitchTowerAndEnemyShop(bool t){
         Tower_Shop.gameObject.SetActive(t);
         Enemy_Shop.gameObject.SetActive(!t);
+        towerButton.gameObject.SetActive(!t);
+        enemyButton.gameObject.SetActive(t);
     }
     private void OnGUI() {
         IncomeGI.text = LevelManager_script.main.Income.ToString();
