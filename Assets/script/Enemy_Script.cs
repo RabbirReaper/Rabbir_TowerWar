@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_Script : MonoBehaviour{//
     [Header("Enemy References")]
     [SerializeField] float health;
+    [SerializeField] float defence;
     [SerializeField] int currencyWorth;
     [SerializeField] float speed;
     bool isDestory = false;
@@ -33,7 +34,9 @@ public class Enemy_Script : MonoBehaviour{//
         }
     }
     public void TakeDamage(float dmg){
-        health -= dmg;
+        if(dmg > defence){
+            health -= (dmg-defence);
+        }else health--;
         if(!isDestory && health <= 0){
             isDestory=true;
             LevelManager_script.main.IncreaseCurrency(currencyWorth);

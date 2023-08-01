@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  defence: 50
   currencyWorth: 5
   speed: 2
   isSlowed: 0
