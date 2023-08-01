@@ -17,7 +17,7 @@ public class EnemySpawn : MonoBehaviour{
         EnemiesDied++;
     }
     public void _EnemySpawn(int x){
-        Instantiate(Enemy_list[0],LevelManager_script.main.WayPoints_list[0].position,Quaternion.identity);
+        Instantiate(Enemy_list[x],LevelManager_script.main.WayPoints_list[0].position,Quaternion.identity);
         EnemiesAlive++;
     }
 }

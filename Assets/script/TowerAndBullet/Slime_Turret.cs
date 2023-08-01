@@ -16,9 +16,9 @@ public class Slime_Turret : MonoBehaviour{
     
     float timeUntilFire;
     private void Update() {
+        timeUntilFire -= Time.deltaTime;
         FindTarget();
         if(target == null) return;
-        timeUntilFire -= Time.deltaTime;
         RotateTowards();
         if(!CheckTargetinRange()){
             target=null;

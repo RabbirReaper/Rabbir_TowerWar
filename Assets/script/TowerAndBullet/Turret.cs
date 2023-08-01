@@ -7,7 +7,6 @@ public class Turret : MonoBehaviour{
 
     [SerializeField] GameObject barrel;
     [SerializeField] GameObject bulletPrefab;
-    // [SerializeField] GameObject nextLevelTower;
     [SerializeField] LayerMask EnemyMask;
     
     [SerializeField] Transform firingPoint;
@@ -18,11 +17,11 @@ public class Turret : MonoBehaviour{
     float timeUntilFire=0;
    
     private void Update() {
+        timeUntilFire -= Time.deltaTime;
         if(target == null){
             FindTarget();
             return;
         }
-        timeUntilFire -= Time.deltaTime;
         RotateTowards();
         if(!CheckTargetinRange()){
             target=null;
