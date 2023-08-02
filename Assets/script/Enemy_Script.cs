@@ -5,26 +5,30 @@ using UnityEngine;
 public class Enemy_Script : MonoBehaviour{//
     [Header("Enemy References")]
     [SerializeField] float Health;
-    [SerializeField] float defence;
+    [SerializeField] float Defence;
     [SerializeField] int currencyWorth;
     [SerializeField] float speed;
     bool isDestory = false;
     public bool isSlowed = false;
     public bool isFire = false;
+    public bool isWeak = false;
 
     float fireInterval = 0.5f ; //Important
     float timer_slow;
     float timer_fire;
+    float timer_weak;
     float fireRate=0;
     float TimerTemp=0;
     Transform target;
     int WayPointidx=0;
     float nowSpeed;
     float nowHealth;
+    float nowDefence;
     private void Start() {
         target = LevelManager_script.main.WayPoints_list[0];
         nowSpeed=speed;
         nowHealth=Health;
+        nowDefence=Defence;
     }
     void Update(){
         transform.position=Vector2.MoveTowards(transform.position,target.position,nowSpeed*Time.deltaTime);
@@ -50,6 +54,13 @@ public class Enemy_Script : MonoBehaviour{//
             }
             if(timer_fire < 0) isFire=false;
         }
+        if(isWeak){
+            timer_weak-=Time.deltaTime;
+            if(timer_weak < 0){
+                nowDefence=Defence;
+                isWeak = false;
+            }
+        }
     }
     void FireDamage(float _fireDmg){
         nowHealth-=Health*_fireDmg;
@@ -61,8 +72,8 @@ public class Enemy_Script : MonoBehaviour{//
         }
     }
     public void TakeDamage(float dmg){
-        if(dmg > defence){
-            nowHealth -= (dmg-defence);
+        if(dmg > nowDefence){
+            nowHealth -= (dmg-nowDefence);
         }else nowHealth--;
         if(!isDestory && nowHealth <= 0){
             isDestory=true;
@@ -87,5 +98,10 @@ public class Enemy_Script : MonoBehaviour{//
         fireRate = _fireRate;
         timer_fire = continuedFiretime;
         isFire = true;
+    }
+    public void UpdateWeak(float _weakRate,float continueTime){
+        timer_weak=continueTime;
+        nowDefence=(1 - _weakRate)*Defence;
+        isWeak = true;
     }
 }
