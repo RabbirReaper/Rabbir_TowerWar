@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1236226568314399909}
   - component: {fileID: 590622883776554821}
   m_Layer: 7
-  m_Name: AOE_Bullet L1
+  m_Name: AOE_Bullet L2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Bullet_speed: 8
-  Bullet_Damage: 40
+  Bullet_Damage: 50
   fireRate: 0
   fireTime: 0
   splashRange: 3

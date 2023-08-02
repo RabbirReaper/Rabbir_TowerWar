@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 9066098894970318772}
   - component: {fileID: 7095679312087566860}
   m_Layer: 0
-  m_Name: Magma
+  m_Name: Magma L3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -299,9 +299,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0475b3f118dae3445b0890b485518c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelTower: {fileID: 5425770091273798401, guid: b2c74fc8d7e568b4d8f4c7e6abbfc06d, type: 3}
+  nextLevelTower: {fileID: 0}
   upgradeUI: {fileID: 7264995651036136402}
-  level: 1
+  level: 3
   baseUpGradeCost: 200
 --- !u!114 &7095679312087566860
 MonoBehaviour:
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrel: {fileID: 7605464674687664407}
-  bulletPrefab: {fileID: 2757682174209815250, guid: 7912fe51b912ca746a6af5cc26ebfd51, type: 3}
+  bulletPrefab: {fileID: 2757682174209815250, guid: 19a25c1bace737440a376ca0315c255f, type: 3}
   EnemyMask:
     serializedVersion: 2
     m_Bits: 64
@@ -755,7 +755,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.13565102, g: 0.02024743, b: 0.3301887, a: 1}
+  m_Color: {r: 0.39094487, g: 0.03137237, b: 0.4433962, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

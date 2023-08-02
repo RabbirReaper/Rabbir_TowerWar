@@ -99,9 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0c67282179f3d4ebdd22840d69c5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 90
+  Health: 100
+  defence: 0
   currencyWorth: 5
   speed: 3
+  isSlowed: 0
+  isFire: 0
 --- !u!61 &5073523086006352601
 BoxCollider2D:
   m_ObjectHideFlags: 0
