@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
-public class Slime_Turret : MonoBehaviour{
+public class AOE_Turret : MonoBehaviour{
     [SerializeField] GameObject barrel;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] LayerMask EnemyMask;
@@ -34,7 +34,7 @@ public class Slime_Turret : MonoBehaviour{
 
     void Shoot(){
         GameObject bulletobj = Instantiate(bulletPrefab,firingPoint.position,Quaternion.identity);
-        Slime_Bullet bulletScript = bulletobj.GetComponent<Slime_Bullet>();
+        AOE_Bullet bulletScript = bulletobj.GetComponent<AOE_Bullet>();
         bulletScript.SetTarget(target);
     }
 

@@ -44,10 +44,8 @@ public class Turret : MonoBehaviour{
     }
 
     void FindTarget(){
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position,AttackRange,(Vector2)transform.position,0f,EnemyMask);
-        if(hits.Length > 0){
-            target = hits[0].transform;
-        }
+        RaycastHit2D hits = Physics2D.CircleCast(transform.position,AttackRange,(Vector2)transform.position,0f,EnemyMask);
+        target = hits.transform;
     }
 
     void RotateTowards(){
@@ -56,9 +54,9 @@ public class Turret : MonoBehaviour{
         barrel.transform.rotation = Quaternion.RotateTowards(barrel.transform.rotation,targetRotation,RotationSpeed*Time.deltaTime);
     }
 
-    private void OnDrawGizmosSelected() {
-        Handles.color=Color.blue;
-        Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);
-    }
+    // private void OnDrawGizmosSelected() {
+    //     Handles.color=Color.blue;
+    //     Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);
+    // }
 
 }
