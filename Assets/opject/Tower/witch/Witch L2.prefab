@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 9066098894970318772}
   - component: {fileID: 753357232913506003}
   m_Layer: 0
-  m_Name: Witch L1
+  m_Name: Witch L2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,9 +381,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0475b3f118dae3445b0890b485518c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelTower: {fileID: 5425770091273798401, guid: 010ce135bb178c948a223fbf67363e13, type: 3}
+  nextLevelTower: {fileID: 0}
   upgradeUI: {fileID: 7264995651036136402}
-  level: 1
+  level: 3
   baseUpGradeCost: 200
 --- !u!114 &753357232913506003
 MonoBehaviour:
@@ -398,14 +398,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrel: {fileID: 7605464674687664407}
-  bulletPrefab: {fileID: 2757682174209815250, guid: 2a3469d55d4088b4281e1ee013ccb4dd, type: 3}
+  bulletPrefab: {fileID: 2757682174209815250, guid: 1c8bee6049f9ee54c86d43f141309dd9, type: 3}
   EnemyMask:
     serializedVersion: 2
     m_Bits: 64
   firingPoint: {fileID: 7645419958237979238}
   AttackRange: 8
   RotationSpeed: 250
-  reload: 1
+  reload: 0.9
 --- !u!1 &5522754639439517041
 GameObject:
   m_ObjectHideFlags: 0
