@@ -13,14 +13,14 @@ public class Plot : MonoBehaviour{
         startColor=SR.color;
     }
     private void OnMouseEnter() {
+        if(UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) return;
         SR.color = hoverColor;
     }
     private void OnMouseExit() {
         SR.color=startColor;
     }
     private void OnMouseDown() {
-        if(UIManager.main.IsHoveringUI()) return;
-
+        if(UIManager.main.IsHoveringUI() || UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) return;
         if(towerObj != null) {
             UpGrade_Script.OpenUpgradeUI();
             return;
