@@ -18,16 +18,30 @@ public class Witch_Turret : MonoBehaviour{
    
     private void Update() {
         timeUntilFire -= Time.deltaTime;
-        FindTarget();
-        if(target == null) return;
-        RotateTowards();
-        if(!CheckTargetinRange()){
-            target=null;
-        }else{
-            if(timeUntilFire < 0){
-                Shoot();
-                timeUntilFire=reload;
+        // FindTarget();
+        // if(target == null) return;
+        // RotateTowards();
+        // if(!CheckTargetinRange()){
+        //     target=null;
+        // }else{
+        //     if(timeUntilFire < 0){
+        //         Shoot();
+        //         timeUntilFire=reload;
+        //     }
+        // }
+        if(target != null){
+            RotateTowards();
+            if(!CheckTargetinRange()) target = null;
+        } 
+        if(timeUntilFire < 0){
+            FindTarget();
+            if(target == null) return;
+            if(!CheckTargetinRange()){
+                target=null;
+                return;
             }
+            Shoot();
+            timeUntilFire=reload;
         }
     }
 
