@@ -14,6 +14,8 @@ public class Menu_Script : MonoBehaviour{
     [SerializeField] Button towerButton;
     [SerializeField] Button enemyButton;
     [SerializeField] Animator anim;
+    [SerializeField] TextMeshProUGUI red_Hp;
+    [SerializeField] TextMeshProUGUI blue_Hp;
     
     bool isMenuOpen = true;
     
@@ -32,6 +34,9 @@ public class Menu_Script : MonoBehaviour{
         IncomeGI.text = LevelManager_script.main.Income.ToString();
         GoldUI.text = LevelManager_script.main.Gold.ToString();
         Next_IncomeUI.text =(10-(int)LevelManager_script.main.Next_Income).ToString(); // maybe can performance optimization
+    }
+    public void HpUpdate(){
+        
     }
     
 }

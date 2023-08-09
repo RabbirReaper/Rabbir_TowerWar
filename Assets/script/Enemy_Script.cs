@@ -36,6 +36,7 @@ public class Enemy_Script : MonoBehaviour{//
             if(WayPointidx<LevelManager_script.main.WayPoints_list.Length-1){
                 target=LevelManager_script.main.WayPoints_list[++WayPointidx];
             }else{
+                
                 WayPointidx=0;
                 transform.position=LevelManager_script.main.WayPoints_list[0].position;
                 target=LevelManager_script.main.WayPoints_list[WayPointidx];

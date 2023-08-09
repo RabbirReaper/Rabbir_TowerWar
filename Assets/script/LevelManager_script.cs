@@ -9,6 +9,7 @@ public class LevelManager_script : MonoBehaviour{
     public float Income=50;
     public float Gold=100;
     public float Next_Income=0;
+    public int Hp = 20;
     private void Awake() {
         main = this;    
     }
