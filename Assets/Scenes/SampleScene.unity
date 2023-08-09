@@ -539,7 +539,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1882255481}
         m_TargetAssemblyTypeName: EnemySpawn, Assembly-CSharp
-        m_MethodName: _EnemySpawn
+        m_MethodName: SpawnEnemy
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14963,7 +14963,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1882255481}
         m_TargetAssemblyTypeName: EnemySpawn, Assembly-CSharp
-        m_MethodName: _EnemySpawn
+        m_MethodName: SpawnEnemy
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18416,7 +18416,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541a02805eac9fd4ea5c96e3ccc111cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FpsUI: {fileID: 0}
   GoldUI: {fileID: 200140976}
   IncomeGI: {fileID: 557919768}
   Next_IncomeUI: {fileID: 1635143731}
@@ -21114,6 +21113,7 @@ MonoBehaviour:
   Income: 50
   Gold: 1000
   Next_Income: 0
+  Hp: 20
 --- !u!4 &1882255480
 Transform:
   m_ObjectHideFlags: 0

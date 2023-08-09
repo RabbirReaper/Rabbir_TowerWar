@@ -7,7 +7,7 @@ public class EnemySpawn : MonoBehaviour{
     [SerializeField] GameObject[] Enemy_list;
     int EnemiesAlive=0,EnemiesDied=0;
     
-    public static UnityEvent onEnemyDestory = new UnityEvent();
+    public static UnityEvent onEnemyDestory = new();
     private void Awake() {
         onEnemyDestory.AddListener(EnemyDestoryed);
     }
@@ -16,7 +16,7 @@ public class EnemySpawn : MonoBehaviour{
         EnemiesAlive--;
         EnemiesDied++;
     }
-    public void _EnemySpawn(int x){
+    public void SpawnEnemy(int x){
         Instantiate(Enemy_list[x],LevelManager_script.main.WayPoints_list[0].position,Quaternion.identity);
         EnemiesAlive++;
     }
