@@ -25,12 +25,7 @@ public class StartPlayGame : MonoBehaviourPunCallbacks{
             PhotonNetwork.JoinRandomOrCreateRoom();
         }
     }
-
-    private string GenerateRandomRoomName()
-    {
-        return "Room_" + Random.Range(1000, 10000); // 生成一個隨機房間名稱，例如 "Room_1234"
-    }
-
+    
     public override void OnJoinRoomFailed(short returnCode, string message){
         print("Failed");
     }
