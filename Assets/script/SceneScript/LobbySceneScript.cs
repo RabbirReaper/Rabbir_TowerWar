@@ -17,7 +17,7 @@ public class LobbySceneScript : MonoBehaviourPunCallbacks{
     }
     private void Update() {
         if(PhotonNetwork.IsConnected){
-            connectPlayerCount.text = PhotonNetwork.PlayerList.Length.ToString();
+            connectPlayerCount.text = PhotonNetwork.CountOfPlayers.ToString();
         }
     }
     

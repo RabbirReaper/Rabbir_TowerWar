@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 1367227411}
   - component: {fileID: 1367227410}
   - component: {fileID: 1367227409}
+  - component: {fileID: 1367227412}
   m_Layer: 5
   m_Name: Join_TowerWar_2
   m_TagString: Untagged
@@ -453,7 +454,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1367227410}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1367227412}
+        m_TargetAssemblyTypeName: StartPlayGame, Assembly-CSharp
+        m_MethodName: JoinLoadingRoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1367227410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,6 +505,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367227407}
   m_CullTransparentMesh: 1
+--- !u!114 &1367227412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367227407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e954b5a45be2f034ca96f20bb4e9ebcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startGameButton: {fileID: 1367227409}
+  expectedMaxPlayers: 2
 --- !u!1 &1417588703
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -496, y: 309}
+  m_AnchoredPosition: {x: -827.7645, y: 493}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1417588705
@@ -752,7 +779,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -361.23547, y: 309}
+  m_AnchoredPosition: {x: -693, y: 493}
   m_SizeDelta: {x: 45.529, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1790897089
