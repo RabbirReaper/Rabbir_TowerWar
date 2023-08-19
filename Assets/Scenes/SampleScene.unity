@@ -16772,7 +16772,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.08472028, g: 0.07956566, b: 0.11320752, a: 0}
+  m_BackGroundColor: {r: 0.15686275, g: 0.24705882, b: 0.2784314, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -18421,12 +18421,13 @@ GameObject:
   - component: {fileID: 1882255481}
   - component: {fileID: 1882255482}
   - component: {fileID: 1882255483}
+  - component: {fileID: 1882255484}
   m_Layer: 0
   m_Name: LevelManager1
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1882255479
 MonoBehaviour:
@@ -18531,6 +18532,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cabc61c8c24d644086aee9551f1c33b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1882255484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882255478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1887204746
 PrefabInstance:
   m_ObjectHideFlags: 0
