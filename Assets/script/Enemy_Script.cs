@@ -10,6 +10,7 @@ public class Enemy_Script : MonoBehaviour{//
     [SerializeField] float speed;
     [SerializeField] TextMeshProUGUI hpUI;
     [SerializeField] TextMeshProUGUI defenceUI;
+
     bool isDestory = false;
     public bool isSlowed = false;
     public bool isFire = false;
@@ -40,8 +41,8 @@ public class Enemy_Script : MonoBehaviour{//
             if(WayPointidx<LevelManager_script.main.WayPoints_list.Length-1){
                 target=LevelManager_script.main.WayPoints_list[++WayPointidx];
             }else{
-
                 WayPointidx=0;
+                LevelManager_script.main.HpUpdate(-1);
                 transform.position=LevelManager_script.main.WayPoints_list[0].position;
                 target=LevelManager_script.main.WayPoints_list[WayPointidx];
             }

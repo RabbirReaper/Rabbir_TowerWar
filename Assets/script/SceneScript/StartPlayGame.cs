@@ -11,6 +11,7 @@ public class StartPlayGame : MonoBehaviourPunCallbacks{
     RoomOptions roomOptions = new();
     private void Start() {
         roomOptions.MaxPlayers = expectedMaxPlayers;
+        roomOptions.IsVisible = true;
     }
 
     // public void JoinLoadingRoom(){
