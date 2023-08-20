@@ -27,8 +27,13 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         // actorNumberAndColor.Add(1,"Blue");
         // actorNumberAndColor.Add(2,"Red");
         // actorNumberAndColor.Add(3,"Green");
-        if(PhotonNetwork.LocalPlayer.ActorNumber == 1) teamColor.text = "Blue";
-        else if(PhotonNetwork.LocalPlayer.ActorNumber == 2) teamColor.text = "Red";
+        if(PhotonNetwork.LocalPlayer.ActorNumber == 1){
+            teamColor.text = "Blue";
+            teamColor.color = Color.blue;
+        }else if(PhotonNetwork.LocalPlayer.ActorNumber == 2){
+            teamColor.text = "Red";
+            teamColor.color = Color.red;
+        }
         // teamColor.text = actorNumberAndColor[PhotonNetwork.LocalPlayer.ActorNumber].ToString();
         tmp_text[PhotonNetwork.LocalPlayer.ActorNumber-1].text = hp.ToString();
         hpPhotonView = tmp_text[PhotonNetwork.LocalPlayer.ActorNumber-1].GetComponent<PhotonView>();
