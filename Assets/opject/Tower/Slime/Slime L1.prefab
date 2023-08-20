@@ -259,8 +259,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2871768730972604516}
-  - component: {fileID: 9066098894970318772}
   - component: {fileID: 409553519833113922}
+  - component: {fileID: 9066098894970318772}
   m_Layer: 0
   m_Name: Slime L1
   m_TagString: Untagged
@@ -286,6 +286,24 @@ Transform:
   - {fileID: 627025214603722507}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &409553519833113922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425770091273798401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10be0222080a4249bf8cc3506f90e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrel: {fileID: 7605464674687664407}
+  bulletPrefab: {fileID: 2757682174209815250, guid: 082d0678da0303f41b603027b92b5bcf, type: 3}
+  firingPoint: {fileID: 7645419958237979238}
+  AttackRange: 8
+  RotationSpeed: 220
+  reload: 1.5
 --- !u!114 &9066098894970318772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,28 +319,7 @@ MonoBehaviour:
   nextLevelTower: {fileID: 5425770091273798401, guid: b2c74fc8d7e568b4d8f4c7e6abbfc06d, type: 3}
   upgradeUI: {fileID: 7264995651036136402}
   level: 1
-  baseUpGradeCost: 200
---- !u!114 &409553519833113922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5425770091273798401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c10be0222080a4249bf8cc3506f90e58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barrel: {fileID: 7605464674687664407}
-  bulletPrefab: {fileID: 2757682174209815250, guid: 082d0678da0303f41b603027b92b5bcf, type: 3}
-  EnemyMask:
-    serializedVersion: 2
-    m_Bits: 64
-  firingPoint: {fileID: 7645419958237979238}
-  AttackRange: 3
-  RotationSpeed: 220
-  reload: 3
+  baseUpGradeCost: 650
 --- !u!1 &5522754639439517041
 GameObject:
   m_ObjectHideFlags: 0

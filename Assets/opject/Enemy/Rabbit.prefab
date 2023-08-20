@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 1569181874396882892}
   - component: {fileID: 7038830147595451391}
   m_Layer: 8
-  m_Name: Circle
+  m_Name: Rabbit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

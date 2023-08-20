@@ -136,10 +136,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rb: {fileID: 590622883776554821}
   Bullet_speed: 6
-  Bullet_Damage: 15
+  Bullet_Damage: 150
   slowRate: 50
-  slowTime: 2
-  slowRange: 1.5
+  slowTime: 4
+  slowRange: 6
 --- !u!50 &590622883776554821
 Rigidbody2D:
   serializedVersion: 4

@@ -100,13 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rb: {fileID: 590622883776554821}
-  EnemyMask:
-    serializedVersion: 2
-    m_Bits: 0
   Bullet_speed: 9
-  Bullet_Damage: 5
+  Bullet_Damage: 100
   weakRate: 0.8
-  weakTime: 5
+  weakTime: 10
 --- !u!58 &1236226568314399909
 CircleCollider2D:
   m_ObjectHideFlags: 0

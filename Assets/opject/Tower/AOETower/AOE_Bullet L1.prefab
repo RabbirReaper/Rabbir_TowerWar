@@ -100,11 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rb: {fileID: 590622883776554821}
-  EnemyMask:
-    serializedVersion: 2
-    m_Bits: 0
   Bullet_speed: 8
-  Bullet_Damage: 40
+  Bullet_Damage: 75
   fireRate: 0
   fireTime: 0
   splashRange: 3

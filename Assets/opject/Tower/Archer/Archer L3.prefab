@@ -548,13 +548,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 2527887398834315687}
   bulletPrefab: {fileID: 2757682174209815250, guid: db81491f49c7d104683c28717293f1bb, type: 3}
-  EnemyMask:
-    serializedVersion: 2
-    m_Bits: 256
   firingPoint: {fileID: 4158264148134828056}
-  AttackRange: 4.5
+  AttackRange: 12
   RotationSpeed: 300
-  reload: 0.7
+  reload: 1
 --- !u!114 &-3936533003070748790
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -548,13 +548,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 2527887398834315687}
   bulletPrefab: {fileID: 2757682174209815250, guid: 47e4c29aa9565534a8b24a7ab4258631, type: 3}
-  EnemyMask:
-    serializedVersion: 2
-    m_Bits: 256
   firingPoint: {fileID: 4158264148134828056}
-  AttackRange: 3.5
+  AttackRange: 10
   RotationSpeed: 250
-  reload: 2
+  reload: 1.5
 --- !u!114 &2549813068709215598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,7 +567,7 @@ MonoBehaviour:
   nextLevelTower: {fileID: 6886352582088729161, guid: 34e9e57763c6b4148a196a7ac8c97d02, type: 3}
   upgradeUI: {fileID: 74906148311249462}
   level: 1
-  baseUpGradeCost: 200
+  baseUpGradeCost: 90
 --- !u!1 &7021464189751788408
 GameObject:
   m_ObjectHideFlags: 0
