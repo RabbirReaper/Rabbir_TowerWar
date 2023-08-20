@@ -102,7 +102,7 @@ MonoBehaviour:
   Rb: {fileID: 590622883776554821}
   EnemyMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   Bullet_speed: 9
   Bullet_Damage: 5
   weakRate: 0.4
@@ -150,14 +150,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2757682174209815250}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.07068584
+  m_UseAutoMass: 0
+  m_Mass: 0.001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -167,5 +167,5 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0

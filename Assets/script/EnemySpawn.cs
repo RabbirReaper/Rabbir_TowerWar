@@ -31,8 +31,10 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
         // EnemiesAlive++;
         _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x);
     }
-    // public void CallRPCSpawnEnemy(int x){
-    //     _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x);
+    
+    // public void SpawnEnemy(int x){ //test
+    //     GameObject tempEnemy = Instantiate(Enemy_list[x],LevelManager_script.main.WayPoints_list[0].position,Quaternion.identity);
+    //     EnemiesAlive++;
     // }
     
     [PunRPC]

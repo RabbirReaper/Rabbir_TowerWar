@@ -6,15 +6,19 @@ using UnityEditor;
 public class AOE_Turret : MonoBehaviour{
     [SerializeField] GameObject barrel;
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] LayerMask EnemyMask;
+    
     
     [SerializeField] Transform firingPoint;
     [SerializeField] float AttackRange;
     [SerializeField] float RotationSpeed;
     [SerializeField] float reload;
     Transform target;
-    
+    LayerMask EnemyMask;
     float timeUntilFire;
+    
+    private void Start() {
+        EnemyMask = LayerMask.GetMask("Enemy");
+    }
     private void Update() {
         timeUntilFire -= Time.deltaTime;
         if(target == null){

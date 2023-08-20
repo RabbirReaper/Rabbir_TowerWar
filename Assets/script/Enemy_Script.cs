@@ -37,7 +37,7 @@ public class Enemy_Script : MonoBehaviour{//
     }
     void Update(){
         transform.position=Vector2.MoveTowards(transform.position,target.position,nowSpeed*Time.deltaTime);
-        if(Vector2.Distance(transform.position,target.position) < 0.01f){
+        if(Vector2.Distance(transform.position,target.position) < 1.2f){
             if(WayPointidx<LevelManager_script.main.WayPoints_list.Length-1){
                 target=LevelManager_script.main.WayPoints_list[++WayPointidx];
             }else{

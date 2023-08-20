@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Slime_Bullet : MonoBehaviour{
     [SerializeField] Rigidbody2D Rb;
-    [SerializeField] LayerMask EnemyMask;
+    LayerMask EnemyMask;
     [SerializeField] float Bullet_speed;
     [SerializeField] float Bullet_Damage;
     [SerializeField] float slowRate;
@@ -12,6 +12,9 @@ public class Slime_Bullet : MonoBehaviour{
     [SerializeField] float slowRange;
     Transform Target;
     bool isDestory = false;
+    private void Start() {
+        EnemyMask = LayerMask.GetMask("Enemy");
+    }
     public void SetTarget(Transform _Target){
         Target =_Target;
 

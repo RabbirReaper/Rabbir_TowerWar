@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AOE_Bullet : MonoBehaviour{
     [SerializeField] Rigidbody2D Rb;
-    [SerializeField] LayerMask EnemyMask;
+    LayerMask EnemyMask;
     [SerializeField] float Bullet_speed;
     [SerializeField] float Bullet_Damage;
     [SerializeField] float fireRate;
@@ -12,9 +12,11 @@ public class AOE_Bullet : MonoBehaviour{
     [SerializeField] float splashRange;
     Transform Target;
     bool isDestory = false;
+    private void Start() {
+        EnemyMask = LayerMask.GetMask("Enemy");
+    }
     public void SetTarget(Transform _Target){
         Target =_Target;
-
     }
     private void FixedUpdate() {
         if(!Target) return;

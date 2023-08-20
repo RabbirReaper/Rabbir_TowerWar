@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Witch_Bullet : MonoBehaviour{
     [SerializeField] Rigidbody2D Rb;
-    [SerializeField] LayerMask EnemyMask;
     [SerializeField] float Bullet_speed;
     [SerializeField] float Bullet_Damage;
     [SerializeField] float weakRate;
@@ -13,7 +12,6 @@ public class Witch_Bullet : MonoBehaviour{
     bool isDestory = false;
     public void SetTarget(Transform _Target){
         Target =_Target;
-
     }
     private void FixedUpdate() {
         if(!Target) return;

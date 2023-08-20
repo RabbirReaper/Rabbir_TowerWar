@@ -6,7 +6,7 @@ using UnityEditor;
 public class Slime_Turret : MonoBehaviour{
     [SerializeField] GameObject barrel;
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] LayerMask EnemyMask;
+    LayerMask EnemyMask;
     
     [SerializeField] Transform firingPoint;
     [SerializeField] float AttackRange;
@@ -15,6 +15,9 @@ public class Slime_Turret : MonoBehaviour{
     Transform target;
     
     float timeUntilFire;
+    private void Start() {
+        EnemyMask = LayerMask.GetMask("Enemy");
+    }
     private void Update() {
         timeUntilFire -= Time.deltaTime;
         if(target == null){

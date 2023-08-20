@@ -7,7 +7,7 @@ public class Witch_Turret : MonoBehaviour{
 
     [SerializeField] GameObject barrel;
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] LayerMask EnemyMask;
+    LayerMask EnemyMask;
     
     [SerializeField] Transform firingPoint;
     [SerializeField] float AttackRange;
@@ -15,7 +15,9 @@ public class Witch_Turret : MonoBehaviour{
     [SerializeField] float reload;
     Transform target;
     float timeUntilFire=0;
-   
+    private void Start() {
+        EnemyMask = LayerMask.GetMask("Enemy");
+    }
     private void Update() {
         timeUntilFire -= Time.deltaTime;
         // FindTarget();
