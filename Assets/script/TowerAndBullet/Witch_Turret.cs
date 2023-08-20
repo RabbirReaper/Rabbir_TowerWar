@@ -36,10 +36,10 @@ public class Witch_Turret : MonoBehaviour{
         if(timeUntilFire < 0){
             FindTarget();
             if(target == null) return;
-            if(!CheckTargetinRange()){
-                target=null;
-                return;
-            }
+            // if(!CheckTargetinRange()){
+            //     target=null;
+            //     return;
+            // }
             Shoot();
             timeUntilFire=reload;
         }
