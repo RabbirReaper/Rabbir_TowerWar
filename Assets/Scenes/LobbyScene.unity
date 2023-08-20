@@ -457,7 +457,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1367227412}
         m_TargetAssemblyTypeName: StartPlayGame, Assembly-CSharp
-        m_MethodName: JoinLoadingRoom
+        m_MethodName: JoinRandRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startGameButton: {fileID: 1367227409}
-  expectedMaxPlayers: 2
+  maxPlayers: 2
 --- !u!1 &1417588703
 GameObject:
   m_ObjectHideFlags: 0

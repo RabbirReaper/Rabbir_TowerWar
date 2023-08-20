@@ -5,30 +5,24 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 public class StartPlayGame : MonoBehaviourPunCallbacks{
     [SerializeField] Button startGameButton;
-    [SerializeField] byte expectedMaxPlayers;
-    RoomOptions roomOptions = new();
-    private void Start() {
-        roomOptions.MaxPlayers = expectedMaxPlayers;
-        roomOptions.IsVisible = true;
-    }
+    [SerializeField] byte maxPlayers;
 
-    // public void JoinLoadingRoom(){
-    //     if(PhotonNetwork.IsConnected){
-    //        PhotonNetwork.JoinOrCreateRoom(null,roomOptions,null,null);
-    //     }
-    // }
-    public void JoinLoadingRoom(){
-        if (PhotonNetwork.IsConnected){
-            // string roomName = GenerateRandomRoomName(); // 自行生成隨機房間名稱
-            // PhotonNetwork.JoinOrCreateRoom(roomName, roomOptions, null, null);
-            PhotonNetwork.JoinRandomOrCreateRoom();
+    public void JoinRandRoom(){
+        if(PhotonNetwork.IsConnectedAndReady){
+            PhotonNetwork.JoinRandomRoom(null,maxPlayers);
         }
     }
-    
-    public override void OnJoinRoomFailed(short returnCode, string message){
-        print("Failed");
+    public void CreateRoom(){
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = maxPlayers;
+        PhotonNetwork.CreateRoom(null, roomOptions, null);
+    }
+
+    public override void OnJoinRandomFailed(short returnCode, string message){
+        CreateRoom();
     }
 
     public override void OnJoinedRoom(){
