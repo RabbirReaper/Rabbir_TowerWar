@@ -16,7 +16,7 @@ public class Enemy_Script : MonoBehaviour{//
     public bool isFire = false;
     public bool isWeak = false;
 
-    float fireInterval = 0.5f ; //Important
+    float fireInterval = 1f ; //Important
     float timer_slow;
     float timer_fire;
     float timer_weak;
@@ -28,7 +28,7 @@ public class Enemy_Script : MonoBehaviour{//
     float nowHealth;
     float nowDefence;
     private void Start() {
-        target = LevelManager_script.main.WayPoints_list[0];
+        target = LevelManager_script.main.WayPoints_list[1];
         nowSpeed=speed;
         nowHealth=Health;
         nowDefence=Defence;
@@ -37,7 +37,7 @@ public class Enemy_Script : MonoBehaviour{//
     }
     void Update(){
         transform.position=Vector2.MoveTowards(transform.position,target.position,nowSpeed*Time.deltaTime);
-        if(Vector2.Distance(transform.position,target.position) < 1.2f){
+        if(Vector2.Distance(transform.position,target.position) < 2.5f){
             if(WayPointidx<LevelManager_script.main.WayPoints_list.Length-1){
                 target=LevelManager_script.main.WayPoints_list[++WayPointidx];
             }else{

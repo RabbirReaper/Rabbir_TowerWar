@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using Photon.Pun;
 using Photon.Realtime;
-
 public class EnemySpawn : MonoBehaviourPunCallbacks{
     [SerializeField] GameObject[] Enemy_list;
     private PhotonView _pV;
@@ -33,13 +32,14 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
     }
     
     // public void SpawnEnemy(int x){ //test
-    //     GameObject tempEnemy = Instantiate(Enemy_list[x],LevelManager_script.main.WayPoints_list[0].position,Quaternion.identity);
+    //     GameObject tempEnemy = Instantiate(Enemy_list[x],new Vector3(-22f,Random.Range(7f, 13f),0f),Quaternion.identity);
     //     EnemiesAlive++;
     // }
     
     [PunRPC]
     void RPCSpawnEnemy(int x,PhotonMessageInfo Info){
-        GameObject tempEnemy = Instantiate(Enemy_list[x],LevelManager_script.main.WayPoints_list[0].position,Quaternion.identity);
+        // GameObject tempEnemy = Instantiate(Enemy_list[x],LevelManager_script.main.WayPoints_list[0].position,Quaternion.identity);
+        GameObject tempEnemy = Instantiate(Enemy_list[x],new Vector3(-22f,Random.Range(7f, 13f),0f),Quaternion.identity);
         tempEnemy.GetComponent<Renderer>().material.color = color[Info.Sender.ActorNumber-1];
         EnemiesAlive++;
     }
