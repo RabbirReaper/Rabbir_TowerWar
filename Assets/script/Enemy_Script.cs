@@ -27,6 +27,7 @@ public class Enemy_Script : MonoBehaviour{//
     float nowSpeed;
     float nowHealth;
     float nowDefence;
+    int moveRotation=1;
     private void Start() {
         target = LevelManager_script.main.WayPoints_list[1];
         nowSpeed=speed;
@@ -36,17 +37,21 @@ public class Enemy_Script : MonoBehaviour{//
         defenceUI.text = ((int)Defence).ToString() + "/" +((int)Defence).ToString();
     }
     void Update(){
-        transform.position=Vector2.MoveTowards(transform.position,target.position,nowSpeed*Time.deltaTime);
-        if(Vector2.Distance(transform.position,target.position) < 2.5f){
-            if(WayPointidx<LevelManager_script.main.WayPoints_list.Length-1){
-                target=LevelManager_script.main.WayPoints_list[++WayPointidx];
-            }else{
-                WayPointidx=0;
-                LevelManager_script.main.HpUpdate(-1);
-                transform.position=LevelManager_script.main.WayPoints_list[0].position;
-                target=LevelManager_script.main.WayPoints_list[WayPointidx];
-            }
-        }
+        // transform.position=Vector2.MoveTowards(transform.position,target.position,nowSpeed*Time.deltaTime);
+        if(moveRotation == 1) transform.position = new Vector3(transform.position.x+nowSpeed*Time.deltaTime,transform.position.y,transform.position.z);
+        else if(moveRotation == 2) transform.position = new Vector3(transform.position.x,transform.position.y-nowSpeed*Time.deltaTime,transform.position.z);
+        else if(moveRotation == 3) transform.position = new Vector3(transform.position.x-nowSpeed*Time.deltaTime,transform.position.y,transform.position.z);
+        else if(moveRotation == 4) transform.position = new Vector3(transform.position.x,transform.position.y+nowSpeed*Time.deltaTime,transform.position.z);
+        // if(Vector2.Distance(transform.position,target.position) < 2.5f){
+        //     if(WayPointidx<LevelManager_script.main.WayPoints_list.Length-1){
+        //         target=LevelManager_script.main.WayPoints_list[++WayPointidx];
+        //     }else{
+        //         WayPointidx=0;
+        //         LevelManager_script.main.HpUpdate(-1);
+        //         transform.position=LevelManager_script.main.WayPoints_list[0].position;
+        //         target=LevelManager_script.main.WayPoints_list[WayPointidx];
+        //     }
+        // }
         if(isSlowed){
             timer_slow-=Time.deltaTime;
             if(timer_slow < 0) ResetSpeed();
@@ -68,6 +73,10 @@ public class Enemy_Script : MonoBehaviour{//
             }
             defenceUI.text = ((int)nowDefence).ToString() + "/" +((int)Defence).ToString();
         }
+    }
+
+    public void UpdateMoveRotation(int x){
+        moveRotation = x;
     }
     void FireDamage(float _fireDmg){
         nowHealth-=Health*_fireDmg;
