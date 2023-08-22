@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Realtime;
+
 public class Enemy_Script : MonoBehaviour{//
     [Header("Enemy References")]
     [SerializeField] float Health;
@@ -22,14 +24,15 @@ public class Enemy_Script : MonoBehaviour{//
     float timer_weak;
     float fireRate=0;
     float TimerTemp=0;
-    Transform target;
+    // Transform target;
     int WayPointidx=0;
     float nowSpeed;
     float nowHealth;
     float nowDefence;
     int moveRotation=1;
+    public Player ownPlayer;
     private void Start() {
-        target = LevelManager_script.main.WayPoints_list[1];
+        // target = LevelManager_script.main.WayPoints_list[1];
         nowSpeed=speed;
         nowHealth=Health;
         nowDefence=Defence;
