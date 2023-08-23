@@ -20,5 +20,8 @@ public class LobbySceneScript : MonoBehaviourPunCallbacks{
             connectPlayerCount.text = PhotonNetwork.CountOfPlayers.ToString();
         }
     }
+    public void OuitGame(){
+        Application.Quit();
+    }
     
 }
