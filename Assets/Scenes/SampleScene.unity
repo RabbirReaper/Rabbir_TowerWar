@@ -42919,6 +42919,7 @@ GameObject:
   - component: {fileID: 2057887902}
   - component: {fileID: 2057887901}
   - component: {fileID: 2057887900}
+  - component: {fileID: 2057887903}
   m_Layer: 5
   m_Name: 'Silverfish '
   m_TagString: Untagged
@@ -43040,6 +43041,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057887898}
   m_CullTransparentMesh: 1
+--- !u!114 &2057887903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057887898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9b011b0c02ba14cb17ce318c1b58f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2057887900}
+  imagePrefab: {fileID: 1710161070809483650, guid: c604f78913d6f08458b4d163b4df481c, type: 3}
 --- !u!1001 &2061161656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44840,8 +44855,8 @@ SceneRoots:
   - {fileID: 328057193}
   - {fileID: 918153789}
   - {fileID: 166988636}
-  - {fileID: 2066082646}
-  - {fileID: 1266054346}
   - {fileID: 1634352757}
   - {fileID: 1005339364}
+  - {fileID: 2066082646}
+  - {fileID: 1266054346}
   - {fileID: 1653720771}

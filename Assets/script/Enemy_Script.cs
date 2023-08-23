@@ -25,7 +25,7 @@ public class Enemy_Script : MonoBehaviour{//
     float fireRate=0;
     float TimerTemp=0;
     // Transform target;
-    int WayPointidx=0;
+    // int WayPointidx=0;
     float nowSpeed;
     float nowHealth;
     float nowDefence;
