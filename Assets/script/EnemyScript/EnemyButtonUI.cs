@@ -9,6 +9,12 @@ public class EnemyButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     [SerializeField] Button button;
     [SerializeField] Image imagePrefab; // 需要在 Inspector 中設定預製體
+    [SerializeField] float enemyHp;
+    [SerializeField] float enemySpeed;
+    [SerializeField] int cost;
+    [SerializeField] int income;
+    [SerializeField] int unlock;
+
     private Image spawnedImage;
     private TMP_Text text;
     // private RectTransform uiRectTransform;
@@ -28,7 +34,7 @@ public class EnemyButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         text = spawnedImage.GetComponentInChildren<TMP_Text>();
         spawnedImage.transform.SetParent(transform.parent.parent.parent); // 設定父物件
         // spawnedImage.rectTransform.sizeDelta = new Vector2(50, 50); // 設定大小
-        text.text = "Hellow World";
+        text.text = button.name +"\n\nHealth:  " + enemyHp +"\nSpeed:  " + enemySpeed + "\n\nCost:  " + cost + "\nIncome:  +" + income + "\n\nReach " + unlock + " income to unlock";
     }
 
     public void OnPointerExit(PointerEventData eventData){
