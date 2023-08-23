@@ -20,15 +20,13 @@ public class EnemyButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private void Update(){
         if (spawnedImage != null){
             spawnedImage.transform.position = new Vector3(Input.mousePosition.x + spawnedImage.rectTransform.rect.width*0.5f + 0.1f,Input.mousePosition.y - spawnedImage.rectTransform.rect.height*0.5f-0.1f,0);
-
         }
     }
 
     public void OnPointerEnter(PointerEventData eventData){
-        // 創建並顯示 UI
-        spawnedImage = Instantiate(imagePrefab,new Vector3(Input.mousePosition.x + imagePrefab.rectTransform.rect.width*0.5f + 0.1f,Input.mousePosition.y - imagePrefab.rectTransform.rect.height*0.5f-0.1f,0),Quaternion.identity);
+        spawnedImage = Instantiate(imagePrefab,new Vector3(0,0,0),Quaternion.identity);
         text = spawnedImage.GetComponentInChildren<TMP_Text>();
-        spawnedImage.transform.SetParent(transform.parent); // 設定父物件
+        spawnedImage.transform.SetParent(transform.parent.parent.parent); // 設定父物件
         // spawnedImage.rectTransform.sizeDelta = new Vector2(50, 50); // 設定大小
         text.text = "Hellow World";
     }
