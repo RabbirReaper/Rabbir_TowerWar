@@ -65,7 +65,9 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         table.Add("hp",hp);
         PhotonNetwork.LocalPlayer.SetCustomProperties(table);
         _pV.RPC("RPCHpUpdate",_ownPlayer,-x);
-        // this.GetComponent<EnemySpawn>().HpUpdate(878,_ownPlayer);
+        if(hp <= 0){
+            
+        }
     }
     public override void OnPlayerPropertiesUpdate(Player targetPlayer,Hashtable changedProps){
         tmp_text[targetPlayer.ActorNumber-1].text = changedProps["hp"].ToString();
