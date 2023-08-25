@@ -3969,11 +3969,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 154814624}
   imagePrefab: {fileID: 1710161070809483650, guid: c604f78913d6f08458b4d163b4df481c, type: 3}
-  enemyHp: 0
-  enemySpeed: 0
-  cost: 0
-  income: 0
-  unlock: 0
+  enemyHp: 4
+  enemySpeed: 3
+  cost: 10
+  income: 2
+  unlock: 1000
 --- !u!1001 &157040396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11586,7 +11586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -13}
+  m_AnchoredPosition: {x: 0, y: -12.999878}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468063680
@@ -14109,7 +14109,7 @@ Transform:
   m_GameObject: {fileID: 635692047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.299995, y: 26.81, z: 0}
+  m_LocalPosition: {x: -40.299995, y: 26.68, z: 0}
   m_LocalScale: {x: 41.000347, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15020,11 +15020,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 656950772}
   imagePrefab: {fileID: 1710161070809483650, guid: c604f78913d6f08458b4d163b4df481c, type: 3}
-  enemyHp: 0
-  enemySpeed: 0
-  cost: 0
-  income: 0
-  unlock: 0
+  enemyHp: 300
+  enemySpeed: 3
+  cost: 75
+  income: 12
+  unlock: 10000
 --- !u!1001 &657297549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22751,7 +22751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -13}
+  m_AnchoredPosition: {x: 0, y: -12.999878}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102767351
@@ -26351,6 +26351,7 @@ MonoBehaviour:
   - {fileID: 440512424}
   - {fileID: 1782004655}
   EnemyParent: {fileID: 870827808}
+  isLose: 0
 --- !u!114 &1266054348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33880,7 +33881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 20, y: -12.999998}
+  m_AnchoredPosition: {x: 20, y: -12.999878}
   m_SizeDelta: {x: -640, y: -600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648869872
@@ -34843,11 +34844,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 1669137788}
   imagePrefab: {fileID: 1710161070809483650, guid: c604f78913d6f08458b4d163b4df481c, type: 3}
-  enemyHp: 0
-  enemySpeed: 0
-  cost: 0
-  income: 0
-  unlock: 0
+  enemyHp: 200
+  enemySpeed: 3.5
+  cost: 50
+  income: 8
+  unlock: 5000
 --- !u!1001 &1669147097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38032,7 +38033,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1771781630}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1945585371}
+        m_TargetAssemblyTypeName: SettingUI_Script, Assembly-CSharp
+        m_MethodName: TurnSettingUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1771781630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42739,6 +42752,7 @@ GameObject:
   - component: {fileID: 1945585368}
   - component: {fileID: 1945585370}
   - component: {fileID: 1945585369}
+  - component: {fileID: 1945585371}
   m_Layer: 5
   m_Name: SettingImage
   m_TagString: Untagged
@@ -42781,14 +42795,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7019608, b: 0.7019608, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2976135448196196091, guid: c902e08bd83e04947b6e8d7f31f385be, type: 3}
+  m_Sprite: {fileID: -8929440768489705544, guid: c902e08bd83e04947b6e8d7f31f385be, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -42806,6 +42820,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945585367}
   m_CullTransparentMesh: 0
+--- !u!114 &1945585371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945585367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f15b76c7f1991d242bd1a313629fb628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingUI: {fileID: 1945585367}
 --- !u!1001 &1953035476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44064,11 +44091,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 2010724950}
   imagePrefab: {fileID: 1710161070809483650, guid: c604f78913d6f08458b4d163b4df481c, type: 3}
-  enemyHp: 0
-  enemySpeed: 0
-  cost: 0
-  income: 0
-  unlock: 0
+  enemyHp: 88
+  enemySpeed: 2.5
+  cost: 22
+  income: 4
+  unlock: 2000
 --- !u!1001 &2022560964
 PrefabInstance:
   m_ObjectHideFlags: 0

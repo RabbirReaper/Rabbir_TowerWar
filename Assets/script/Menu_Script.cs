@@ -33,5 +33,4 @@ public class Menu_Script : MonoBehaviour{
         Next_IncomeUI.text =(10-(int)LevelManager_script.main.Next_Income).ToString(); // maybe can performance optimization
     }
     
-    
 }
