@@ -7,6 +7,7 @@ using Photon.Realtime;
 
 public class EnemySpawn : MonoBehaviourPunCallbacks{
     [SerializeField] GameObject[] Enemy_list;
+    [SerializeField] GameObject EnemyParent;
     private PhotonView _pV;
     int EnemiesAlive=0,EnemiesDied=0;
     Color[] color = new Color[6];
@@ -39,6 +40,7 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
     void RPCSpawnEnemy(int x,PhotonMessageInfo Info){
         // GameObject tempEnemy = Instantiate(Enemy_list[x],LevelManager_script.main.WayPoints_list[0].position,Quaternion.identity);
         GameObject tempEnemy = Instantiate(Enemy_list[x],new Vector3(-22f,Random.Range(7f, 13f),0f),Quaternion.identity);
+        tempEnemy.transform.SetParent(EnemyParent.transform);
         // tempEnemy.GetComponent<Renderer>().material.color = color[Info.Sender.ActorNumber-1];
         tempEnemy.GetComponent<Enemy_Script>().ownPlayer = Info.Sender;
         EnemiesAlive++;

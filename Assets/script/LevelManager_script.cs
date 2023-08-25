@@ -5,6 +5,8 @@ using TMPro;
 using Photon.Pun;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using Photon.Realtime;
+using UnityEngine.UI;
+
 public class LevelManager_script : MonoBehaviourPunCallbacks{
     public static LevelManager_script main;
     public Transform[] WayPoints_list;
@@ -13,11 +15,13 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     public float Gold=100;
     public float Next_Income=0;
     [SerializeField] TextMeshProUGUI teamColor;
-
+    [SerializeField] GameObject lostUI;
     public int hp = 20;
     [SerializeField] TextMeshProUGUI[] tmp_text;
     private PhotonView hpPhotonView,_pV;
     public Hashtable actorNumberAndColor = new();
+    [SerializeField] GameObject EnemyParent;
+    
 
     private void Awake() {
         main = this;
@@ -59,14 +63,26 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         }
     }
 
+
+    public void YouLose(){
+        lostUI.SetActive(true);
+        StartCoroutine(StopGame());
+    }
+    public IEnumerator StopGame(){
+        yield return new WaitForSeconds(2f);
+        Time.timeScale = 0;
+    }
+
     public void HpUpdate(int x,Player _ownPlayer){
+        if(hp <= 0) return;
         hp+=x;
         Hashtable table = new();
         table.Add("hp",hp);
         PhotonNetwork.LocalPlayer.SetCustomProperties(table);
         _pV.RPC("RPCHpUpdate",_ownPlayer,-x);
         if(hp <= 0){
-            
+            tmp_text[PhotonNetwork.LocalPlayer.ActorNumber-1].text = "0";
+            YouLose();
         }
     }
     public override void OnPlayerPropertiesUpdate(Player targetPlayer,Hashtable changedProps){
