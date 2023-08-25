@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
     [SerializeField] GameObject[] Enemy_list;
     [SerializeField] GameObject EnemyParent;
     private PhotonView _pV;
-    int EnemiesAlive=0,EnemiesDied=0;
+    public int Summon=0,EnemiesDied=0;
     Color[] color = new Color[6];
     public static UnityEvent onEnemyDestory = new();
     private void Awake() {
@@ -24,10 +24,10 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
     }
 
     void EnemyDestoryed(){
-        EnemiesAlive--;
         EnemiesDied++;
     }
     public void SpawnEnemy(int x){
+        Summon++;
         _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x);
     }
     
@@ -43,7 +43,6 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
         tempEnemy.transform.SetParent(EnemyParent.transform);
         // tempEnemy.GetComponent<Renderer>().material.color = color[Info.Sender.ActorNumber-1];
         tempEnemy.GetComponent<Enemy_Script>().ownPlayer = Info.Sender;
-        EnemiesAlive++;
     }
 
 

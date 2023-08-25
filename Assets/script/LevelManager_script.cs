@@ -21,7 +21,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     private PhotonView hpPhotonView,_pV;
     public Hashtable actorNumberAndColor = new();
     [SerializeField] GameObject EnemyParent;
-    
+    private int alivePLayer;
 
     private void Awake() {
         main = this;
@@ -31,6 +31,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         // actorNumberAndColor.Add(1,"Blue");
         // actorNumberAndColor.Add(2,"Red");
         // actorNumberAndColor.Add(3,"Green");
+        alivePLayer = PhotonNetwork.CurrentRoom.PlayerCount;
         if(PhotonNetwork.LocalPlayer.ActorNumber == 1){
             teamColor.text = "Blue";
             teamColor.color = Color.blue;
@@ -66,6 +67,11 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
 
     public void YouLose(){
         lostUI.SetActive(true);
+        lostUI.transform.Find("You Lose").gameObject.SetActive(true);
+        _pV.RPC("RPCalivePLayerUpdate",RpcTarget.Others);
+        lostUI.transform.Find("Text").GetComponent<TMP_Text>().text = "Income: "+Income+"\nSummon: "+this.GetComponent<EnemySpawn>().Summon.ToString()+"\nKill enemy: "+this.GetComponent<EnemySpawn>().EnemiesDied.ToString()+"\nRank: "+alivePLayer.ToString();
+        alivePLayer--;
+        Destroy(EnemyParent);
         StartCoroutine(StopGame());
     }
     public IEnumerator StopGame(){
@@ -74,7 +80,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     }
 
     public void HpUpdate(int x,Player _ownPlayer){
-        if(hp <= 0) return;
+        if(hp <= 0 || alivePLayer == 1) return;
         hp+=x;
         Hashtable table = new();
         table.Add("hp",hp);
@@ -97,5 +103,18 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         PhotonNetwork.LocalPlayer.SetCustomProperties(table);
         // Debug.Log(x);
     }
+    
+    [PunRPC]
+    public void RPCalivePLayerUpdate(){
+        alivePLayer--;
+        if(alivePLayer == 1){
+            lostUI.SetActive(true);
+            lostUI.transform.Find("You Win").gameObject.SetActive(true);
+            Destroy(EnemyParent);
+            StartCoroutine(StopGame());
+            lostUI.transform.Find("Text").GetComponent<TMP_Text>().text = "Income: "+Income+"\nSummon: "+this.GetComponent<EnemySpawn>().Summon.ToString()+"\nKill enemy: "+this.GetComponent<EnemySpawn>().EnemiesDied.ToString()+"\nRank: "+alivePLayer.ToString();
+        }
+    }
+    
     
 }
