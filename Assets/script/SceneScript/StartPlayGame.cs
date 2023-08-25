@@ -5,7 +5,6 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Hashtable = ExitGames.Client.Photon.Hashtable;
 public class StartPlayGame : MonoBehaviourPunCallbacks{
     [SerializeField] Button startGameButton;
     [SerializeField] byte maxPlayers;

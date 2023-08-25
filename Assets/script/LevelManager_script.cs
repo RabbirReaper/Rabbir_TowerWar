@@ -22,6 +22,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     public Hashtable actorNumberAndColor = new();
     [SerializeField] GameObject EnemyParent;
     private int alivePLayer;
+    public bool isLose = false;
 
     private void Awake() {
         main = this;
@@ -67,6 +68,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
 
     public void YouLose(){
         lostUI.SetActive(true);
+        isLose = true;
         lostUI.transform.Find("You Lose").gameObject.SetActive(true);
         _pV.RPC("RPCalivePLayerUpdate",RpcTarget.Others);
         lostUI.transform.Find("Text").GetComponent<TMP_Text>().text = "Income: "+Income+"\nSummon: "+this.GetComponent<EnemySpawn>().Summon.ToString()+"\nKill enemy: "+this.GetComponent<EnemySpawn>().EnemiesDied.ToString()+"\nRank: "+alivePLayer.ToString();
@@ -108,6 +110,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     public void RPCalivePLayerUpdate(){
         alivePLayer--;
         if(alivePLayer == 1){
+            isLose = true;
             lostUI.SetActive(true);
             lostUI.transform.Find("You Win").gameObject.SetActive(true);
             Destroy(EnemyParent);
