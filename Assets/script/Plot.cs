@@ -20,7 +20,7 @@ public class Plot : MonoBehaviour{
         SR.color=startColor;
     }
     private void OnMouseDown() {
-        if(UIManager.main.IsHoveringUI() || UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject() || LevelManager_script.main.isLose) return;
+        if(UIManager.main.IsHoveringUI() || UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject() || LevelManager_script.main.isEnd) return;
         if(towerObj != null) {
             UpGrade_Script.OpenUpgradeUI();
             return;

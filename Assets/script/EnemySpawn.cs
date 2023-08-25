@@ -27,7 +27,7 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
         EnemiesDied++;
     }
     public void SpawnEnemy(int x){
-        if(LevelManager_script.main.isLose) return;
+        if(LevelManager_script.main.isEnd) return;
         Summon++;
         _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x);
     }

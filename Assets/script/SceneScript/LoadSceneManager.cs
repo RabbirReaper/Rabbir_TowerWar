@@ -20,9 +20,7 @@ public class LoadSceneManager : MonoBehaviourPunCallbacks{
     }
     // public override void OnJoinedRoom(){
     //     roomCurrentPlayerText.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
-    //     if(2 == PhotonNetwork.CurrentRoom.PlayerCount){
-
-    //     }
+    //
     // }
     // public override void OnLeftRoom(){
     //     roomCurrentPlayerText.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
