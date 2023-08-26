@@ -16,5 +16,6 @@ public class UpGradeUIHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
         UIManager.main.SetHoveringStatie(false);
         gameObject.SetActive(false);
     }
+    
 
 }

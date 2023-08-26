@@ -5,8 +5,6 @@ using TMPro;
 using Photon.Pun;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using Photon.Realtime;
-using UnityEngine.UI;
-using System;
 
 public class LevelManager_script : MonoBehaviourPunCallbacks{
     public static LevelManager_script main;
@@ -53,7 +51,10 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         }
     }
 
-    public void IncreaseCurrency(int amount){
+    public void IncreaseGold(int amount){
+        Gold+=amount;
+    }
+    public void IncreaseIncome(int amount){
         Income+=amount;
     } 
     public bool SpendCurrency(int amount){

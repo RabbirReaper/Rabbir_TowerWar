@@ -85,7 +85,7 @@ public class Enemy_Script : MonoBehaviour{//
         nowHealth-=Health*_fireDmg;
         if(!isDestory && nowHealth <= 0){
             isDestory=true;
-            LevelManager_script.main.IncreaseCurrency(currencyWorth);
+            LevelManager_script.main.IncreaseIncome(currencyWorth);
             EnemySpawn.onEnemyDestory.Invoke();
             Destroy(gameObject);
         }
@@ -97,7 +97,7 @@ public class Enemy_Script : MonoBehaviour{//
         }else nowHealth--;
         if(!isDestory && nowHealth <= 0){
             isDestory=true;
-            LevelManager_script.main.IncreaseCurrency(currencyWorth);
+            LevelManager_script.main.IncreaseIncome(currencyWorth);
             EnemySpawn.onEnemyDestory.Invoke();
             Destroy(gameObject);
         }
