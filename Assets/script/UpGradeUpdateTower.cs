@@ -6,7 +6,7 @@ public class UpGradeUpdateTower : MonoBehaviour{
     [SerializeField] GameObject nextLevelTower;
     [SerializeField] GameObject upgradeUI;
     [SerializeField] int level;
-    [SerializeField] float baseUpGradeCost;
+    [SerializeField] int baseUpGradeCost;
     public void OpenUpgradeUI(){
         upgradeUI.SetActive(true);
     }

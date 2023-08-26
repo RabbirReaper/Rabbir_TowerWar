@@ -6,13 +6,14 @@ using Photon.Pun;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using Photon.Realtime;
 using UnityEngine.UI;
+using System;
 
 public class LevelManager_script : MonoBehaviourPunCallbacks{
     public static LevelManager_script main;
     public Transform[] WayPoints_list;
     public float Interval=10;
-    public float Income=50;
-    public float Gold=100;
+    public int Income=50;
+    public int Gold=100;
     public float Next_Income=0;
     [SerializeField] TextMeshProUGUI teamColor;
     [SerializeField] GameObject lostUI;
@@ -40,7 +41,6 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
             teamColor.text = "Red";
             teamColor.color = Color.red;
         }
-        // teamColor.text = actorNumberAndColor[PhotonNetwork.LocalPlayer.ActorNumber].ToString();
         tmp_text[PhotonNetwork.LocalPlayer.ActorNumber-1].text = hp.ToString();
         hpPhotonView = tmp_text[PhotonNetwork.LocalPlayer.ActorNumber-1].GetComponent<PhotonView>();
         _pV = this.GetComponent<PhotonView>();
@@ -52,11 +52,11 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
             Next_Income=0;
         }
     }
-    
-    public void IncreaseCurrency(float amount){
+
+    public void IncreaseCurrency(int amount){
         Income+=amount;
     } 
-    public bool SpendCurrency(float amount){
+    public bool SpendCurrency(int amount){
         if(amount <= Gold){
             Gold-=amount;
             return true;

@@ -13,7 +13,7 @@ public class EnemyButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] float enemySpeed;
     [SerializeField] int cost;
     [SerializeField] int income;
-    [SerializeField] int unlock;
+    public int unlock;
 
     private Image spawnedImage;
     private TMP_Text text;
