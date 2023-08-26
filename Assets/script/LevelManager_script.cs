@@ -52,6 +52,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
             Next_Income=0;
         }
     }
+    
     public void IncreaseCurrency(float amount){
         Income+=amount;
     } 
