@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 88479941160018654}
   - component: {fileID: 590622883776554821}
   m_Layer: 7
-  m_Name: Archer_Bullet L1
+  m_Name: Archer_Bullet L4 Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rb: {fileID: 590622883776554821}
-  Bullet_speed: 6
-  Bullet_Damage: 15
+  Bullet_speed: 7
+  Bullet_Damage: 2400
 --- !u!50 &590622883776554821
 Rigidbody2D:
   serializedVersion: 4
