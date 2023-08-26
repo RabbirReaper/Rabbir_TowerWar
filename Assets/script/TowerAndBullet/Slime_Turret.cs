@@ -12,6 +12,8 @@ public class Slime_Turret : MonoBehaviour{
     [SerializeField] float AttackRange;
     [SerializeField] float RotationSpeed;
     [SerializeField] float reload;
+    [SerializeField] int sellValue;
+
     Transform target;
     
     float timeUntilFire;
@@ -55,6 +57,12 @@ public class Slime_Turret : MonoBehaviour{
         float angle = Mathf.Atan2(target.position.y - transform.position.y,target.position.x - transform.position.x)*Mathf.Rad2Deg-90f;
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0f,0f,angle));
         barrel.transform.rotation = Quaternion.RotateTowards(barrel.transform.rotation,targetRotation,RotationSpeed*Time.deltaTime);
+    }
+
+    public void SellingTower(){
+        LevelManager_script.main.IncreaseGold(sellValue);
+        UIManager.main.SetHoveringStatie(false);
+        Destroy(this.gameObject);
     }
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;

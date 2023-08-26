@@ -13,6 +13,8 @@ public class Witch_Turret : MonoBehaviour{
     [SerializeField] float AttackRange;
     [SerializeField] float RotationSpeed;
     [SerializeField] float reload;
+    [SerializeField] int sellValue;
+
     Transform target;
     float timeUntilFire=0;
     private void Start() {
@@ -74,6 +76,11 @@ public class Witch_Turret : MonoBehaviour{
         barrel.transform.rotation = Quaternion.RotateTowards(barrel.transform.rotation,targetRotation,RotationSpeed*Time.deltaTime);
     }
 
+    public void SellingTower(){
+        LevelManager_script.main.IncreaseGold(sellValue);
+        UIManager.main.SetHoveringStatie(false);
+        Destroy(this.gameObject);
+    }
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;
     //     Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);
