@@ -517,7 +517,7 @@ MonoBehaviour:
   nextLevelTower2: {fileID: 5425770091273798401, guid: 5a68704ccd434484ab5c7e42c2fbebcd, type: 3}
   upgradeUI: {fileID: 638208011480837033}
   level: 3
-  baseUpGradeCost: 200
+  baseUpGradeCost: 63625
 --- !u!114 &7095679312087566860
 MonoBehaviour:
   m_ObjectHideFlags: 0
