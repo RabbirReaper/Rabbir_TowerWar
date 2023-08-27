@@ -5,9 +5,9 @@ using UnityEngine;
 public class Witch_Bullet : MonoBehaviour{
     [SerializeField] Rigidbody2D Rb;
     [SerializeField] float Bullet_speed;
-    [SerializeField] float Bullet_Damage;
-    [SerializeField] float weakRate;
-    [SerializeField] float weakTime;
+    public float Bullet_Damage;
+    public float weakRate;
+    public float weakTime;
     Transform Target;
     bool isDestory = false;
     public void SetTarget(Transform _Target){

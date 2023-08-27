@@ -5,22 +5,13 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class EnemyButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler{
-    [SerializeField] Button button;
+public class MagmaTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler{
     [SerializeField] Image imagePrefab; // 需要在 Inspector 中設定預製體
-    [SerializeField] float enemyHp;
-    [SerializeField] float enemySpeed;
+    [SerializeField] GameObject tower;
     [SerializeField] int cost;
-    [SerializeField] int income;
-    public int unlock;
 
     private Image spawnedImage;
     private TMP_Text text;
-    // private RectTransform uiRectTransform;
-
-    private void Start(){
-        // uiRectTransform = GetComponent<RectTransform>();
-    }
 
     private void Update(){
         if (spawnedImage != null){
@@ -29,11 +20,12 @@ public class EnemyButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
 
     public void OnPointerEnter(PointerEventData eventData){
-        spawnedImage = Instantiate(imagePrefab,new Vector3(0,0,0),Quaternion.identity);
+        spawnedImage = Instantiate(imagePrefab);
         text = spawnedImage.GetComponentInChildren<TMP_Text>();
-        spawnedImage.transform.SetParent(transform.parent.parent.parent); // 設定父物件
+        spawnedImage.transform.SetParent(transform.parent.parent); // 設定父物件
         // spawnedImage.rectTransform.sizeDelta = new Vector2(50, 50); // 設定大小
-        text.text = button.name +"\n\nHealth:  " + enemyHp +"\nSpeed:  " + enemySpeed + "\n\nCost:  " + cost + "\nIncome:  +" + income + "\n\nReach " + unlock + " income to unlock";
+        AOE_Turret towerScript = tower.GetComponent<AOE_Turret>();
+        text.text = tower.name +"\n\nDamage:  " + towerScript.bulletPrefab.GetComponent<AOE_Bullet>().Bullet_Damage +"\nReload:  " + towerScript.reload + "\nAttachRange:  " + towerScript.AttackRange + "\nSplash: " + towerScript.bulletPrefab.GetComponent<AOE_Bullet>().splashRange + "\n\nCost: " + cost;
     }
 
     public void OnPointerExit(PointerEventData eventData){

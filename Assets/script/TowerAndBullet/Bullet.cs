@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour{
 
     [SerializeField] Rigidbody2D Rb;
     [SerializeField] float Bullet_speed;
-    [SerializeField] float Bullet_Damage;
+    public float Bullet_Damage;
     Transform Target;
     bool isDestory = false;
     public void SetTarget(Transform _Target){

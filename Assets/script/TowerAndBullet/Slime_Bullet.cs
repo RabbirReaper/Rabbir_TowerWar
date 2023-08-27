@@ -6,10 +6,10 @@ public class Slime_Bullet : MonoBehaviour{
     [SerializeField] Rigidbody2D Rb;
     LayerMask EnemyMask;
     [SerializeField] float Bullet_speed;
-    [SerializeField] float Bullet_Damage;
-    [SerializeField] float slowRate;
-    [SerializeField] float slowTime;
-    [SerializeField] float slowRange;
+    public float Bullet_Damage;
+    public float slowRate;
+    public float slowTime;
+    public float slowRange;
     Transform Target;
     bool isDestory = false;
     private void Start() {
@@ -32,7 +32,7 @@ public class Slime_Bullet : MonoBehaviour{
             Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,slowRange,EnemyMask);
             for(int i=0;i<(int)inRange.Length;i++){
                 Enemy_Script em=inRange[i].gameObject.GetComponent<Enemy_Script>();
-                em.UpdateSpeed(slowRate,slowRange);
+                em.UpdateSpeed(slowRate,slowTime);
             }
             // RaycastHit2D[] inRange = Physics2D.CircleCastAll(transform.position,slowRange,(Vector2)transform.position,0f,EnemyMask);
             // for(int i=0;i<inRange.Length;i++){

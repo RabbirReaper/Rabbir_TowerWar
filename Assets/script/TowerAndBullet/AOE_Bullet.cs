@@ -6,10 +6,10 @@ public class AOE_Bullet : MonoBehaviour{
     [SerializeField] Rigidbody2D Rb;
     LayerMask EnemyMask;
     [SerializeField] float Bullet_speed;
-    [SerializeField] float Bullet_Damage;
+    public float Bullet_Damage;
     [SerializeField] float fireRate;
     [SerializeField] float fireTime;
-    [SerializeField] float splashRange;
+    public float splashRange;
     Transform Target;
     bool isDestory = false;
     private void Start() {

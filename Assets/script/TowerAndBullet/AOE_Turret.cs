@@ -5,14 +5,14 @@ using UnityEngine.UI;
 using UnityEditor;
 public class AOE_Turret : MonoBehaviour{
     [SerializeField] GameObject barrel;
-    [SerializeField] GameObject bulletPrefab;
+    public GameObject bulletPrefab;
     
     
     [SerializeField] Transform firingPoint;
-    [SerializeField] float AttackRange;
+    public float AttackRange;
     [SerializeField] float RotationSpeed;
-    [SerializeField] float reload;
-    [SerializeField] int sellValue;
+    public float reload;
+    public int sellValue;
 
     Transform target;
     LayerMask EnemyMask;
