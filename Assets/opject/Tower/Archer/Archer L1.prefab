@@ -475,7 +475,6 @@ GameObject:
   - component: {fileID: 8101673361039976918}
   - component: {fileID: 2371980913208512509}
   - component: {fileID: 5098860034949139960}
-  - component: {fileID: 7194280260656835475}
   m_Layer: 5
   m_Name: Sell
   m_TagString: Untagged
@@ -596,21 +595,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7194280260656835475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6597374403178307306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d5a7b062b6b0064c998ea6968f2056e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imagePrefab: {fileID: 1710161070809483650, guid: c604f78913d6f08458b4d163b4df481c, type: 3}
-  tower: {fileID: 6886352582088729161}
-  canvas: {fileID: 0}
 --- !u!1 &6886352582088729161
 GameObject:
   m_ObjectHideFlags: 0
