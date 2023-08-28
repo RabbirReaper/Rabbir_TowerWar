@@ -563,6 +563,7 @@ GameObject:
   - component: {fileID: 6860633725046230351}
   - component: {fileID: 1442809296288416346}
   - component: {fileID: 7949744285724199614}
+  - component: {fileID: 7150819850468213150}
   m_Layer: 5
   m_Name: UpGrade
   m_TagString: Untagged
@@ -683,6 +684,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7150819850468213150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6029241256210867180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645f2846ac39f4946a109d5116b56c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Big Slime
+  tower: {fileID: 5425770091273798401, guid: e275b69429556cc4bbc0819d4fbf47d2, type: 3}
+  cost: 38650
 --- !u!1 &6263911996526157712
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +711,7 @@ GameObject:
   - component: {fileID: 1205162936112580502}
   - component: {fileID: 6134916825009868238}
   - component: {fileID: 9072592989218845405}
+  - component: {fileID: 5254480559948549583}
   m_Layer: 5
   m_Name: UpGrade (1)
   m_TagString: Untagged
@@ -815,6 +832,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5254480559948549583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263911996526157712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645f2846ac39f4946a109d5116b56c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Sticky tower
+  tower: {fileID: 5425770091273798401, guid: 26e896505616e014286cb39c8aa8631b, type: 3}
+  cost: 38650
 --- !u!1 &8485884658484787462
 GameObject:
   m_ObjectHideFlags: 0

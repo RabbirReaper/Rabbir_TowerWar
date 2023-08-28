@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 8432408827333428676}
   - component: {fileID: 3792063083727098673}
   - component: {fileID: 6182212094213649341}
+  - component: {fileID: 8296192916038667487}
   m_Layer: 5
   m_Name: UpGrade
   m_TagString: Untagged
@@ -378,6 +379,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8296192916038667487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2796729046386031943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645f2846ac39f4946a109d5116b56c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Slime L3
+  tower: {fileID: 5425770091273798401, guid: 4f80fff76c5ca5b4693a5a7bf38e25a4, type: 3}
+  cost: 8650
 --- !u!1 &3297874763142598029
 GameObject:
   m_ObjectHideFlags: 0
