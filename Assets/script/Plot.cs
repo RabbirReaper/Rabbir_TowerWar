@@ -23,6 +23,7 @@ public class Plot : MonoBehaviour{
         if(UIManager.main.IsHoveringUI() || UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject() || LevelManager_script.main.isEnd) return;
         if(towerObj != null) {
             UpGrade_Script.OpenUpgradeUI();
+            Debug.Log("OpenUpgradeUI");
             return;
         }
         Tower tempTower = buildManager.main.GetSelectTower();

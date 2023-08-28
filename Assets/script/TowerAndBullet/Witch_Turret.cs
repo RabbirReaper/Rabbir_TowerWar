@@ -14,11 +14,14 @@ public class Witch_Turret : MonoBehaviour{
     [SerializeField] float RotationSpeed;
     public float reload;
     public int sellValue;
+    LayerMask shieldMask;
+
 
     Transform target;
     float timeUntilFire=0;
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy");
+        shieldMask = LayerMask.GetMask("shield");
     }
     private void Update() {
         timeUntilFire -= Time.deltaTime;
@@ -45,7 +48,9 @@ public class Witch_Turret : MonoBehaviour{
             //     return;
             // }
             Shoot();
-            timeUntilFire=reload;
+            if(ShieldInRange()){
+                timeUntilFire= reload*0.9f;
+            }else timeUntilFire=reload;
         }
     }
 
@@ -81,6 +86,14 @@ public class Witch_Turret : MonoBehaviour{
         UIManager.main.SetHoveringStatie(false);
         Destroy(this.gameObject);
     }
+
+    bool ShieldInRange(){
+        Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,10,shieldMask);
+        foreach (var item in inRange){
+            if(item.GetComponent<Villager_Turret>().level == 2) return true;
+        }
+        return false;
+    } 
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;
     //     Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);

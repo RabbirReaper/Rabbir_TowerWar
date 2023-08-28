@@ -7,6 +7,8 @@ public class Slime_Turret : MonoBehaviour{
     [SerializeField] GameObject barrel;
     public GameObject bulletPrefab;
     LayerMask EnemyMask;
+    LayerMask shieldMask;
+
     
     [SerializeField] Transform firingPoint;
     public float AttackRange;
@@ -19,6 +21,7 @@ public class Slime_Turret : MonoBehaviour{
     float timeUntilFire;
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy");
+        shieldMask = LayerMask.GetMask("shield");
     }
     private void Update() {
         timeUntilFire -= Time.deltaTime;
@@ -32,7 +35,9 @@ public class Slime_Turret : MonoBehaviour{
         }else{
             if(timeUntilFire <= 0){
                 Shoot();
-                timeUntilFire=reload;
+                if(ShieldInRange()){
+                    timeUntilFire= reload*0.9f;
+                }else timeUntilFire=reload;
             }
         }
     }
@@ -64,6 +69,14 @@ public class Slime_Turret : MonoBehaviour{
         UIManager.main.SetHoveringStatie(false);
         Destroy(this.gameObject);
     }
+
+    bool ShieldInRange(){
+        Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,10,shieldMask);
+        foreach (var item in inRange){
+            if(item.GetComponent<Villager_Turret>().level == 2) return true;
+        }
+        return false;
+    } 
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;
     //     Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);

@@ -16,10 +16,13 @@ public class AOE_Turret : MonoBehaviour{
 
     Transform target;
     LayerMask EnemyMask;
+    LayerMask shieldMask;
+
     float timeUntilFire;
     
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy");
+        shieldMask = LayerMask.GetMask("shield");
     }
     private void Update() {
         timeUntilFire -= Time.deltaTime;
@@ -33,7 +36,9 @@ public class AOE_Turret : MonoBehaviour{
         }else{
             if(timeUntilFire <= 0){
                 Shoot();
-                timeUntilFire=reload;
+                if(ShieldInRange()){
+                    timeUntilFire= reload*0.9f;
+                }else timeUntilFire=reload;
             }
         }
     }
@@ -65,6 +70,14 @@ public class AOE_Turret : MonoBehaviour{
         UIManager.main.SetHoveringStatie(false);
         Destroy(this.gameObject);
     }
+
+    bool ShieldInRange(){
+        Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,10,shieldMask);
+        foreach (var item in inRange){
+            if(item.GetComponent<Villager_Turret>().level == 2) return true;
+        }
+        return false;
+    }     
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;
     //     Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);

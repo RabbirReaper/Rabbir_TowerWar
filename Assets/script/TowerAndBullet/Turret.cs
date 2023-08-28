@@ -8,6 +8,8 @@ public class Turret : MonoBehaviour{
     [SerializeField] GameObject barrel;
     public GameObject bulletPrefab;
     LayerMask EnemyMask;
+    LayerMask shieldMask;
+
     
     [SerializeField] Transform firingPoint;
     public float AttackRange;
@@ -18,6 +20,7 @@ public class Turret : MonoBehaviour{
     float timeUntilFire=0;
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy");
+        shieldMask = LayerMask.GetMask("Shield");
     }
     private void Update() {
         timeUntilFire -= Time.deltaTime;
@@ -31,7 +34,10 @@ public class Turret : MonoBehaviour{
         }else{
             if(timeUntilFire <= 0){
                 Shoot();
-                timeUntilFire=reload;
+                if(ShieldInRange()){
+                    timeUntilFire= reload*0.9f;
+                }else timeUntilFire=reload;
+                Debug.Log(timeUntilFire);
             }
         }
     }
@@ -62,6 +68,16 @@ public class Turret : MonoBehaviour{
         UIManager.main.SetHoveringStatie(false);
         Destroy(this.gameObject);
     }
+
+    bool ShieldInRange(){
+        Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,10,shieldMask);
+        Debug.Log("hey");
+        foreach (var item in inRange){
+            if(item.GetComponent<Villager_Turret>().level == 2) return true;
+            Debug.Log(item.GetComponent<Villager_Turret>().level + "!!!");
+        }
+        return false;
+    } 
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;
     //     Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);
