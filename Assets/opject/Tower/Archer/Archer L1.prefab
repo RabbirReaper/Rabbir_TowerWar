@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Archer L1
-  tower: {fileID: 6886352582088729161}
+  sellValue: 5
 --- !u!1 &6886352582088729161
 GameObject:
   m_ObjectHideFlags: 0

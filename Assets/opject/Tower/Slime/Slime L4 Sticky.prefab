@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 434207039373132584}
   - component: {fileID: 6629628839241057496}
   - component: {fileID: 7024046630078948405}
+  - component: {fileID: 6871349725549895486}
   m_Layer: 5
   m_Name: Sell
   m_TagString: Untagged
@@ -377,6 +378,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6871349725549895486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3297874763142598029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa7169e95211484cb6d8fae6134ab85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Sticky tower
+  sellValue: 19325
 --- !u!1 &3951133460659534261
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +580,7 @@ MonoBehaviour:
   nextLevelTower2: {fileID: 0}
   upgradeUI: {fileID: 2110996781093813710}
   level: 4
-  baseUpGradeCost: 8650
+  baseUpGradeCost: 0
 --- !u!1 &8818640744242615127
 GameObject:
   m_ObjectHideFlags: 0

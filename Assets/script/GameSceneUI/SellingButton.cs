@@ -6,10 +6,10 @@ using UnityEngine.EventSystems;
 
 public class SellingButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler{
     [SerializeField] string _name;
-    [SerializeField] GameObject tower;
+    [SerializeField] int  sellValue;
     string str;
     private void Start() {
-        str = "\n " + _name + "\n\n\n\n Selling: " + tower.GetComponent<Turret>().sellValue + "\n";
+        str = "\n " + _name + "\n\n\n\n Selling: " + sellValue + "\n";
     }
     public void OnPointerEnter(PointerEventData eventData){
         TooltipScreen.main.SetActive(true);

@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 6279763912656320796}
   - component: {fileID: 7381748426580657573}
   - component: {fileID: 1568151988182270161}
+  - component: {fileID: 2623184417870891079}
   m_Layer: 5
   m_Name: Sell
   m_TagString: Untagged
@@ -455,6 +456,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2623184417870891079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4904351407204271018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa7169e95211484cb6d8fae6134ab85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Archer L2
+  sellValue: 45
 --- !u!1 &6886352582088729161
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevelTower: {fileID: 6886352582088729161, guid: 7c5702c3ba189fe4884ace603b4b3401, type: 3}
+  nextLevelTower2: {fileID: 0}
   upgradeUI: {fileID: 9039472009756342854}
   level: 2
   baseUpGradeCost: 1340

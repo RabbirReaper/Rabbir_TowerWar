@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7030650127459091195}
   - component: {fileID: 533821734292893996}
   - component: {fileID: 1373057102186777192}
+  - component: {fileID: 7215297303981938804}
   m_Layer: 5
   m_Name: Sell
   m_TagString: Untagged
@@ -163,6 +164,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7215297303981938804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5027186901626460020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa7169e95211484cb6d8fae6134ab85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Magma L1
+  sellValue: 63
 --- !u!1 &5104866624119840742
 GameObject:
   m_ObjectHideFlags: 0

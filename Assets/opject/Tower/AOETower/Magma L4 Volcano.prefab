@@ -383,7 +383,7 @@ MonoBehaviour:
   nextLevelTower2: {fileID: 0}
   upgradeUI: {fileID: 638208011480837033}
   level: 4
-  baseUpGradeCost: 31813
+  baseUpGradeCost: 0
 --- !u!114 &7095679312087566860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,7 +402,7 @@ MonoBehaviour:
   AttackRange: 9
   RotationSpeed: 250
   reload: 1
-  sellValue: 0
+  sellValue: 31813
 --- !u!1 &7382548907381633445
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 8774293139948005531}
   - component: {fileID: 4617533152726372605}
   - component: {fileID: 6316730363423545618}
+  - component: {fileID: 5861173303350222504}
   m_Layer: 5
   m_Name: Sell
   m_TagString: Untagged
@@ -535,6 +536,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5861173303350222504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382548907381633445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa7169e95211484cb6d8fae6134ab85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Volcano
+  sellValue: 31813
 --- !u!1 &7605464674687664407
 GameObject:
   m_ObjectHideFlags: 0

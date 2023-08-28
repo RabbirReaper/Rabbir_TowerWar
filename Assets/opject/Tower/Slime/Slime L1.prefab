@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 4831691114386327110}
   - component: {fileID: 1574367457217980906}
   - component: {fileID: 5089102634915724230}
+  - component: {fileID: 8676831026684580055}
   m_Layer: 5
   m_Name: Sell
   m_TagString: Untagged
@@ -163,6 +164,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8676831026684580055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3846095143213773939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa7169e95211484cb6d8fae6134ab85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Slime L1
+  sellValue: 25
 --- !u!1 &3926278393651026437
 GameObject:
   m_ObjectHideFlags: 0
