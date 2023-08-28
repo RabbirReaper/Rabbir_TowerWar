@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 5463076585459451283}
   - component: {fileID: 6308595421764688407}
   - component: {fileID: 6275685865416465511}
+  - component: {fileID: 6172751085243725651}
   m_Layer: 5
   m_Name: UpGrade (1)
   m_TagString: Untagged
@@ -279,6 +280,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6172751085243725651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125910627441502685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48fcc0cf8cd2b24d9ccd599277e17de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Machine Gun
+  tower: {fileID: 6886352582088729161, guid: cbafe015ff92fa94dbc0c430fdd8a76b, type: 3}
+  cost: 21340
 --- !u!1 &2527887398834315687
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +498,7 @@ GameObject:
   - component: {fileID: 1687113189816297588}
   - component: {fileID: 4155212027229888686}
   - component: {fileID: 604586113396736365}
+  - component: {fileID: 2497203267914138771}
   m_Layer: 5
   m_Name: UpGrade
   m_TagString: Untagged
@@ -602,6 +619,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2497203267914138771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564524440580662862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48fcc0cf8cd2b24d9ccd599277e17de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Sniper
+  tower: {fileID: 6886352582088729161, guid: 8a1207ff281d485438e5af042c06220b, type: 3}
+  cost: 21340
 --- !u!1 &6886352582088729161
 GameObject:
   m_ObjectHideFlags: 0

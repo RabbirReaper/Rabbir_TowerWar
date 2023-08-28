@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4367454401535628359}
   - component: {fileID: 1265036402984085749}
   - component: {fileID: 3281619339980915709}
+  - component: {fileID: 7747732086266849839}
   m_Layer: 5
   m_Name: UpGrade
   m_TagString: Untagged
@@ -132,6 +133,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7747732086266849839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566058408978883595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48fcc0cf8cd2b24d9ccd599277e17de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Archer L3
+  tower: {fileID: 6886352582088729161, guid: 7c5702c3ba189fe4884ace603b4b3401, type: 3}
+  cost: 1340
 --- !u!1 &2527887398834315687
 GameObject:
   m_ObjectHideFlags: 0
