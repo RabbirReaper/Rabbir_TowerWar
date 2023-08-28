@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 2760409660466213280}
   - component: {fileID: 6093150031443228830}
   - component: {fileID: 7081336849976451969}
+  - component: {fileID: 7694764664850593155}
   m_Layer: 5
   m_Name: UpGrade
   m_TagString: Untagged
@@ -608,6 +609,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7694764664850593155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6564214229942714363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69335d4574f87b142b05608da828d619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Magma L3
+  tower: {fileID: 5425770091273798401, guid: b6ec20e5e45f7ac4cbf9cbb58f7fab00, type: 3}
+  cost: 13625
 --- !u!1 &7605464674687664407
 GameObject:
   m_ObjectHideFlags: 0

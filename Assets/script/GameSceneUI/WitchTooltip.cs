@@ -25,7 +25,7 @@ public class WitchTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         spawnedImage.transform.SetParent(transform.parent.parent); // 設定父物件
         // spawnedImage.rectTransform.sizeDelta = new Vector2(50, 50); // 設定大小
         Witch_Turret towerScript = tower.GetComponent<Witch_Turret>();
-        text.text = tower.name +"\n\nDamage:  " + towerScript.bulletPrefab.GetComponent<Witch_Bullet>().Bullet_Damage +"\nReload:  " + towerScript.reload + "\nAttachRange:  " + towerScript.AttackRange + "\nWeakness: " + towerScript.bulletPrefab.GetComponent<Witch_Bullet>().weakRate + "%\nWeakness Time: "+ towerScript.bulletPrefab.GetComponent<Witch_Bullet>().weakTime + "\n\nCost: " + cost;
+        text.text = tower.name +"\n\nDamage:  " + towerScript.bulletPrefab.GetComponent<Witch_Bullet>().Bullet_Damage +"\nReload:  " + towerScript.reload + "\nAttachRange:  " + towerScript.AttackRange + "\nWeakness: " + towerScript.bulletPrefab.GetComponent<Witch_Bullet>().weakRate*100 + "%\nWeakness Time: "+ towerScript.bulletPrefab.GetComponent<Witch_Bullet>().weakTime + "\n\nCost: " + cost;
     }
 
     public void OnPointerExit(PointerEventData eventData){

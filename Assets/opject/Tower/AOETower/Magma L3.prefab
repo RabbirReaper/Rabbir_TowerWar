@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 6873951606665782194}
   - component: {fileID: 5079537716257879387}
   - component: {fileID: 493245846055839905}
+  - component: {fileID: 8075636858587430628}
   m_Layer: 5
   m_Name: UpGrade (1)
   m_TagString: Untagged
@@ -304,6 +305,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8075636858587430628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547233973585135743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69335d4574f87b142b05608da828d619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Volcano
+  tower: {fileID: 5425770091273798401, guid: 5a68704ccd434484ab5c7e42c2fbebcd, type: 3}
+  cost: 63625
 --- !u!1 &2548643384667442638
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +565,7 @@ GameObject:
   - component: {fileID: 4239617565535063061}
   - component: {fileID: 1319456486831659161}
   - component: {fileID: 1251989701199223333}
+  - component: {fileID: 8578491411315313179}
   m_Layer: 5
   m_Name: UpGrade
   m_TagString: Untagged
@@ -669,6 +686,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8578491411315313179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5802118567010960099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69335d4574f87b142b05608da828d619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Inferna
+  tower: {fileID: 5425770091273798401, guid: d551897abf3707741aefb62c306c8df4, type: 3}
+  cost: 63625
 --- !u!1 &7382548907381633445
 GameObject:
   m_ObjectHideFlags: 0

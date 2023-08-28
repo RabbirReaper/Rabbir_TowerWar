@@ -538,6 +538,7 @@ GameObject:
   - component: {fileID: 3886742408545531983}
   - component: {fileID: 167582025601381524}
   - component: {fileID: 6102023559943072707}
+  - component: {fileID: 6629115900595777735}
   m_Layer: 5
   m_Name: UpGrade
   m_TagString: Untagged
@@ -658,6 +659,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6629115900595777735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8440461080198766462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e370e95b20c554a94bffe7b772d197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Witch L2
+  tower: {fileID: 5425770091273798401, guid: 010ce135bb178c948a223fbf67363e13, type: 3}
+  cost: 5250
 --- !u!1 &8700665696282261676
 GameObject:
   m_ObjectHideFlags: 0
