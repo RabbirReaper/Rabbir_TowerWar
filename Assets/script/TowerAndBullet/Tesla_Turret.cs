@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 public class Tesla_Turret : MonoBehaviour{
     [SerializeField] GameObject lightning;
@@ -17,8 +18,8 @@ public class Tesla_Turret : MonoBehaviour{
     float timeUntilFire=0;
     GameObject nowLightning;
     float damageBuff=1;
-    float damageBuffRate=1.15f;
-    float damageBuffLimit = 2;
+    float damageBuffRate=1.05f;
+    [SerializeField] float damageBuffLimit;
 
 
     private void Start() {
@@ -29,11 +30,13 @@ public class Tesla_Turret : MonoBehaviour{
     private void Update() {
         timeUntilFire -= Time.deltaTime;
         if(target == null){
+            Debug.Log("!!!");
             damageBuff = 1;
             FindTarget();
-            nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,this.transform.position,Bullet_speed*Time.deltaTime);
+            if(target == null) nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,this.transform.position,Bullet_speed*Time.deltaTime);
             return;
         }
+        nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,target.position,Bullet_speed*Time.deltaTime);
         if(!CheckTargetinRange()){
             target=null;
         }else{
@@ -49,12 +52,13 @@ public class Tesla_Turret : MonoBehaviour{
         }
     }
     private void FixedUpdate() {
-        if(target == null) return;
-        nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,target.position,Bullet_speed*Time.deltaTime);
+        // if(target == null) return;
+        // nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,target.position,Bullet_speed*Time.deltaTime);
     }
 
     void Shoot(){
-        target.gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
+        target.gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage * damageBuff);
+        Debug.Log(Bullet_Damage * damageBuff);
     }
 
     bool CheckTargetinRange(){
@@ -76,10 +80,8 @@ public class Tesla_Turret : MonoBehaviour{
 
     bool ShieldInRange(){
         Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,10,shieldMask);
-        Debug.Log("hey");
         foreach (var item in inRange){
             if(item.GetComponent<Villager_Turret>().level == 2) return true;
-            Debug.Log(item.GetComponent<Villager_Turret>().level + "!!!");
         }
         return false;
     } 

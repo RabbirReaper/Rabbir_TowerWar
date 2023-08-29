@@ -299,6 +299,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5327724547627783418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8379009642302525108}
+  - component: {fileID: 419740704868249590}
+  m_Layer: 0
+  m_Name: Hexagon Flat-Top (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8379009642302525108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327724547627783418}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 5721783999316987178}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &419740704868249590
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327724547627783418}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  m_Color: {r: 0, g: 1, b: 0.9184933, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 0.8828125}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &6329908225827024544
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +395,7 @@ GameObject:
   - component: {fileID: 2984888620074865857}
   - component: {fileID: 7686769945914730474}
   - component: {fileID: 7701376229736240225}
-  - component: {fileID: 4552914711909550509}
+  - component: {fileID: 7981863446352711678}
   m_Layer: 5
   m_Name: UpGrade
   m_TagString: Untagged
@@ -432,7 +516,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4552914711909550509
+--- !u!114 &7981863446352711678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -444,9 +528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cea6d7b225cb5742945d48c0b8aad4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Tesla L2
-  tower: {fileID: 6886352582088729161, guid: 0dc54e0849e959046bed1f1a6efed04e, type: 3}
-  cost: 2000
+  _name: Tesla L3
+  tower: {fileID: 6886352582088729161, guid: d18a880268f63e44e8043d018d6df5ac, type: 3}
+  cost: 12000
 --- !u!1 &6597374403178307306
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,8 +676,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa7169e95211484cb6d8fae6134ab85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Tesla L1
-  sellValue: 100
+  _name: Tesla L2
+  sellValue: 1000
 --- !u!1 &6886352582088729161
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +690,7 @@ GameObject:
   - component: {fileID: 1906696120299655053}
   - component: {fileID: 2549813068709215598}
   m_Layer: 0
-  m_Name: Tesla L1
+  m_Name: Tesla L2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -626,6 +710,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4266828750317406561}
+  - {fileID: 8379009642302525108}
   - {fileID: 2902647602979932884}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -643,10 +728,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightning: {fileID: 1264781525559932590, guid: e877841f9ff565d48a0bb421ecd5161d, type: 3}
   Bullet_speed: 11
-  Bullet_Damage: 75
-  AttackRange: 8
+  Bullet_Damage: 500
+  AttackRange: 10
   reload: 1
-  sellValue: 100
+  sellValue: 1000
   damageBuffLimit: 2
 --- !u!114 &2549813068709215598
 MonoBehaviour:
@@ -660,8 +745,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0475b3f118dae3445b0890b485518c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelTower: {fileID: 6886352582088729161, guid: 0dc54e0849e959046bed1f1a6efed04e, type: 3}
+  nextLevelTower: {fileID: 6886352582088729161, guid: d18a880268f63e44e8043d018d6df5ac, type: 3}
   nextLevelTower2: {fileID: 0}
   upgradeUI: {fileID: 74906148311249462}
-  level: 1
-  baseUpGradeCost: 2000
+  level: 2
+  baseUpGradeCost: 12000
