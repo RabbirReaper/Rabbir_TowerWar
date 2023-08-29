@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Photon.Realtime;
+using System;
 
 public class Enemy_Script : MonoBehaviour{//
     [Header("Enemy References")]
@@ -20,6 +21,7 @@ public class Enemy_Script : MonoBehaviour{//
 
     float fireInterval = 1f ; //Important
     float timer_slow;
+    float timer_slow_all=0;
     float timer_fire;
     float timer_weak;
     float fireRate=0;
@@ -31,6 +33,7 @@ public class Enemy_Script : MonoBehaviour{//
     float nowDefence;
     int moveRotation=1;
     public Player ownPlayer;
+    List<(float,float)> slowSchedule = new();
     private void Start() {
         // target = LevelManager_script.main.WayPoints_list[1];
         nowSpeed=speed;
@@ -56,8 +59,8 @@ public class Enemy_Script : MonoBehaviour{//
         //     }
         // }
         if(isSlowed){
-            timer_slow-=Time.deltaTime;
-            if(timer_slow < 0) ResetSpeed();
+            timer_slow_all += Time.deltaTime;
+            if(timer_slow_all >= timer_slow) ResetSpeed();
         }
         if(isFire){
             timer_fire-=Time.deltaTime;
@@ -104,15 +107,24 @@ public class Enemy_Script : MonoBehaviour{//
         hpUI.text = ((int)nowHealth).ToString() + "/" +((int)Health).ToString();
     }
     public void UpdateSpeed(float x,float waitTime){
-        x= 1 - x/100;
-        nowSpeed = speed*x;
-        timer_slow=waitTime;
+        slowSchedule.Add((x,waitTime+timer_slow_all));
+        slowSchedule.Sort(Cmp);
+        nowSpeed = speed*(1 - slowSchedule[0].Item1/100);
+        timer_slow=slowSchedule[0].Item2;
         isSlowed = true;
+        Debug.Log(nowSpeed);
     }
     public void ResetSpeed(){
+        slowSchedule.RemoveAt(0);
+        if(slowSchedule.Count == 0){
+            nowSpeed = speed;
+            isSlowed = false;
+            timer_slow_all = 0;
+        }else{
+            nowSpeed = speed *(1 - slowSchedule[0].Item1/100);
+            timer_slow = slowSchedule[0].Item2;
+        }
         Debug.Log(nowSpeed);
-        nowSpeed = speed;
-        isSlowed = false;
     }
     public void UpdateFire(float _fireRate,float continuedFiretime){
         if(continuedFiretime == 0) return;
@@ -124,5 +136,14 @@ public class Enemy_Script : MonoBehaviour{//
         timer_weak=continueTime;
         nowDefence=(1 - _weakRate)*Defence;
         isWeak = true;
+    }
+
+    static int Cmp((float, float) x, (float, float) y)    {
+        if (x.Item1 != y.Item1){
+            return x.Item1 > y.Item1 ? -1 : 1;
+        }
+        else{
+            return x.Item2 < y.Item2 ? -1 : 1;
+        }
     }
 }

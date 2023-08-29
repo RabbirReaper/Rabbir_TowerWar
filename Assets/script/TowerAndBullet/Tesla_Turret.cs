@@ -34,7 +34,7 @@ public class Tesla_Turret : MonoBehaviour{
             damageBuff = 1;
             FindTarget();
             return;
-        }//他被判定在攻擊範圍內 可是判斷不在範圍內
+        }//這裡很重要 以前的bug原因:他被判定在攻擊範圍內 可是判斷不在範圍內
         if(!CheckTargetinRange()){
             target=null;
         }else{
