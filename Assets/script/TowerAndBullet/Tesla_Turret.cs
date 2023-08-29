@@ -30,16 +30,15 @@ public class Tesla_Turret : MonoBehaviour{
     private void Update() {
         timeUntilFire -= Time.deltaTime;
         if(target == null){
-            Debug.Log("!!!");
+            nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,transform.position,Bullet_speed*Time.deltaTime);
             damageBuff = 1;
             FindTarget();
-            if(target == null) nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,this.transform.position,Bullet_speed*Time.deltaTime);
             return;
-        }
-        nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,target.position,Bullet_speed*Time.deltaTime);
+        }//他被判定在攻擊範圍內 可是判斷不在範圍內
         if(!CheckTargetinRange()){
             target=null;
         }else{
+            nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,target.position,Bullet_speed*Time.deltaTime);
             if(timeUntilFire <= 0){
                 Shoot();
                 damageBuff*=damageBuffRate;
@@ -62,11 +61,11 @@ public class Tesla_Turret : MonoBehaviour{
     }
 
     bool CheckTargetinRange(){
-        return Vector2.Distance(target.position,transform.position) <= AttackRange;
+        return Vector2.Distance(target.position,transform.position) < AttackRange;
     }
 
     void FindTarget(){
-        RaycastHit2D hits = Physics2D.CircleCast(transform.position,AttackRange,(Vector2)transform.position,0f,EnemyMask);
+        RaycastHit2D hits = Physics2D.CircleCast(transform.position,AttackRange,transform.position,0f,EnemyMask);
         target = hits.transform;
     }
 
