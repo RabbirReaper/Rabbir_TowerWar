@@ -494,10 +494,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0c67282179f3d4ebdd22840d69c5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
-  Defence: 50
-  currencyWorth: 5
-  speed: 2
+  Health: 2000
+  Defence: 10
+  cost: 500
+  currencyWorth: 50
+  speed: 3
   hpUI: {fileID: 1849589872041958391}
   defenceUI: {fileID: 7756444303148913509}
   isSlowed: 0

@@ -549,6 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 88
   Defence: 0
+  cost: 22
   currencyWorth: 4
   speed: 2.5
   hpUI: {fileID: 1849589872041958391}

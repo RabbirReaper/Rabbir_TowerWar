@@ -9,6 +9,7 @@ public class Enemy_Script : MonoBehaviour{//
     [Header("Enemy References")]
     [SerializeField] float Health;
     [SerializeField] float Defence;
+    public int cost; 
     [SerializeField] int currencyWorth;
     [SerializeField] float speed;
     [SerializeField] TextMeshProUGUI hpUI;

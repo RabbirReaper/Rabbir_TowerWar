@@ -496,6 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 5
   Defence: 0
+  cost: 5
   currencyWorth: 1
   speed: 2
   hpUI: {fileID: 1849589872041958391}
