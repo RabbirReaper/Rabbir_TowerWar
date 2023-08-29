@@ -11,7 +11,7 @@ public class StartPlayGame : MonoBehaviourPunCallbacks{
 
     public void JoinRandRoom(){
         if(PhotonNetwork.IsConnectedAndReady){
-            PhotonNetwork.JoinRandomRoom(null,maxPlayers);
+            PhotonNetwork.JoinRandomRoom();
         }
     }
     public void CreateRoom(){

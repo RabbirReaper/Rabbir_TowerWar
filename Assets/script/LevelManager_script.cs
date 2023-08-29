@@ -5,6 +5,7 @@ using TMPro;
 using Photon.Pun;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class LevelManager_script : MonoBehaviourPunCallbacks{
     public static LevelManager_script main;
@@ -28,6 +29,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         
     }
     private void Start() {
+        PhotonNetwork.AutomaticallySyncScene = false;
         // actorNumberAndColor.Add(1,"Blue");
         // actorNumberAndColor.Add(2,"Red");
         // actorNumberAndColor.Add(3,"Green");
@@ -132,5 +134,30 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         tmp_text[otherPlayer.ActorNumber-1].text = 0.ToString();
     }
     
-    
+
+    // public void QuitGame(){
+    //     Debug.Log(PhotonNetwork.InRoom);
+    //     if(PhotonNetwork.InRoom)
+    //         PhotonNetwork.LeaveRoom();
+    //     else{
+    //         SceneManager.LoadScene("LobbyScene");
+    //     }
+    // }
+
+    // public override void OnLeftRoom(){
+    //     Debug.Log("player left room");
+    //     SceneManager.LoadScene("LobbyScene");
+    // }
+    public void QuitGame(){
+        PhotonNetwork.LeaveRoom();
+        StartCoroutine(WaitForLeaveAndLoadScene());
+    }
+
+    private IEnumerator WaitForLeaveAndLoadScene(){
+        while (PhotonNetwork.InRoom){
+        }
+        
+        yield return 3;
+        SceneManager.LoadScene("LobbyScene");
+    }
 }

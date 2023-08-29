@@ -7,16 +7,27 @@ public class LobbySceneScript : MonoBehaviourPunCallbacks{
     [SerializeField] TMP_Text offlineOrOnline;
     [SerializeField] TMP_Text connectPlayerCount;
     private void Awake() {
-        offlineOrOnline.text = "Offline";
-        offlineOrOnline.color = Color.red;
-        PhotonNetwork.ConnectUsingSettings();
+        if(!PhotonNetwork.IsConnected){
+            offlineOrOnline.text = "Offline";
+            offlineOrOnline.color = Color.red;
+            PhotonNetwork.GameVersion = "0.0.1";
+            PhotonNetwork.ConnectUsingSettings();
+        }
+    }
+    private void Start() {
+        if(PhotonNetwork.CurrentLobby == null){
+            PhotonNetwork.JoinLobby();
+        }
     }
     public override void OnConnectedToMaster(){
         offlineOrOnline.text = "Online";
         offlineOrOnline.color = Color.green;
+        PhotonNetwork.JoinLobby();
     }
     private void Update() {
         if(PhotonNetwork.IsConnected){
+            offlineOrOnline.text = "Online";
+            offlineOrOnline.color = Color.green;
             connectPlayerCount.text = PhotonNetwork.CountOfPlayers.ToString();
         }
     }

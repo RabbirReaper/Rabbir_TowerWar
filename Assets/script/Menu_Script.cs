@@ -17,6 +17,7 @@ public class Menu_Script : MonoBehaviour{
     private int nowIncomeLevel=0;
     private int[] incomeLevel = new int[29];
     bool isMenuOpen = true;
+    [SerializeField] GameObject TowerPoint;
     private void Start() {
         int j=0;
         for(int i=0;i<EnemyUI.Length;i+=2){
@@ -30,6 +31,7 @@ public class Menu_Script : MonoBehaviour{
     }
     public void SwitchTowerAndEnemyShop(bool t){
         Tower_Shop.gameObject.SetActive(t);
+        TowerPoint.gameObject.SetActive(t);
         Enemy_Shop.gameObject.SetActive(!t);
         towerButton.gameObject.SetActive(!t);
         enemyButton.gameObject.SetActive(t);

@@ -14,6 +14,7 @@ public class LoadSceneManager : MonoBehaviourPunCallbacks{
     private void Update() {
         roomCurrentPlayerText.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
         if(PhotonNetwork.IsMasterClient  && PhotonNetwork.CurrentRoom.PlayerCount == 2){// isbug
+            PhotonNetwork.CurrentRoom.IsOpen = false;
             SceneManager.LoadScene("SampleScene");
         }
         
