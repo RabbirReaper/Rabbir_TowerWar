@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEditor;
 public class Turret : MonoBehaviour{
 
     [SerializeField] GameObject barrel;
     public GameObject bulletPrefab;
     LayerMask EnemyMask;
+
     LayerMask shieldMask;
 
     
@@ -18,8 +17,9 @@ public class Turret : MonoBehaviour{
     public int sellValue;
     Transform target;
     float timeUntilFire=0;
+
     private void Start() {
-        EnemyMask = LayerMask.GetMask("Enemy");
+        EnemyMask = LayerMask.GetMask("Enemy","Ghost");
         shieldMask = LayerMask.GetMask("Shield");
     }
     private void Update() {
