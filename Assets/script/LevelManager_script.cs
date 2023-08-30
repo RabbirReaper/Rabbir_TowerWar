@@ -135,29 +135,21 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     }
     
 
-    // public void QuitGame(){
-    //     Debug.Log(PhotonNetwork.InRoom);
-    //     if(PhotonNetwork.InRoom)
-    //         PhotonNetwork.LeaveRoom();
-    //     else{
-    //         SceneManager.LoadScene("LobbyScene");
-    //     }
-    // }
+    public void QuitGame(){
+        PhotonNetwork.Disconnect();
+        SceneManager.LoadScene("BeginScene");
 
+        // StartCoroutine(WaitForLeaveAndLoadScene());
+    }
     // public override void OnLeftRoom(){
-    //     Debug.Log("player left room");
     //     SceneManager.LoadScene("LobbyScene");
     // }
-    public void QuitGame(){
-        PhotonNetwork.LeaveRoom();
-        StartCoroutine(WaitForLeaveAndLoadScene());
-    }
 
-    private IEnumerator WaitForLeaveAndLoadScene(){
-        while (PhotonNetwork.InRoom){
-        }
+    // private IEnumerator WaitForLeaveAndLoadScene(){
+    //     while (PhotonNetwork.InRoom){
+    //         yield return null;
+    //     }
         
-        yield return 3;
-        SceneManager.LoadScene("LobbyScene");
-    }
+    //     SceneManager.LoadScene("LobbyScene");
+    // }
 }

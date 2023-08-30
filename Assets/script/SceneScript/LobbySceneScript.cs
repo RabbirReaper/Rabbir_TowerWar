@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class LobbySceneScript : MonoBehaviourPunCallbacks{
     [SerializeField] TMP_Text offlineOrOnline;
     [SerializeField] TMP_Text connectPlayerCount;
-    private void Awake() {
-        if(!PhotonNetwork.IsConnected){
-            offlineOrOnline.text = "Offline";
-            offlineOrOnline.color = Color.red;
-            PhotonNetwork.GameVersion = "0.0.1";
-            PhotonNetwork.ConnectUsingSettings();
-        }
-    }
+    
     private void Start() {
-        if(PhotonNetwork.CurrentLobby == null){
-            PhotonNetwork.JoinLobby();
+        if(PhotonNetwork.IsConnected == false){
+            Debug.Log("You not Connection");
+            SceneManager.LoadScene("BeginScene");
+        }else{
+            if(PhotonNetwork.CurrentLobby == null) PhotonNetwork.JoinLobby();
         }
     }
     public override void OnConnectedToMaster(){
@@ -30,6 +28,9 @@ public class LobbySceneScript : MonoBehaviourPunCallbacks{
             offlineOrOnline.color = Color.green;
             connectPlayerCount.text = PhotonNetwork.CountOfPlayers.ToString();
         }
+        if(PhotonNetwork.IsConnectedAndReady) Debug.Log("I am ready");
+        else if(PhotonNetwork.IsConnected) Debug.Log("I am not ready");
+        else Debug.Log("I am not connect");
     }
     public void OuitGame(){
         Application.Quit();
