@@ -15,6 +15,7 @@ public class Enemy_Script : MonoBehaviour{//
     [SerializeField] TextMeshProUGUI hpUI;
     [SerializeField] TextMeshProUGUI defenceUI;
 
+
     bool isDestory = false;
     public bool isSlowed = false;
     public bool isFire = false;
@@ -34,9 +35,11 @@ public class Enemy_Script : MonoBehaviour{//
     float nowDefence;
     int moveRotation=1;
     public Player ownPlayer;
+    public int nowStreet = 0;
     List<(float,float)> slowSchedule = new();
     private void Start() {
         // target = LevelManager_script.main.WayPoints_list[1];
+        nowStreet = 0;
         nowSpeed=speed;
         nowHealth=Health;
         nowDefence=Defence;
@@ -103,6 +106,7 @@ public class Enemy_Script : MonoBehaviour{//
             isDestory=true;
             LevelManager_script.main.IncreaseIncome(currencyWorth);
             EnemySpawn.onEnemyDestory.Invoke();
+            LevelManager_script.main.UpdateEnemyStreet(ownPlayer,nowStreet,-1);
             Destroy(gameObject);
         }
         hpUI.text = ((int)nowHealth).ToString() + "/" +((int)Health).ToString();

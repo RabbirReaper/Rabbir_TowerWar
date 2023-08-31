@@ -45,8 +45,8 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
         // GameObject tempEnemy = Instantiate(Enemy_list[x],LevelManager_script.main.WayPoints_list[0].position,Quaternion.identity);
         GameObject tempEnemy = Instantiate(Enemy_list[x],new Vector3(-22f,Random.Range(7f, 13f),0f),Quaternion.identity);
         tempEnemy.transform.SetParent(EnemyParent.transform);
-        // tempEnemy.GetComponent<Renderer>().material.color = color[Info.Sender.ActorNumber-1];
         tempEnemy.GetComponent<Enemy_Script>().ownPlayer = Info.Sender;
+        LevelManager_script.main.UpdateEnemyStreet(Info.Sender,0,1);
     }
 
 

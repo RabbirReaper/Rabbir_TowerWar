@@ -21,6 +21,8 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     private PhotonView hpPhotonView,_pV;
     public Hashtable actorNumberAndColor = new();
     [SerializeField] GameObject EnemyParent;
+    [SerializeField] TMP_Text[] EnemyInStreetText;
+    private int[] EnemyInStreetVal = new int[5];
     private int alivePLayer;
     public bool isEnd = false;
 
@@ -44,6 +46,9 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         tmp_text[PhotonNetwork.LocalPlayer.ActorNumber-1].text = hp.ToString();
         hpPhotonView = tmp_text[PhotonNetwork.LocalPlayer.ActorNumber-1].GetComponent<PhotonView>();
         _pV = this.GetComponent<PhotonView>();
+        for(int i=0;i<EnemyInStreetVal.Length;i++){
+            EnemyInStreetVal[i] = 0;
+        }
     }
     private void Update() {
         Next_Income+=Time.deltaTime;
@@ -133,6 +138,14 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         tmp_text[otherPlayer.ActorNumber-1].text = 0.ToString();
     }
     
+    public void UpdateEnemyStreet(Player _player,int idx,int val){
+        _pV.RPC("RPCUpdateEnemyStreet",_player,idx,val);
+    }
+    [PunRPC]
+    private void RPCUpdateEnemyStreet(int idx,int val){
+        EnemyInStreetVal[idx] += val;
+        EnemyInStreetText[idx].text = EnemyInStreetVal[idx].ToString();
+    }
 
     public void QuitGame(){
         PhotonNetwork.Disconnect();
