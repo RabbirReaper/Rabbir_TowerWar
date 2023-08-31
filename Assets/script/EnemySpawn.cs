@@ -27,9 +27,9 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
         EnemiesDied++;
     }
     public void SpawnEnemy(int x){
+        if(LevelManager_script.main.isEnd) return;
         if(Enemy_list[x].GetComponent<Enemy_Script>().cost > LevelManager_script.main.Gold) return;
         LevelManager_script.main.SpendCurrency(Enemy_list[x].GetComponent<Enemy_Script>().cost);
-        if(LevelManager_script.main.isEnd) return;
         Summon++;
         _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x);
     }
@@ -41,6 +41,7 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
     
     [PunRPC]
     void RPCSpawnEnemy(int x,PhotonMessageInfo Info){
+        if(LevelManager_script.main.isEnd) return;
         // GameObject tempEnemy = Instantiate(Enemy_list[x],LevelManager_script.main.WayPoints_list[0].position,Quaternion.identity);
         GameObject tempEnemy = Instantiate(Enemy_list[x],new Vector3(-22f,Random.Range(7f, 13f),0f),Quaternion.identity);
         tempEnemy.transform.SetParent(EnemyParent.transform);

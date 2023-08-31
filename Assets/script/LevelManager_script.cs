@@ -78,18 +78,17 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         lostUI.transform.Find("Text").GetComponent<TMP_Text>().text = "Income: "+Income+"\nSummon: "+this.GetComponent<EnemySpawn>().Summon.ToString()+"\nKill enemy: "+this.GetComponent<EnemySpawn>().EnemiesDied.ToString()+"\nRank: "+alivePLayer.ToString();
         alivePLayer--;
         Destroy(EnemyParent);
-        StartCoroutine(StopGame());
+        StopGame();
     }
     public void YouWin(){
         lostUI.SetActive(true);
         lostUI.transform.Find("You Win").gameObject.SetActive(true);
         Destroy(EnemyParent);
-        StartCoroutine(StopGame());
+        StopGame();
         lostUI.transform.Find("Text").GetComponent<TMP_Text>().text = "Income: "+Income+"\nSummon: "+this.GetComponent<EnemySpawn>().Summon.ToString()+"\nKill enemy: "+this.GetComponent<EnemySpawn>().EnemiesDied.ToString()+"\nRank: "+alivePLayer.ToString();
     }
-    public IEnumerator StopGame(){
-        yield return new WaitForSeconds(2f);
-        Time.timeScale = 0;
+    public void StopGame(){
+        Time.timeScale = 0.1f;
     }
 
     public void HpUpdate(int x,Player _ownPlayer){

@@ -33,7 +33,7 @@ public class EnemyButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         text = spawnedImage.GetComponentInChildren<TMP_Text>();
         spawnedImage.transform.SetParent(transform.parent.parent.parent); // 設定父物件
         // spawnedImage.rectTransform.sizeDelta = new Vector2(50, 50); // 設定大小
-        text.text = button.name +"\n\nHealth:  " + enemyHp +"\nSpeed:  " + enemySpeed + "\n\nCost:  " + cost + "\nIncome:  +" + income + "\n\nReach " + unlock + " income to unlock";
+        text.text = button.name +"\n\nHealth:  " + enemyHp +"\nSpeed:  " + enemySpeed + "\n\nCost:  " + cost + "\nIncome:  +" + income + "\n\nReach " + unlock + " income to unlock next enemy";
     }
 
     public void OnPointerExit(PointerEventData eventData){

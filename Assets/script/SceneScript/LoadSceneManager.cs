@@ -19,6 +19,12 @@ public class LoadSceneManager : MonoBehaviourPunCallbacks{
         }
         
     }
+    public void QuitGame(){
+        PhotonNetwork.Disconnect();
+        SceneManager.LoadScene("BeginScene");
+
+        // StartCoroutine(WaitForLeaveAndLoadScene());
+    }
     // public override void OnJoinedRoom(){
     //     roomCurrentPlayerText.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
     //
