@@ -381,13 +381,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8359328316174564502}
   - component: {fileID: 376372088796749490}
-  - component: {fileID: 3486997970486939713}
   - component: {fileID: 3233730482002239474}
   - component: {fileID: 1569181874396882892}
   - component: {fileID: 7038830147595451391}
   - component: {fileID: 643992922477741027}
   m_Layer: 8
-  m_Name: Zombie
+  m_Name: Smell Zombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,8 +402,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4770632851424049883}
   m_Father: {fileID: 0}
@@ -461,20 +460,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3486997970486939713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6784628206824239041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70fe1c99c8690654bbca84468f0cea21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemyParent: {fileID: 0}
-  smellZombie: {fileID: 6784628206824239041, guid: 4234581fafa755941a6c46271db72efb, type: 3}
 --- !u!114 &3233730482002239474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,11 +472,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0c67282179f3d4ebdd22840d69c5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 300
+  Health: 50
   Defence: 0
-  cost: 75
-  currencyWorth: 12
-  speed: 3
+  cost: 0
+  currencyWorth: 6
+  speed: 4
   hpUI: {fileID: 1849589872041958391}
   defenceUI: {fileID: 7756444303148913509}
   isDestory: 0

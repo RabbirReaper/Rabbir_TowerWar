@@ -16,7 +16,7 @@ public class Enemy_Script : MonoBehaviour{//
     [SerializeField] TextMeshProUGUI defenceUI;
 
 
-    bool isDestory = false;
+    public bool isDestory = false;
     public bool isSlowed = false;
     public bool isFire = false;
     public bool isWeak = false;
@@ -40,6 +40,7 @@ public class Enemy_Script : MonoBehaviour{//
     private void Start() {
         // target = LevelManager_script.main.WayPoints_list[1];
         nowStreet = 0;
+        isDestory = false;
         nowSpeed=speed;
         nowHealth=Health;
         nowDefence=Defence;

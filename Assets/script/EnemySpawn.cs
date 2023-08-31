@@ -7,7 +7,7 @@ using Photon.Realtime;
 
 public class EnemySpawn : MonoBehaviourPunCallbacks{
     [SerializeField] GameObject[] Enemy_list;
-    [SerializeField] GameObject EnemyParent;
+    public GameObject EnemyParent;
     private PhotonView _pV;
     public int Summon=0,EnemiesDied=0;
     Color[] color = new Color[6];
