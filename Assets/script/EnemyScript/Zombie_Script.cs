@@ -8,16 +8,17 @@ public class Zombie_Script : MonoBehaviour{
     private void Start() {
         EnemyParent = LevelManager_script.main.GetComponent<EnemySpawn>().EnemyParent;
     }
-    private void Update() {
-        if(this.GetComponent<Enemy_Script>().isDestory){
-            Debug.Log("I died!!!!");
-            for(int i=0;i<3;i++){
-                GameObject temp = Instantiate(smellZombie,transform.position,Quaternion.identity);
-                temp.transform.SetParent(EnemyParent.transform);
-                Enemy_Script tempEnemy_Script = this.GetComponent<Enemy_Script>();
-                temp.GetComponent<Enemy_Script>().ownPlayer = tempEnemy_Script.ownPlayer;
-                LevelManager_script.main.UpdateEnemyStreet(tempEnemy_Script.ownPlayer,tempEnemy_Script.nowStreet,1);
-            }
+    
+    private void OnDestroy() {
+        for(int i=0;i<3;i++){
+            GameObject smellZombieOBJ = Instantiate(smellZombie,new Vector3(Random.Range(transform.position.x-1,transform.position.x+1),Random.Range(transform.position.y-1,transform.position.y+1),0 ),Quaternion.identity);
+            smellZombieOBJ.transform.SetParent(EnemyParent.transform);
+            Enemy_Script thisEnemy_Script = this.GetComponent<Enemy_Script>();
+            Enemy_Script _smellZombie = smellZombieOBJ.GetComponent<Enemy_Script>();
+            _smellZombie.ownPlayer = thisEnemy_Script.ownPlayer;
+            _smellZombie.moveRotation = thisEnemy_Script.moveRotation;
+            _smellZombie.nowStreet = thisEnemy_Script.nowStreet;
+            LevelManager_script.main.UpdateEnemyStreet(thisEnemy_Script.ownPlayer,thisEnemy_Script.nowStreet,1);
         }
     }
 }

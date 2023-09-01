@@ -33,13 +33,12 @@ public class Enemy_Script : MonoBehaviour{//
     float nowSpeed;
     float nowHealth;
     float nowDefence;
-    int moveRotation=1;
+    public int moveRotation=1;
     public Player ownPlayer;
     public int nowStreet = 0;
     List<(float,float)> slowSchedule = new();
     private void Start() {
         // target = LevelManager_script.main.WayPoints_list[1];
-        nowStreet = 0;
         isDestory = false;
         nowSpeed=speed;
         nowHealth=Health;
@@ -112,6 +111,7 @@ public class Enemy_Script : MonoBehaviour{//
         }
         hpUI.text = ((int)nowHealth).ToString() + "/" +((int)Health).ToString();
     }
+
     public void UpdateSpeed(float x,float waitTime){
         slowSchedule.Add((x,waitTime+timer_slow_all));
         slowSchedule.Sort(Cmp);

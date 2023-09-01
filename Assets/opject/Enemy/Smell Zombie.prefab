@@ -402,7 +402,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4770632851424049883}
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0c67282179f3d4ebdd22840d69c5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
+  Health: 100
   Defence: 0
   cost: 0
   currencyWorth: 6
@@ -483,6 +483,7 @@ MonoBehaviour:
   isSlowed: 0
   isFire: 0
   isWeak: 0
+  moveRotation: 1
   nowStreet: 0
 --- !u!58 &1569181874396882892
 CircleCollider2D:
