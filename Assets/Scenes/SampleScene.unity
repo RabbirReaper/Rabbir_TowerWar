@@ -30140,6 +30140,8 @@ MonoBehaviour:
   - {fileID: 1350402985}
   - {fileID: 637968525}
   isEnd: 0
+  towerCountLimit: 0
+  enemySpawnLimit: 0
 --- !u!114 &1266054348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34091,6 +34093,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3762399121182687048, guid: 1755d9f115ca00d4287b10e97aa103d8, type: 3}
   m_PrefabInstance: {fileID: 1450436514}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1450563010
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6784628206824239041, guid: ad2df171b5ce79e4dbc751353a3a3cf5, type: 3}
+      propertyPath: m_Name
+      value: Endermite
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359328316174564502, guid: ad2df171b5ce79e4dbc751353a3a3cf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -30.709057
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359328316174564502, guid: ad2df171b5ce79e4dbc751353a3a3cf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.569714
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359328316174564502, guid: ad2df171b5ce79e4dbc751353a3a3cf5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359328316174564502, guid: ad2df171b5ce79e4dbc751353a3a3cf5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359328316174564502, guid: ad2df171b5ce79e4dbc751353a3a3cf5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359328316174564502, guid: ad2df171b5ce79e4dbc751353a3a3cf5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359328316174564502, guid: ad2df171b5ce79e4dbc751353a3a3cf5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359328316174564502, guid: ad2df171b5ce79e4dbc751353a3a3cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359328316174564502, guid: ad2df171b5ce79e4dbc751353a3a3cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359328316174564502, guid: ad2df171b5ce79e4dbc751353a3a3cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad2df171b5ce79e4dbc751353a3a3cf5, type: 3}
 --- !u!1001 &1454938675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53412,3 +53471,4 @@ SceneRoots:
   - {fileID: 1653720771}
   - {fileID: 870827809}
   - {fileID: 680814558}
+  - {fileID: 1450563010}
