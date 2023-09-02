@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Photon.Realtime;
 using System;
+using UnityEngine.UI;
 
 public class Enemy_Script : MonoBehaviour{//
     [Header("Enemy References")]
@@ -12,8 +13,7 @@ public class Enemy_Script : MonoBehaviour{//
     public int cost; 
     [SerializeField] int currencyWorth;
     [SerializeField] float speed;
-    [SerializeField] TextMeshProUGUI hpUI;
-    [SerializeField] TextMeshProUGUI defenceUI;
+    [SerializeField] Image hpUI;
 
 
     public bool isDestory = false;
@@ -43,8 +43,7 @@ public class Enemy_Script : MonoBehaviour{//
         nowSpeed=speed;
         nowHealth=Health;
         nowDefence=Defence;
-        hpUI.text = ((int)Health).ToString() + "/" +((int)Health).ToString();
-        defenceUI.text = ((int)Defence).ToString() + "/" +((int)Defence).ToString();
+        hpUI.fillAmount = 1;
     }
     void Update(){
         // transform.position=Vector2.MoveTowards(transform.position,target.position,nowSpeed*Time.deltaTime);
@@ -81,7 +80,6 @@ public class Enemy_Script : MonoBehaviour{//
                 nowDefence=Defence;
                 isWeak = false;
             }
-            defenceUI.text = ((int)nowDefence).ToString() + "/" +((int)Defence).ToString();
         }
     }
 
@@ -96,11 +94,11 @@ public class Enemy_Script : MonoBehaviour{//
             EnemySpawn.onEnemyDestory.Invoke();
             Destroy(gameObject);
         }
-        hpUI.text = ((int)nowHealth).ToString() + "/" +((int)Health).ToString();
+        hpUI.fillAmount = nowHealth/Health;
     }
     public void TakeDamage(float dmg){
         if(dmg > nowDefence){
-            nowHealth -= (dmg-nowDefence);
+            nowHealth -= dmg-nowDefence;
         }else nowHealth--;
         if(!isDestory && nowHealth <= 0){
             isDestory=true;
@@ -109,7 +107,7 @@ public class Enemy_Script : MonoBehaviour{//
             LevelManager_script.main.UpdateEnemyStreet(ownPlayer,nowStreet,-1);
             Destroy(gameObject);
         }
-        hpUI.text = ((int)nowHealth).ToString() + "/" +((int)Health).ToString();
+        hpUI.fillAmount = nowHealth/Health;
     }
     public void Treat(float treat){
         nowHealth += treat;
