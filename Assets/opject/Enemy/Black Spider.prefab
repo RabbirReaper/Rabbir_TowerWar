@@ -381,6 +381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8359328316174564502}
   - component: {fileID: 376372088796749490}
+  - component: {fileID: 1011973515628426447}
   - component: {fileID: 3233730482002239474}
   - component: {fileID: 1569181874396882892}
   - component: {fileID: 7038830147595451391}
@@ -460,6 +461,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1011973515628426447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6784628206824239041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b0c5c1173884245854747ce3c5892b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowRange: 5.5
+  slowCount: 3
+  slowRate: 0.2
 --- !u!114 &3233730482002239474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,9 +495,12 @@ MonoBehaviour:
   speed: 4
   hpUI: {fileID: 1849589872041958391}
   defenceUI: {fileID: 7756444303148913509}
+  isDestory: 0
   isSlowed: 0
   isFire: 0
   isWeak: 0
+  moveRotation: 1
+  nowStreet: 0
 --- !u!58 &1569181874396882892
 CircleCollider2D:
   m_ObjectHideFlags: 0

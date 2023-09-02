@@ -20,7 +20,8 @@ public class Tesla_Turret : MonoBehaviour{
     float damageBuff=1;
     float damageBuffRate=1.05f;
     [SerializeField] float damageBuffLimit;
-
+    int slowCount = 0;
+    float slowRate;
 
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy","Ghost");
@@ -80,6 +81,16 @@ public class Tesla_Turret : MonoBehaviour{
         }
         return false;
     } 
+    bool ShieldL1InRange(){
+        Collider2D inRange = Physics2D.OverlapCircle(transform.position,5,shieldMask);
+        if(inRange == null) return false;
+        return true;
+    }
+    public void SlowTurret(float _slowRate,int _slowCount){
+        if(ShieldL1InRange() || ShieldL2InRange()) return;
+        slowCount = _slowCount;
+        slowRate = _slowRate;
+    }
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;
     //     Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);

@@ -15,7 +15,8 @@ public class Witch_Turret : MonoBehaviour{
     public float reload;
     public int sellValue;
     LayerMask shieldMask;
-
+    int slowCount = 0;
+    float slowRate;
 
     Transform target;
     float timeUntilFire=0;
@@ -94,6 +95,17 @@ public class Witch_Turret : MonoBehaviour{
         }
         return false;
     } 
+
+    bool ShieldL1InRange(){
+        Collider2D inRange = Physics2D.OverlapCircle(transform.position,5,shieldMask);
+        if(inRange == null) return false;
+        return true;
+    }
+    public void SlowTurret(float _slowRate,int _slowCount){
+        if(ShieldL1InRange() || ShieldL2InRange()) return;
+        slowCount = _slowCount;
+        slowRate = _slowRate;
+    }
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;
     //     Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);

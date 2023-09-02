@@ -17,6 +17,8 @@ public class Turret : MonoBehaviour{
     public int sellValue;
     Transform target;
     float timeUntilFire=0;
+    int slowCount = 0;
+    float slowRate;
 
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy","Ghost");
@@ -36,6 +38,9 @@ public class Turret : MonoBehaviour{
                 Shoot();
                 if(ShieldL2InRange()){
                     timeUntilFire= reload*0.9f;
+                }else if(slowCount != 0){
+                    slowCount--;
+                    timeUntilFire = reload*(1 + slowRate);
                 }else timeUntilFire=reload;
                 Debug.Log(timeUntilFire);
             }
@@ -71,13 +76,23 @@ public class Turret : MonoBehaviour{
 
     bool ShieldL2InRange(){
         Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,10,shieldMask);
-        Debug.Log("hey");
         foreach (var item in inRange){
             if(item.GetComponent<Villager_Turret>().level == 2) return true;
             Debug.Log(item.GetComponent<Villager_Turret>().level + "!!!");
         }
         return false;
     } 
+    bool ShieldL1InRange(){
+        Collider2D inRange = Physics2D.OverlapCircle(transform.position,5,shieldMask);
+        if(inRange == null) return false;
+        return true;
+    }
+    public void SlowTurret(float _slowRate,int _slowCount){
+        if(ShieldL1InRange() || ShieldL2InRange()) return;
+        Debug.Log(" I slow");
+        slowCount = _slowCount;
+        slowRate = _slowRate;
+    }
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;
     //     Handles.DrawWireDisc(transform.position,transform.forward,AttackRange);

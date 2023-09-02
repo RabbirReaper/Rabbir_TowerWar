@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4457472299956369265}
   - component: {fileID: 4501389732569342017}
   - component: {fileID: 4520530596122795896}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 242875911472927548}
   - component: {fileID: 5667625343857220306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: towerpicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 6688539615103995374}
   - component: {fileID: 2558275650980598035}
   - component: {fileID: 4115577905513417532}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4158264148134828056}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Firingpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 7686769945914730474}
   - component: {fileID: 7701376229736240225}
   - component: {fileID: 6763691437416734383}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 2371980913208512509}
   - component: {fileID: 5098860034949139960}
   - component: {fileID: 1128238791497286521}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +637,8 @@ GameObject:
   - component: {fileID: 5721783999316987178}
   - component: {fileID: 4531542335940674625}
   - component: {fileID: 2549813068709215598}
-  m_Layer: 0
+  - component: {fileID: 9169765587353614844}
+  m_Layer: 10
   m_Name: Archer L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,3 +698,38 @@ MonoBehaviour:
   upgradeUI: {fileID: 74906148311249462}
   level: 1
   baseUpGradeCost: 90
+--- !u!58 &9169765587353614844
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6886352582088729161}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.01
