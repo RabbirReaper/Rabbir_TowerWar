@@ -7,7 +7,7 @@ using System;
 
 public class Enemy_Script : MonoBehaviour{//
     [Header("Enemy References")]
-    [SerializeField] float Health;
+    public float Health;
     [SerializeField] float Defence;
     public int cost; 
     [SerializeField] int currencyWorth;
@@ -111,6 +111,9 @@ public class Enemy_Script : MonoBehaviour{//
         }
         hpUI.text = ((int)nowHealth).ToString() + "/" +((int)Health).ToString();
     }
+    public void Treat(float treat){
+        nowHealth += treat;
+    }
 
     public void UpdateSpeed(float x,float waitTime){
         slowSchedule.Add((x,waitTime+timer_slow_all));
@@ -133,7 +136,6 @@ public class Enemy_Script : MonoBehaviour{//
         Debug.Log(nowSpeed);
     }
     public void UpdateFire(float _fireRate,float continuedFiretime){
-        if(continuedFiretime == 0) return;
         fireRate = _fireRate;
         timer_fire = continuedFiretime;
         isFire = true;

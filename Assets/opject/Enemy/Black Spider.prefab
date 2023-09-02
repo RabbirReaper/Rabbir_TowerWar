@@ -475,7 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowRange: 6
   slowCount: 3
-  slowRate: 0.2
+  slowRate: 0.5
 --- !u!114 &3233730482002239474
 MonoBehaviour:
   m_ObjectHideFlags: 0

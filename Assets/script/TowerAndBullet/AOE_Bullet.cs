@@ -30,11 +30,9 @@ public class AOE_Bullet : MonoBehaviour{
             // other.gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
             Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,splashRange,EnemyMask);
             for(int i=0;i<(int)inRange.Length;i++){
-                // Enemy_Script em=inRange[i].gameObject.GetComponent<Enemy_Script>();
-                // em.UpdateSpeed(fireRate,splashRange);
                 if(inRange[i] == null) continue;
                 inRange[i].gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
-                inRange[i].gameObject.GetComponent<Enemy_Script>().UpdateFire(fireRate,fireTime);
+                if(fireTime != 0) inRange[i].gameObject.GetComponent<Enemy_Script>().UpdateFire(fireRate,fireTime);
             }
             Destroy(gameObject);
         }

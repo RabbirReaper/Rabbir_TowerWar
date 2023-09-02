@@ -102,7 +102,7 @@ MonoBehaviour:
   Rb: {fileID: 590622883776554821}
   Bullet_speed: 10
   Bullet_Damage: 1000
-  fireRate: 0.5
+  fireRate: 0.005
   fireTime: 6
   splashRange: 6
 --- !u!58 &1236226568314399909
