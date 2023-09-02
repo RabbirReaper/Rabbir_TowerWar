@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 2000
-  Defence: 10
+  Defence: 0
   cost: 500
   currencyWorth: 50
   speed: 3
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac20c8cbdf6c7d4585604422383ce20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportationSpeed: 28
+  teleportationSpeed: 20
 --- !u!58 &1569181874396882892
 CircleCollider2D:
   m_ObjectHideFlags: 0

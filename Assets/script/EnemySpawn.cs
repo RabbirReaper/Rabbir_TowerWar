@@ -32,6 +32,7 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
         LevelManager_script.main.SpendCurrency(Enemy_list[x].GetComponent<Enemy_Script>().cost);
         LevelManager_script.main.IncreaseIncome(Enemy_list[x].GetComponent<Enemy_Script>().currencyWorth);
         Summon++;
+        LevelManager_script.main.enemySpawnLimit--;
         _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x);
     }
     

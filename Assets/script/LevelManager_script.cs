@@ -25,6 +25,8 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     private int[] EnemyInStreetVal = new int[5];
     private int alivePLayer;
     public bool isEnd = false;
+    public int towerCountLimit;
+    public int enemySpawnLimit;
 
     private void Awake() {
         main = this;
