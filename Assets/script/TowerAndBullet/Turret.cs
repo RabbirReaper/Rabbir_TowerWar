@@ -17,6 +17,7 @@ public class Turret : MonoBehaviour{
     public int sellValue;
     Transform target;
     float timeUntilFire=0;
+    [SerializeField] GameObject slowImage;
     int slowCount = 0;
     float slowRate;
 
@@ -41,6 +42,7 @@ public class Turret : MonoBehaviour{
                 }else if(slowCount != 0){
                     slowCount--;
                     timeUntilFire = reload*(1 + slowRate);
+                    if(slowCount == 0) slowImage.SetActive(false);
                 }else timeUntilFire=reload;
                 Debug.Log(timeUntilFire);
             }
@@ -90,6 +92,7 @@ public class Turret : MonoBehaviour{
     public void SlowTurret(float _slowRate,int _slowCount){
         if(ShieldL1InRange() || ShieldL2InRange()) return;
         Debug.Log(" I slow");
+        slowImage.SetActive(true);
         slowCount = _slowCount;
         slowRate = _slowRate;
     }

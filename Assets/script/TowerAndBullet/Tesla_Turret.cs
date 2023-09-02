@@ -20,6 +20,8 @@ public class Tesla_Turret : MonoBehaviour{
     float damageBuff=1;
     float damageBuffRate=1.05f;
     [SerializeField] float damageBuffLimit;
+    [SerializeField] GameObject slowImage;
+
     int slowCount = 0;
     float slowRate;
 
@@ -46,6 +48,10 @@ public class Tesla_Turret : MonoBehaviour{
                 if(damageBuff > damageBuffLimit) damageBuff = damageBuffLimit;
                 if(ShieldL2InRange()){
                     timeUntilFire= reload*0.9f;
+                }else if(slowCount != 0){
+                    slowCount--;
+                    timeUntilFire = reload*(1 + slowRate);
+                    if(slowCount == 0) slowImage.SetActive(false);
                 }else timeUntilFire=reload;
                 Debug.Log(timeUntilFire);
             }
@@ -88,6 +94,7 @@ public class Tesla_Turret : MonoBehaviour{
     }
     public void SlowTurret(float _slowRate,int _slowCount){
         if(ShieldL1InRange() || ShieldL2InRange()) return;
+        slowImage.SetActive(true);
         slowCount = _slowCount;
         slowRate = _slowRate;
     }

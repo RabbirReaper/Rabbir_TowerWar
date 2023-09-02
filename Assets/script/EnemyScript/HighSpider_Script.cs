@@ -53,8 +53,8 @@ public class HighSpider_Script : MonoBehaviour{
             }
         }
     }
-    private void OnDrawGizmosSelected() {
-        Handles.color=Color.blue;
-        Handles.DrawWireDisc(transform.position,transform.forward,slowRange);
-    }
+    // private void OnDrawGizmosSelected() {
+    //     Handles.color=Color.blue;
+    //     Handles.DrawWireDisc(transform.position,transform.forward,slowRange);
+    // }
 }

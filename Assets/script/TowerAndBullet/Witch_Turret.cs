@@ -15,6 +15,7 @@ public class Witch_Turret : MonoBehaviour{
     public float reload;
     public int sellValue;
     LayerMask shieldMask;
+    [SerializeField] GameObject slowImage;
     int slowCount = 0;
     float slowRate;
 
@@ -51,7 +52,12 @@ public class Witch_Turret : MonoBehaviour{
             Shoot();
             if(ShieldL2InRange()){
                 timeUntilFire= reload*0.9f;
+            }else if(slowCount != 0){
+                slowCount--;
+                timeUntilFire = reload*(1 + slowRate);
+                if(slowCount == 0) slowImage.SetActive(false);
             }else timeUntilFire=reload;
+            Debug.Log(timeUntilFire);
         }
     }
 
@@ -103,6 +109,7 @@ public class Witch_Turret : MonoBehaviour{
     }
     public void SlowTurret(float _slowRate,int _slowCount){
         if(ShieldL1InRange() || ShieldL2InRange()) return;
+        slowImage.SetActive(true);
         slowCount = _slowCount;
         slowRate = _slowRate;
     }

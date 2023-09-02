@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b0c5c1173884245854747ce3c5892b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowRange: 5.5
+  slowRange: 6
   slowCount: 3
   slowRate: 0.2
 --- !u!114 &3233730482002239474
