@@ -20,6 +20,7 @@ public class Turret : MonoBehaviour{
     [SerializeField] GameObject slowImage;
     int slowCount = 0;
     float slowRate;
+    int brokenCount = 0;
 
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy","Ghost");
@@ -36,7 +37,11 @@ public class Turret : MonoBehaviour{
             target=null;
         }else{
             if(timeUntilFire <= 0){
-                Shoot();
+                if(brokenCount == 0) Shoot();
+                else{
+                    Debug.Log("Is Broken");
+                    brokenCount--;
+                } 
                 if(ShieldL2InRange()){
                     timeUntilFire= reload*0.9f;
                 }else if(slowCount != 0){
@@ -95,6 +100,11 @@ public class Turret : MonoBehaviour{
         slowImage.SetActive(true);
         slowCount = _slowCount;
         slowRate = _slowRate;
+    }
+
+    public void UpdateIsborken(int _brokenCount){
+        if(ShieldL2InRange()) return;
+        brokenCount = _brokenCount;
     }
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;

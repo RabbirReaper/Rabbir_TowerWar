@@ -22,6 +22,7 @@ public class Bullet : MonoBehaviour{
     private void OnCollisionEnter2D(Collision2D other) {
         if(!isDestory){
             isDestory=true;
+            if(other == null) Destroy(gameObject);
             other.gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
             Destroy(gameObject);
         }

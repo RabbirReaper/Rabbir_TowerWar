@@ -8,16 +8,9 @@ public class HighSpider_Script : MonoBehaviour{
     [SerializeField] int slowCount;
     [SerializeField] float slowRate;
     LayerMask layerMask;
-    Component[] components = new Component[5];
     float reload = 0.5f;
     float timer=0;
     private void Start() {
-        components[0] = GetComponent<Turret>();
-        components[1] = GetComponent<AOE_Turret>();
-        components[2] = GetComponent<Slime_Turret>();
-        components[3] = GetComponent<Tesla_Turret>();
-        components[4] = GetComponent<Witch_Turret>();
-
         layerMask = LayerMask.GetMask("Turret");
     }
     private void Update(){

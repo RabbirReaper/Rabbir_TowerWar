@@ -22,6 +22,7 @@ public class Witch_Bullet : MonoBehaviour{
         if(!isDestory){
             isDestory=true;
             Enemy_Script em=other.gameObject.GetComponent<Enemy_Script>();
+            if(other == null) Destroy(gameObject);
             em.TakeDamage(Bullet_Damage);
             em.UpdateWeak(weakRate,weakTime);
             Destroy(gameObject);

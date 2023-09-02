@@ -32,6 +32,7 @@ public class AOE_Bullet : MonoBehaviour{
             for(int i=0;i<(int)inRange.Length;i++){
                 // Enemy_Script em=inRange[i].gameObject.GetComponent<Enemy_Script>();
                 // em.UpdateSpeed(fireRate,splashRange);
+                if(inRange[i] == null) continue;
                 inRange[i].gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
                 inRange[i].gameObject.GetComponent<Enemy_Script>().UpdateFire(fireRate,fireTime);
             }

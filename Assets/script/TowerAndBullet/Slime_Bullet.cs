@@ -31,6 +31,7 @@ public class Slime_Bullet : MonoBehaviour{
             other.gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
             Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,slowRange,EnemyMask);
             for(int i=0;i<(int)inRange.Length;i++){
+                if(inRange[i] == null) continue;
                 Enemy_Script em=inRange[i].gameObject.GetComponent<Enemy_Script>();
                 em.UpdateSpeed(slowRate,slowTime);
             }

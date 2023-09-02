@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightning: {fileID: 1264781525559932590, guid: e877841f9ff565d48a0bb421ecd5161d, type: 3}
-  Bullet_speed: 11
+  Bullet_speed: 12
   Bullet_Damage: 500
   AttackRange: 10
   reload: 1
