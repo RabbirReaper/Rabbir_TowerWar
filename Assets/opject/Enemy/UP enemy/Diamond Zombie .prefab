@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 8359328316174564502}
   - component: {fileID: 376372088796749490}
   - component: {fileID: 3233730482002239474}
+  - component: {fileID: 8037825391099806802}
   - component: {fileID: 1569181874396882892}
   - component: {fileID: 7038830147595451391}
   - component: {fileID: 3584529269216053176}
@@ -300,8 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0c67282179f3d4ebdd22840d69c5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 120000
-  Defence: 120
+  Health: 70000
+  Defence: 200
   cost: 30000
   currencyWorth: 1900
   speed: 3.5
@@ -312,6 +313,19 @@ MonoBehaviour:
   isWeak: 0
   moveRotation: 1
   nowStreet: 0
+--- !u!114 &8037825391099806802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6784628206824239041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70fe1c99c8690654bbca84468f0cea21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smellZombie: {fileID: 6784628206824239041, guid: b7e9f54ec9a414144ad46e7011c7aaae, type: 3}
 --- !u!58 &1569181874396882892
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -30,6 +30,7 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
         if(LevelManager_script.main.isEnd) return;
         if(Enemy_list[x].GetComponent<Enemy_Script>().cost > LevelManager_script.main.Gold) return;
         LevelManager_script.main.SpendCurrency(Enemy_list[x].GetComponent<Enemy_Script>().cost);
+        LevelManager_script.main.IncreaseIncome(Enemy_list[x].GetComponent<Enemy_Script>().currencyWorth);
         Summon++;
         _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x);
     }

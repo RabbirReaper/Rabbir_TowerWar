@@ -11,7 +11,7 @@ public class Enemy_Script : MonoBehaviour{//
     public float Health;
     [SerializeField] float Defence;
     public int cost; 
-    [SerializeField] int currencyWorth;
+    public int currencyWorth;
     [SerializeField] float speed;
     [SerializeField] Image hpUI;
 
@@ -122,7 +122,8 @@ public class Enemy_Script : MonoBehaviour{//
         Debug.Log(nowSpeed);
     }
     public void ResetSpeed(){
-        slowSchedule.RemoveAt(0);
+        // slowSchedule.RemoveAt(0);
+        slowSchedule.RemoveAll(temp => timer_slow_all > temp.Item2);
         if(slowSchedule.Count == 0){
             nowSpeed = speed;
             isSlowed = false;
@@ -151,5 +152,16 @@ public class Enemy_Script : MonoBehaviour{//
         else{
             return x.Item2 < y.Item2 ? -1 : 1;
         }
+    }
+    public float GetNowSpeed(){
+        isSlowed = false;
+        timer_slow_all += 10000;
+        return nowSpeed;
+    }
+    public void SetNowSpeed(float _Speed){
+        nowSpeed = _Speed;
+    }
+    public float GetNowHealth(){
+        return nowHealth;
     }
 }
