@@ -48,7 +48,7 @@ public class Witch_Turret : MonoBehaviour{
             //     return;
             // }
             Shoot();
-            if(ShieldInRange()){
+            if(ShieldL2InRange()){
                 timeUntilFire= reload*0.9f;
             }else timeUntilFire=reload;
         }
@@ -67,7 +67,7 @@ public class Witch_Turret : MonoBehaviour{
     void FindTarget(){
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position,AttackRange,(Vector2)transform.position,0f,EnemyMask);
         if(hits.Length != 0) target = hits[0].transform;
-        for(int i=1;i<hits.Length;i++){
+        for(int i=0;i<hits.Length;i++){
             if(!hits[i].transform.GetComponent<Enemy_Script>().isWeak){
                 target = hits[i].transform;
                 break;
@@ -87,7 +87,7 @@ public class Witch_Turret : MonoBehaviour{
         Destroy(this.gameObject);
     }
 
-    bool ShieldInRange(){
+    bool ShieldL2InRange(){
         Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,10,shieldMask);
         foreach (var item in inRange){
             if(item.GetComponent<Villager_Turret>().level == 2) return true;

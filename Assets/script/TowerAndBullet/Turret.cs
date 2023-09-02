@@ -34,7 +34,7 @@ public class Turret : MonoBehaviour{
         }else{
             if(timeUntilFire <= 0){
                 Shoot();
-                if(ShieldInRange()){
+                if(ShieldL2InRange()){
                     timeUntilFire= reload*0.9f;
                 }else timeUntilFire=reload;
                 Debug.Log(timeUntilFire);
@@ -69,7 +69,7 @@ public class Turret : MonoBehaviour{
         Destroy(this.gameObject);
     }
 
-    bool ShieldInRange(){
+    bool ShieldL2InRange(){
         Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,10,shieldMask);
         Debug.Log("hey");
         foreach (var item in inRange){

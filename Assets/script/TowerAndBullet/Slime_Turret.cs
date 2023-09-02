@@ -35,7 +35,7 @@ public class Slime_Turret : MonoBehaviour{
         }else{
             if(timeUntilFire <= 0){
                 Shoot();
-                if(ShieldInRange()){
+                if(ShieldL2InRange()){
                     timeUntilFire= reload*0.9f;
                 }else timeUntilFire=reload;
             }
@@ -70,7 +70,7 @@ public class Slime_Turret : MonoBehaviour{
         Destroy(this.gameObject);
     }
 
-    bool ShieldInRange(){
+    bool ShieldL2InRange(){
         Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,10,shieldMask);
         foreach (var item in inRange){
             if(item.GetComponent<Villager_Turret>().level == 2) return true;
