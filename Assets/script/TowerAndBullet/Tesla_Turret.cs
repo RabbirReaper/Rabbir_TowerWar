@@ -24,6 +24,8 @@ public class Tesla_Turret : MonoBehaviour{
 
     int slowCount = 0;
     float slowRate;
+    [SerializeField] GameObject brokenImage;
+    int brokenCount = 0;
 
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy","Ghost");
@@ -43,9 +45,15 @@ public class Tesla_Turret : MonoBehaviour{
         }else{
             nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,target.position,Bullet_speed*Time.deltaTime);
             if(timeUntilFire <= 0){
-                Shoot();
-                damageBuff*=damageBuffRate;
-                if(damageBuff > damageBuffLimit) damageBuff = damageBuffLimit;
+                if(brokenCount == 0){
+                    Shoot();
+                    damageBuff*=damageBuffRate;
+                    if(damageBuff > damageBuffLimit) damageBuff = damageBuffLimit;
+                }else{
+                    Debug.Log("Is Broken");
+                    brokenCount--;
+                    if(brokenCount == 0) brokenImage.SetActive(false);
+                } 
                 if(ShieldL2InRange()){
                     timeUntilFire= reload*0.9f;
                 }else if(slowCount != 0){
@@ -97,6 +105,12 @@ public class Tesla_Turret : MonoBehaviour{
         slowImage.SetActive(true);
         slowCount = _slowCount;
         slowRate = _slowRate;
+    }
+
+    public void UpdateIsborken(int _brokenCount){
+        if(ShieldL2InRange()) return;
+        brokenImage.SetActive(true);
+        brokenCount = _brokenCount;
     }
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;

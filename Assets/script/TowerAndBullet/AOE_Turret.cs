@@ -17,10 +17,13 @@ public class AOE_Turret : MonoBehaviour{
     Transform target;
     LayerMask EnemyMask;
     LayerMask shieldMask;
+    [SerializeField] GameObject brokenImage;
+    int brokenCount = 0;
     [SerializeField] GameObject slowImage;
 
     int slowCount = 0;
     float slowRate;
+    
 
     float timeUntilFire;
     
@@ -39,7 +42,12 @@ public class AOE_Turret : MonoBehaviour{
             target=null;
         }else{
             if(timeUntilFire <= 0){
-                Shoot();
+                if(brokenCount == 0) Shoot();
+                else{
+                    Debug.Log("Is Broken");
+                    brokenCount--;
+                    if(brokenCount == 0) brokenImage.SetActive(false);
+                } 
                 if(ShieldL2InRange()){
                     timeUntilFire= reload*0.9f;
                 }else if(slowCount != 0){
@@ -98,6 +106,11 @@ public class AOE_Turret : MonoBehaviour{
         slowImage.SetActive(true);
         slowCount = _slowCount;
         slowRate = _slowRate;
+    }
+    public void UpdateIsborken(int _brokenCount){
+        if(ShieldL2InRange()) return;
+        brokenImage.SetActive(true);
+        brokenCount = _brokenCount;
     }
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;

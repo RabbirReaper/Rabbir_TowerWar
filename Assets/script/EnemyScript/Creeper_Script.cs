@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Creeper_Script : MonoBehaviour{
@@ -18,22 +19,26 @@ public class Creeper_Script : MonoBehaviour{
                 collider.GetComponent<Turret>().UpdateIsborken(brokenCount);
                 continue;
             }
-            // if(collider.GetComponent<AOE_Turret>() != null){
-            //     collider.GetComponent<AOE_Turret>().SlowTurret(slowRate,slowCount);
-            //     continue;
-            // }
-            // if(collider.GetComponent<Slime_Turret>() != null){
-            //     collider.GetComponent<Slime_Turret>().SlowTurret(slowRate,slowCount);
-            //     continue;
-            // }
-            // if(collider.GetComponent<Tesla_Turret>() != null){
-            //     collider.GetComponent<Tesla_Turret>().SlowTurret(slowRate,slowCount);
-            //     continue;
-            // }
-            // if(collider.GetComponent<Witch_Turret>() != null){
-            //     collider.GetComponent<Witch_Turret>().SlowTurret(slowRate,slowCount);
-            //     continue;
-            // }
+            if(collider.GetComponent<AOE_Turret>() != null){
+                collider.GetComponent<AOE_Turret>().UpdateIsborken(brokenCount);
+                continue;
+            }
+            if(collider.GetComponent<Tesla_Turret>() != null){
+                collider.GetComponent<Tesla_Turret>().UpdateIsborken(brokenCount);
+                continue;
+            }
+            if(collider.GetComponent<Slime_Turret>() != null){
+                collider.GetComponent<Slime_Turret>().UpdateIsborken(brokenCount);
+                continue;
+            }
+            if(collider.GetComponent<Witch_Turret>() != null){
+                collider.GetComponent<Witch_Turret>().UpdateIsborken(brokenCount);
+                continue;
+            }
         }
     }
+    // private void OnDrawGizmosSelected() {
+    //     Handles.color=Color.blue;
+    //     Handles.DrawWireDisc(transform.position,transform.forward,explosionRange);
+    // }
 }

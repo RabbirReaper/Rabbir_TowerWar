@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 public class Turret : MonoBehaviour{
 
@@ -18,6 +19,7 @@ public class Turret : MonoBehaviour{
     Transform target;
     float timeUntilFire=0;
     [SerializeField] GameObject slowImage;
+    [SerializeField] GameObject brokenImage;
     int slowCount = 0;
     float slowRate;
     int brokenCount = 0;
@@ -41,6 +43,7 @@ public class Turret : MonoBehaviour{
                 else{
                     Debug.Log("Is Broken");
                     brokenCount--;
+                    if(brokenCount == 0) brokenImage.SetActive(false);
                 } 
                 if(ShieldL2InRange()){
                     timeUntilFire= reload*0.9f;
@@ -104,6 +107,7 @@ public class Turret : MonoBehaviour{
 
     public void UpdateIsborken(int _brokenCount){
         if(ShieldL2InRange()) return;
+        brokenImage.SetActive(true);
         brokenCount = _brokenCount;
     }
     // private void OnDrawGizmosSelected() {
