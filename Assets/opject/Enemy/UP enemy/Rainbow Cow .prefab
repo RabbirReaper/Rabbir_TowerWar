@@ -300,11 +300,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0c67282179f3d4ebdd22840d69c5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10000
+  Health: 5000
   Defence: 10
-  cost: 450
-  currencyWorth: 5000
-  speed: 4.5
+  cost: 2000
+  currencyWorth: 200
+  speed: 7
   hpUI: {fileID: 4515586261754617692}
   isDestory: 0
   isSlowed: 0
