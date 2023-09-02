@@ -93,7 +93,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         lostUI.transform.Find("Text").GetComponent<TMP_Text>().text = "Income: "+Income+"\nSummon: "+this.GetComponent<EnemySpawn>().Summon.ToString()+"\nKill enemy: "+this.GetComponent<EnemySpawn>().EnemiesDied.ToString()+"\nRank: "+alivePLayer.ToString();
     }
     public void StopGame(){
-        Time.timeScale = 0.1f;
+        Time.timeScale = 1f;
     }
 
     public void HpUpdate(int x,Player _ownPlayer){
