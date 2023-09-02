@@ -42865,7 +42865,7 @@ MonoBehaviour:
   enemyHp: 40000
   enemySpeed: 4
   cost: 10000
-  income: 900
+  income: 850
   unlock: 130000
 --- !u!1 &1753937563
 GameObject:

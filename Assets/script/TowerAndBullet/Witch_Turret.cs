@@ -20,7 +20,7 @@ public class Witch_Turret : MonoBehaviour{
     Transform target;
     float timeUntilFire=0;
     private void Start() {
-        EnemyMask = LayerMask.GetMask("Enemy");
+        EnemyMask = LayerMask.GetMask("Enemy","Ghost");
         shieldMask = LayerMask.GetMask("shield");
     }
     private void Update() {

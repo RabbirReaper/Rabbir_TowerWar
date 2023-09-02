@@ -475,13 +475,16 @@ MonoBehaviour:
   Health: 40000
   Defence: 50
   cost: 10000
-  currencyWorth: 900
+  currencyWorth: 850
   speed: 4
   hpUI: {fileID: 1849589872041958391}
   defenceUI: {fileID: 7756444303148913509}
+  isDestory: 0
   isSlowed: 0
   isFire: 0
   isWeak: 0
+  moveRotation: 1
+  nowStreet: 0
 --- !u!58 &1569181874396882892
 CircleCollider2D:
   m_ObjectHideFlags: 0

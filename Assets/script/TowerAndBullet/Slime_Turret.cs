@@ -20,7 +20,7 @@ public class Slime_Turret : MonoBehaviour{
     
     float timeUntilFire;
     private void Start() {
-        EnemyMask = LayerMask.GetMask("Enemy");
+        EnemyMask = LayerMask.GetMask("Enemy","Ghost");
         shieldMask = LayerMask.GetMask("shield");
     }
     private void Update() {

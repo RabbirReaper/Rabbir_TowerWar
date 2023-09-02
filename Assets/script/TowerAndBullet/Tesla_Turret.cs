@@ -50,10 +50,6 @@ public class Tesla_Turret : MonoBehaviour{
             }
         }
     }
-    private void FixedUpdate() {
-        // if(target == null) return;
-        // nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,target.position,Bullet_speed*Time.deltaTime);
-    }
 
     void Shoot(){
         target.gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage * damageBuff);
