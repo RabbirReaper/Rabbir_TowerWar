@@ -102,7 +102,7 @@ public class Enemy_Script : MonoBehaviour{//
         }else nowHealth--;
         if(!isDestory && nowHealth <= 0){
             isDestory=true;
-            LevelManager_script.main.IncreaseIncome(currencyWorth);
+            LevelManager_script.main.IncreaseGold(currencyWorth);
             EnemySpawn.onEnemyDestory.Invoke();
             LevelManager_script.main.UpdateEnemyStreet(ownPlayer,nowStreet,-1);
             Destroy(gameObject);
