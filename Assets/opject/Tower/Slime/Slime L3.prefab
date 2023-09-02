@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8753961596186721201}
   - component: {fileID: 4905850888497547069}
   - component: {fileID: 3376308113798207845}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 6525854508586806396}
   - component: {fileID: 8539079408101229724}
   - component: {fileID: 1514277805505369140}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7645419958237979238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4687608216872414451}
   - component: {fileID: 6032358684572884476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,8 @@ GameObject:
   - component: {fileID: 2871768730972604516}
   - component: {fileID: 5630527622020842355}
   - component: {fileID: 9096293243162673977}
-  m_Layer: 0
+  - component: {fileID: -1267730514426289659}
+  m_Layer: 10
   m_Name: Slime L3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,6 +477,41 @@ MonoBehaviour:
   upgradeUI: {fileID: 508234876608494620}
   level: 3
   baseUpGradeCost: 38650
+--- !u!58 &-1267730514426289659
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425770091273798401}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.01
 --- !u!1 &5885461946918972472
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +523,7 @@ GameObject:
   - component: {fileID: 5078530762918210141}
   - component: {fileID: 7194390214514390374}
   - component: {fileID: 5027076295372761446}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +600,7 @@ GameObject:
   - component: {fileID: 1442809296288416346}
   - component: {fileID: 7949744285724199614}
   - component: {fileID: 7150819850468213150}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +748,7 @@ GameObject:
   - component: {fileID: 6134916825009868238}
   - component: {fileID: 9072592989218845405}
   - component: {fileID: 5254480559948549583}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGrade (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,7 +892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7123119851229523151}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RotateCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -889,7 +925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8814255822497523707}
   - component: {fileID: 1275303489276519438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

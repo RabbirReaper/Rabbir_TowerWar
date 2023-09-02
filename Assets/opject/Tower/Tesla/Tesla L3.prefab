@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 778305366869969320}
   - component: {fileID: 9196318974824567691}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hexagon Flat-Top (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2259376845991988006}
   - component: {fileID: 8061488480915784892}
   - component: {fileID: 5903206862901393017}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3053739291405897642}
   - component: {fileID: 2820322632693018994}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hexagon Flat-Top (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 2183845652910867745}
   - component: {fileID: 4815529373093312785}
   - component: {fileID: 1309321490269473308}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 4389541187617659575}
   - component: {fileID: 8518669384022167410}
   - component: {fileID: 3161762620616393139}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 237287602741777986}
   - component: {fileID: 1666103468369133459}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hexagon Flat-Top (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 9027952782759510630}
   - component: {fileID: 4112846987585556637}
   - component: {fileID: 7940541056632976855}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,7 +773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4266828750317406561}
   - component: {fileID: 6644236245725902464}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hexagon Flat-Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,7 +857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6418121750329727754}
   - component: {fileID: 6376961203909024666}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hexagon Flat-Top (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,7 +942,8 @@ GameObject:
   - component: {fileID: 5721783999316987178}
   - component: {fileID: 1906696120299655053}
   - component: {fileID: 2549813068709215598}
-  m_Layer: 0
+  - component: {fileID: -1314414595600814753}
+  m_Layer: 10
   m_Name: Tesla L3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,6 +1007,41 @@ MonoBehaviour:
   upgradeUI: {fileID: 1553687429953713142}
   level: 3
   baseUpGradeCost: 37000
+--- !u!58 &-1314414595600814753
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6886352582088729161}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.01
 --- !u!1 &8836501984575627824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1055,7 @@ GameObject:
   - component: {fileID: 7775883014501517831}
   - component: {fileID: 5234723226565319827}
   - component: {fileID: 419021819937038735}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGrade (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

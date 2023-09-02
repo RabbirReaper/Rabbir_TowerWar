@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4457472299956369265}
   - component: {fileID: 4501389732569342017}
   - component: {fileID: 4520530596122795896}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6688539615103995374}
   - component: {fileID: 2558275650980598035}
   - component: {fileID: 4115577905513417532}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4266828750317406561}
   - component: {fileID: 6644236245725902464}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hexagon Flat-Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8379009642302525108}
   - component: {fileID: 419740704868249590}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hexagon Flat-Top (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 7686769945914730474}
   - component: {fileID: 7701376229736240225}
   - component: {fileID: 7981863446352711678}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 2371980913208512509}
   - component: {fileID: 5098860034949139960}
   - component: {fileID: 1128238791497286521}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -689,7 +689,8 @@ GameObject:
   - component: {fileID: 5721783999316987178}
   - component: {fileID: 1906696120299655053}
   - component: {fileID: 2549813068709215598}
-  m_Layer: 0
+  - component: {fileID: -8063510313347418282}
+  m_Layer: 10
   m_Name: Tesla L2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -750,3 +751,38 @@ MonoBehaviour:
   upgradeUI: {fileID: 74906148311249462}
   level: 2
   baseUpGradeCost: 12000
+--- !u!58 &-8063510313347418282
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6886352582088729161}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.01

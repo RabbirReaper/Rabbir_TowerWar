@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7645419958237979238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8608080938823796562}
   - component: {fileID: 275502253258531149}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4687608216872414451}
   - component: {fileID: 6032358684572884476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,8 @@ GameObject:
   - component: {fileID: 2871768730972604516}
   - component: {fileID: 9066098894970318772}
   - component: {fileID: 753357232913506003}
-  m_Layer: 0
+  - component: {fileID: 4421348148791857952}
+  m_Layer: 10
   m_Name: Witch L2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,6 +272,41 @@ MonoBehaviour:
   RotationSpeed: 250
   reload: 0.75
   sellValue: 2625
+--- !u!58 &4421348148791857952
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425770091273798401}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.01
 --- !u!1 &6402678907015667130
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +321,7 @@ GameObject:
   - component: {fileID: 6583285004993422025}
   - component: {fileID: 9179878343262904065}
   - component: {fileID: 7830019868029663587}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +459,7 @@ GameObject:
   - component: {fileID: 8663902838996718463}
   - component: {fileID: 5594580812159864718}
   - component: {fileID: 6726055759035765990}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +604,7 @@ GameObject:
   - component: {fileID: 8356575135409162354}
   - component: {fileID: 309125467930814174}
   - component: {fileID: 2045709059246400810}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,7 +677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2699942511703847135}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RotateCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}

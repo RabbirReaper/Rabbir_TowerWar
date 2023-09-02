@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7645419958237979238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2324162302035563035}
   - component: {fileID: 4354551452567131142}
   - component: {fileID: 3327978649026898662}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 1206724576348680048}
   - component: {fileID: 1082855574199173038}
   - component: {fileID: 4236510308902123304}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 6629628839241057496}
   - component: {fileID: 7024046630078948405}
   - component: {fileID: 7705451949410065977}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9092613242057320071}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RotateCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4687608216872414451}
   - component: {fileID: 6032358684572884476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,8 @@ GameObject:
   - component: {fileID: 2871768730972604516}
   - component: {fileID: 5630527622020842355}
   - component: {fileID: 121738703451113332}
-  m_Layer: 0
+  - component: {fileID: 7710517399444867835}
+  m_Layer: 10
   m_Name: Slime L4 Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,6 +582,41 @@ MonoBehaviour:
   upgradeUI: {fileID: 2110996781093813710}
   level: 4
   baseUpGradeCost: 0
+--- !u!58 &7710517399444867835
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425770091273798401}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.01
 --- !u!1 &8818640744242615127
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8814255822497523707}
   - component: {fileID: 1275303489276519438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

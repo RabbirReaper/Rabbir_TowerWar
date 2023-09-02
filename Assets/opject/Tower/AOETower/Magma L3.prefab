@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 229202535755355703}
   - component: {fileID: 1576545268717283085}
   - component: {fileID: 6574038935444322410}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7645419958237979238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 5079537716257879387}
   - component: {fileID: 493245846055839905}
   - component: {fileID: 8075636858587430628}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGrade (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 3751992307711541855}
   - component: {fileID: 3089803583503853970}
   - component: {fileID: 2763743680186024789}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4687608216872414451}
   - component: {fileID: 6032358684572884476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,8 @@ GameObject:
   - component: {fileID: 2871768730972604516}
   - component: {fileID: 9066098894970318772}
   - component: {fileID: 7095679312087566860}
-  m_Layer: 0
+  - component: {fileID: -6485085098468910900}
+  m_Layer: 10
   m_Name: Magma L3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,6 +554,41 @@ MonoBehaviour:
   RotationSpeed: 250
   reload: 1
   sellValue: 6813
+--- !u!58 &-6485085098468910900
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425770091273798401}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.01
 --- !u!1 &5802118567010960099
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +602,7 @@ GameObject:
   - component: {fileID: 1319456486831659161}
   - component: {fileID: 1251989701199223333}
   - component: {fileID: 8578491411315313179}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UpGrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +750,7 @@ GameObject:
   - component: {fileID: 4617533152726372605}
   - component: {fileID: 6316730363423545618}
   - component: {fileID: 1232010270855083594}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,7 +893,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2699942511703847135}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RotateCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,7 +926,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7385300085716972819}
   - component: {fileID: 8150523002966259953}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -974,7 +1010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8814255822497523707}
   - component: {fileID: 1275303489276519438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
