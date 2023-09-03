@@ -19,7 +19,7 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
     private void Start() {
         color[0]=new Color(0.1f,0.05f,0.8f,1); //Blue
         color[1]=new Color(0.8f,0.05f,0.1f,1); //Red
-        color[2]=new Color(0.1f,0.8f,0.1f,1); //Green
+        color[2]=new Color (1, 0.92f, 0.016f, 1); //Yellow
         _pV = this.GetComponent<PhotonView>();
     }
 

@@ -13,8 +13,8 @@ public class LoadSceneManager : MonoBehaviourPunCallbacks{
         PhotonNetwork.AutomaticallySyncScene = true;
     }
     private void Update() {
-        roomCurrentPlayerText.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
-        if(PhotonNetwork.IsMasterClient  && PhotonNetwork.CurrentRoom.PlayerCount == 2){// isbug
+        if(PhotonNetwork.IsConnected) roomCurrentPlayerText.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
+        if(PhotonNetwork.IsMasterClient  && PhotonNetwork.CurrentRoom.PlayerCount == 3){// isbug
             PhotonNetwork.CurrentRoom.IsOpen = false;
             SceneManager.LoadScene("SampleScene");
         }

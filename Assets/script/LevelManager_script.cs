@@ -17,7 +17,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     [SerializeField] TextMeshProUGUI teamColor;
     [SerializeField] GameObject lostUI;
     public int hp = 20;
-    [SerializeField] TextMeshProUGUI[] tmp_text;
+    [SerializeField] TextMeshProUGUI[] team_text;
     private PhotonView hpPhotonView,_pV;
     public Hashtable actorNumberAndColor = new();
     [SerializeField] GameObject EnemyParent;
@@ -51,9 +51,12 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         }else if(PhotonNetwork.LocalPlayer.ActorNumber == 2){
             teamColor.text = "Red";
             teamColor.color = Color.red;
+        }else if(PhotonNetwork.LocalPlayer.ActorNumber == 3){
+            teamColor.text = "Yellow";
+            teamColor.color = Color.yellow;
         }
-        tmp_text[PhotonNetwork.LocalPlayer.ActorNumber-1].text = hp.ToString();
-        hpPhotonView = tmp_text[PhotonNetwork.LocalPlayer.ActorNumber-1].GetComponent<PhotonView>();
+        team_text[PhotonNetwork.LocalPlayer.ActorNumber-1].text = hp.ToString();
+        hpPhotonView = team_text[PhotonNetwork.LocalPlayer.ActorNumber-1].GetComponent<PhotonView>();
         _pV = this.GetComponent<PhotonView>();
         for(int i=0;i<EnemyInStreetVal.Length;i++){
             EnemyInStreetVal[i] = 0;
@@ -88,12 +91,22 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         isEnd = true;
         lostUI.SetActive(true);
         lostUI.transform.Find("You Lose").gameObject.SetActive(true);
-        _pV.RPC("RPCalivePLayerUpdate",RpcTarget.Others);
+        // _pV.RPC("RPCalivePLayerUpdate",RpcTarget.Others);
         lostUI.transform.Find("Text").GetComponent<TMP_Text>().text = "Income: "+Income+"\nSummon: "+this.GetComponent<EnemySpawn>().Summon.ToString()+"\nKill enemy: "+this.GetComponent<EnemySpawn>().EnemiesDied.ToString()+"\nRank: "+alivePLayer.ToString();
-        alivePLayer--;
+        // alivePLayer--;
         Destroy(EnemyParent);
         StartCoroutine(DisGame());
     }
+
+    // [PunRPC]
+    // public void RPCalivePLayerUpdate(){
+    //     alivePLayer--;
+    //     if(alivePLayer == 1){
+    //         isEnd = true;
+    //         YouWin();
+    //     }
+    // }
+
     private IEnumerator DisGame(){
         yield return new WaitForSeconds(1);
         PhotonNetwork.Disconnect();
@@ -113,12 +126,12 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         PhotonNetwork.LocalPlayer.SetCustomProperties(table);
         _pV.RPC("RPCHpUpdate",_ownPlayer,-x);
         if(hp <= 0){
-            tmp_text[PhotonNetwork.LocalPlayer.ActorNumber-1].text = "0";
+            team_text[PhotonNetwork.LocalPlayer.ActorNumber-1].text = "0";
             YouLose();
         }
     }
     public override void OnPlayerPropertiesUpdate(Player targetPlayer,Hashtable changedProps){
-        tmp_text[targetPlayer.ActorNumber-1].text = changedProps["hp"].ToString();
+        team_text[targetPlayer.ActorNumber-1].text = changedProps["hp"].ToString();
     }
     
     [PunRPC]
@@ -130,21 +143,14 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         // Debug.Log(x);
     }
     
-    [PunRPC]
-    public void RPCalivePLayerUpdate(){
-        alivePLayer--;
-        if(alivePLayer == 1){
-            isEnd = true;
-            YouWin();
-        }
-    }
+    
     public override void OnPlayerLeftRoom(Player otherPlayer){
         alivePLayer--;
         if(alivePLayer == 1){
             isEnd = true;
             YouWin();
         }
-        tmp_text[otherPlayer.ActorNumber-1].text = 0.ToString();
+        team_text[otherPlayer.ActorNumber-1].text = 0.ToString();
     }
     
     public void UpdateEnemyStreet(Player _player,int idx,int val){

@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startGameButton: {fileID: 76452300}
-  maxPlayers: 2
+  maxPlayers: 3
 --- !u!1001 &323938465
 PrefabInstance:
   m_ObjectHideFlags: 0
