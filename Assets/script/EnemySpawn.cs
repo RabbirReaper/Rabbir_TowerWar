@@ -32,8 +32,7 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
         LevelManager_script.main.SpendCurrency(Enemy_list[x].GetComponent<Enemy_Script>().cost);
         LevelManager_script.main.IncreaseIncome(Enemy_list[x].GetComponent<Enemy_Script>().currencyWorth);
         Summon++;
-        LevelManager_script.main.enemySpawnLimit--;
-        _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x);
+        _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x,LevelManager_script.main.GetEnemyId());
     }
     
     // public void SpawnEnemy(int x){ //test
@@ -42,12 +41,13 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
     // }
     
     [PunRPC]
-    void RPCSpawnEnemy(int x,PhotonMessageInfo Info){
+    void RPCSpawnEnemy(int x,int id,PhotonMessageInfo Info){
         if(LevelManager_script.main.isEnd) return;
         // GameObject tempEnemy = Instantiate(Enemy_list[x],LevelManager_script.main.WayPoints_list[0].position,Quaternion.identity);
         GameObject tempEnemy = Instantiate(Enemy_list[x],new Vector3(-22f,Random.Range(7f, 13f),0f),Quaternion.identity);
         tempEnemy.transform.SetParent(EnemyParent.transform);
         tempEnemy.GetComponent<Enemy_Script>().ownPlayer = Info.Sender;
+        tempEnemy.GetComponent<Enemy_Script>().SetEnemyId(id);
         LevelManager_script.main.UpdateEnemyStreet(Info.Sender,0,1);
     }
 

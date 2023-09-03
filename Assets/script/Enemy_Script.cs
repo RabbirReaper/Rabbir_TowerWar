@@ -37,6 +37,11 @@ public class Enemy_Script : MonoBehaviour{//
     public Player ownPlayer;
     public int nowStreet = 0;
     List<(float,float)> slowSchedule = new();
+    int enemyId;
+    public void SetEnemyId(int x){
+        enemyId = x;
+    }
+
     private void Start() {
         // target = LevelManager_script.main.WayPoints_list[1];
         isDestory = false;
@@ -69,7 +74,8 @@ public class Enemy_Script : MonoBehaviour{//
             timer_fire-=Time.deltaTime;
             TimerTemp+=Time.deltaTime;
             if(TimerTemp >= fireInterval){
-                FireDamage(fireRate);
+                TakeDamage(Health*fireRate);
+                // FireDamage(fireRate);
                 TimerTemp=0;
             }
             if(timer_fire < 0) isFire=false;
@@ -86,16 +92,18 @@ public class Enemy_Script : MonoBehaviour{//
     public void UpdateMoveRotation(int x){
         moveRotation = x;
     }
-    void FireDamage(float _fireDmg){
-        nowHealth-=Health*_fireDmg;
-        if(!isDestory && nowHealth <= 0){
-            isDestory=true;
-            LevelManager_script.main.IncreaseIncome(currencyWorth);
-            EnemySpawn.onEnemyDestory.Invoke();
-            Destroy(gameObject);
-        }
-        hpUI.fillAmount = nowHealth/Health;
-    }
+    // void FireDamage(float _fireDmg){
+    //     nowHealth-=Health*_fireDmg;
+    //     if(!isDestory && nowHealth <= 0){
+    //         isDestory=true;
+    //         LevelManager_script.main.IncreaseIncome(currencyWorth);
+    //         EnemySpawn.onEnemyDestory.Invoke();
+    //         LevelManager_script.main.UpdateEnemyStreet(ownPlayer,nowStreet,-1);
+    //         LevelManager_script.main.EnemyIsDied(ownPlayer,enemyId);
+    //         Destroy(gameObject);
+    //     }
+    //     hpUI.fillAmount = nowHealth/Health;
+    // }
     public void TakeDamage(float dmg){
         if(dmg > nowDefence){
             nowHealth -= dmg-nowDefence;
@@ -105,6 +113,7 @@ public class Enemy_Script : MonoBehaviour{//
             LevelManager_script.main.IncreaseGold(currencyWorth);
             EnemySpawn.onEnemyDestory.Invoke();
             LevelManager_script.main.UpdateEnemyStreet(ownPlayer,nowStreet,-1);
+            LevelManager_script.main.EnemyIsDied(ownPlayer,enemyId);
             Destroy(gameObject);
         }
         hpUI.fillAmount = nowHealth/Health;

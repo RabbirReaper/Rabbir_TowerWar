@@ -27,12 +27,19 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     public bool isEnd = false;
     public int towerCountLimit;
     public int enemySpawnLimit;
+    [SerializeField] TMP_Text enemySpawnLimitUI;
+    private Stack<int> enemyIdStack = new();
+    private int[] enemyIdArray = new int[2000];
 
     private void Awake() {
         main = this;
         
     }
     private void Start() {
+        for(int i=1999;i>=1;i--){
+            enemyIdStack.Push(i);
+        }
+        enemySpawnLimitUI.text = enemySpawnLimit.ToString();
         PhotonNetwork.AutomaticallySyncScene = false;
         // actorNumberAndColor.Add(1,"Blue");
         // actorNumberAndColor.Add(2,"Red");
@@ -85,19 +92,15 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         lostUI.transform.Find("Text").GetComponent<TMP_Text>().text = "Income: "+Income+"\nSummon: "+this.GetComponent<EnemySpawn>().Summon.ToString()+"\nKill enemy: "+this.GetComponent<EnemySpawn>().EnemiesDied.ToString()+"\nRank: "+alivePLayer.ToString();
         alivePLayer--;
         Destroy(EnemyParent);
-        StopGame();
+        PhotonNetwork.Disconnect();
     }
     public void YouWin(){
         lostUI.SetActive(true);
         lostUI.transform.Find("You Win").gameObject.SetActive(true);
         Destroy(EnemyParent);
-        StopGame();
         lostUI.transform.Find("Text").GetComponent<TMP_Text>().text = "Income: "+Income+"\nSummon: "+this.GetComponent<EnemySpawn>().Summon.ToString()+"\nKill enemy: "+this.GetComponent<EnemySpawn>().EnemiesDied.ToString()+"\nRank: "+alivePLayer.ToString();
     }
-    public void StopGame(){
-        Time.timeScale = 1f;
-    }
-
+    
     public void HpUpdate(int x,Player _ownPlayer){
         if(hp <= 0 || alivePLayer == 1) return;
         hp+=x;
@@ -150,11 +153,54 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     }
 
     public void QuitGame(){
-        PhotonNetwork.Disconnect();
+        if(PhotonNetwork.IsConnected) PhotonNetwork.Disconnect();
         SceneManager.LoadScene("BeginScene");
 
         // StartCoroutine(WaitForLeaveAndLoadScene());
     }
+
+    public int GetEnemyId(){
+        int temp = enemyIdStack.Pop();
+        enemySpawnLimit--;
+        enemyIdArray[temp] = alivePLayer-1;
+        enemySpawnLimitUI.text = enemySpawnLimit.ToString();
+        return temp;
+    }
+    public void PushEnemyId(int id){
+        enemyIdStack.Push(id);
+    }
+
+    public void EnemyIsDied(Player player,int _enemyId){
+        _pV.RPC("RPCEnemyIsDied",player,_enemyId);
+    }
+
+
+    [PunRPC]
+    private void RPCEnemyIsDied(int _enemyId){
+        enemyIdArray[_enemyId]--;
+        Debug.Log(_enemyId + "-> "+enemyIdArray[_enemyId]);
+        if(enemyIdArray[_enemyId] == alivePLayer-2){
+            enemySpawnLimit++;
+            enemySpawnLimitUI.text = enemySpawnLimit.ToString();
+        }
+        if(enemyIdArray[_enemyId] == 0){
+            enemyIdStack.Push(_enemyId);
+        } 
+    } 
+
+
+    // public void UpdateEnemyStreet(Player _player,int idx,int val){
+    //     _pV.RPC("RPCUpdateEnemyStreet",_player,idx,val);
+    // }
+    // [PunRPC]
+    // private void RPCUpdateEnemyStreet(int idx,int val){
+    //     EnemyInStreetVal[idx] += val;
+    //     EnemyInStreetText[idx].text = EnemyInStreetVal[idx].ToString();
+    // }
+
+
+
+
     // public override void OnLeftRoom(){
     //     SceneManager.LoadScene("LobbyScene");
     // }
