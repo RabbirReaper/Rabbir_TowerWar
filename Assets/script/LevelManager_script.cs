@@ -162,6 +162,10 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     public int GetEnemyId(){
         int temp = enemyIdStack.Pop();
         enemySpawnLimit--;
+        if(enemySpawnLimit <= 0){
+            enemyIdStack.Push(temp);
+            return -1;
+        }
         enemyIdArray[temp] = alivePLayer-1;
         enemySpawnLimitUI.text = enemySpawnLimit.ToString();
         return temp;

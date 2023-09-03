@@ -30351,7 +30351,7 @@ MonoBehaviour:
   - {fileID: 1350402985}
   - {fileID: 637968525}
   isEnd: 0
-  towerCountLimit: 0
+  towerCountLimit: 60
   enemySpawnLimit: 60
   enemySpawnLimitUI: {fileID: 594077865}
 --- !u!114 &1266054348

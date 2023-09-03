@@ -31,8 +31,10 @@ public class Plot : MonoBehaviour{
             Debug.Log("you not have enough money!");
             return;
         }
+        if(LevelManager_script.main.towerCountLimit <= 0) return;
         LevelManager_script.main.SpendCurrency(tempTower.cost);
         towerObj = Instantiate(tempTower.towerPrefab,transform.position,Quaternion.identity);
+        LevelManager_script.main.towerCountLimit--;
         UpGrade_Script = towerObj.GetComponent<UpGradeUpdateTower>(); //
         towerObj.transform.SetParent(transform);
     }

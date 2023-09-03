@@ -29,10 +29,12 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
     public void SpawnEnemy(int x){
         if(LevelManager_script.main.isEnd) return;
         if(Enemy_list[x].GetComponent<Enemy_Script>().cost > LevelManager_script.main.Gold) return;
+        int temp = LevelManager_script.main.GetEnemyId();
+        if(temp == -1) return; // enemySpawnLimit <= 0
         LevelManager_script.main.SpendCurrency(Enemy_list[x].GetComponent<Enemy_Script>().cost);
         LevelManager_script.main.IncreaseIncome(Enemy_list[x].GetComponent<Enemy_Script>().currencyWorth);
         Summon++;
-        _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x,LevelManager_script.main.GetEnemyId());
+        _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x,temp);
     }
     
     // public void SpawnEnemy(int x){ //test
