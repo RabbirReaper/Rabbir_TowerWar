@@ -385,9 +385,9 @@ MonoBehaviour:
   enemySpeed: 4
   cost: 1000
   income: 150
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: High income
+  textHigh: 190
+  textWidth: 190
   unlock: 0
 --- !u!114 &12494827
 MonoBehaviour:
@@ -16674,9 +16674,9 @@ MonoBehaviour:
   enemySpeed: 3.5
   cost: 30000
   income: 1900
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: Zombie spawns three mini zombies upon death
+  textHigh: 250
+  textWidth: 180
   unlock: 0
 --- !u!114 &652791969
 MonoBehaviour:
@@ -18338,9 +18338,9 @@ MonoBehaviour:
   enemySpeed: 6
   cost: 40000
   income: 2200
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: null
+  textHigh: 180
+  textWidth: 180
   unlock: 0
 --- !u!114 &722786088
 MonoBehaviour:
@@ -21051,9 +21051,9 @@ MonoBehaviour:
   enemySpeed: 7
   cost: 2000
   income: 200
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: null
+  textHigh: 180
+  textWidth: 180
   unlock: 0
 --- !u!114 &886271744
 MonoBehaviour:
@@ -23385,9 +23385,9 @@ MonoBehaviour:
   enemySpeed: 5
   cost: 60000
   income: 2800
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: Heals wounded mobs around it
+  textHigh: 200
+  textWidth: 190
   unlock: 0
 --- !u!114 &973239581
 MonoBehaviour:
@@ -26931,12 +26931,9 @@ MonoBehaviour:
   enemySpeed: 8
   cost: 500000
   income: 0
-  special: Boss mobs are super expensive late game mobs with high hitpoints. In exchange
-    for their "boss" nature, they do not grant ANY income at all, so are only useful
-    for stealing lives. All boss mobs, if they reach the end, will not just steal
-    a life but will also teleport back to the start.
-  textHigh: 0
-  textWidth: 0
+  special: 'Immune to slow '
+  textHigh: 200
+  textWidth: 200
   unlock: 0
 --- !u!114 &1129052045
 MonoBehaviour:
@@ -30374,7 +30371,7 @@ MonoBehaviour:
   - {fileID: 2084795376}
   Interval: 10
   Income: 5
-  Gold: 100
+  Gold: 100000000
   Next_Income: 0
   teamColor: {fileID: 1314175617}
   lostUI: {fileID: 1596922425}
@@ -33963,9 +33960,9 @@ MonoBehaviour:
   enemySpeed: 3
   cost: 500
   income: 50
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: Teleport on hit
+  textHigh: 200
+  textWidth: 180
   unlock: 0
 --- !u!114 &1443445560
 MonoBehaviour:
@@ -34119,9 +34116,9 @@ MonoBehaviour:
   enemySpeed: 5
   cost: 15000
   income: 1300
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: null
+  textHigh: 200
+  textWidth: 180
   unlock: 0
 --- !u!114 &1444405419
 MonoBehaviour:
@@ -35169,9 +35166,9 @@ MonoBehaviour:
   enemySpeed: 4
   cost: 10000
   income: 900
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: Zombie spawns three mini zombies upon death
+  textHigh: 250
+  textWidth: 180
   unlock: 0
 --- !u!114 &1506073056
 MonoBehaviour:
@@ -35925,9 +35922,9 @@ MonoBehaviour:
   enemySpeed: 4.5
   cost: 5000
   income: 450
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: null
+  textHigh: 180
+  textWidth: 180
   unlock: 0
 --- !u!114 &1536768377
 MonoBehaviour:
@@ -42671,9 +42668,9 @@ MonoBehaviour:
   enemySpeed: 5
   cost: 20000
   income: 1500
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: Shoots webs onto towers
+  textHigh: 200
+  textWidth: 180
   unlock: 0
 --- !u!114 &1742177632
 MonoBehaviour:
@@ -42827,9 +42824,9 @@ MonoBehaviour:
   enemySpeed: 8
   cost: 100000
   income: 3500
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: null
+  textHigh: 180
+  textWidth: 180
   unlock: 0
 --- !u!114 &1747681264
 MonoBehaviour:
@@ -52387,9 +52384,9 @@ MonoBehaviour:
   enemySpeed: 5
   cost: 80000
   income: 3200
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: null
+  textHigh: 180
+  textWidth: 180
   unlock: 0
 --- !u!114 &2094666625
 MonoBehaviour:
@@ -52841,9 +52838,9 @@ MonoBehaviour:
   enemySpeed: 7
   cost: 130000
   income: 3800
-  special: 
-  textHigh: 0
-  textWidth: 0
+  special: Causes nearby towers to malfunction upon death
+  textHigh: 220
+  textWidth: 180
   unlock: 0
 --- !u!114 &2102112183
 MonoBehaviour:

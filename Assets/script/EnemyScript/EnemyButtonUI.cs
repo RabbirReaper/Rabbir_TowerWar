@@ -33,7 +33,7 @@ public class EnemyButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         spawnedImage.rectTransform.sizeDelta = new Vector2(textWidth, textHigh); // 設定大小
         text.text = button.name +"\n\nHealth:  " + enemyHp +"\nSpeed:  " + enemySpeed + "\n\nCost:  " + cost + "\nIncome:  +" + income ;
         if(special != "null") text.text = text.text + "\n\nSpecial: " + special;
-        text.text =text.text + "\n\nReach " + unlock + " income to unlock next enemy";
+        if(unlock != 0) text.text =text.text + "\n\nReach " + unlock + " income to unlock next enemy";
         
     }
 

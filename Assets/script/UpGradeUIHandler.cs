@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems; 
 public class UpGradeUIHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
-    public bool mouse_over = false;
-    
+    private bool mouse_over = false;
     
     public void OnPointerEnter(PointerEventData eventData){
         mouse_over=true;

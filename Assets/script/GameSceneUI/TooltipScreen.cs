@@ -34,6 +34,7 @@ public class TooltipScreen : MonoBehaviour,IPointerExitHandler{
         backGround.sizeDelta = textSize + paddingSize;
     }
     public void SetActive(bool temp){
+        rectTransform.transform.position = new Vector3(2000,2000,0);
         gameObject.SetActive(temp);
     }
 
