@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tesla_Turret : MonoBehaviour{
     [SerializeField] GameObject lightning;
     [SerializeField] float Bullet_speed;
+    [SerializeField] bool keepBuff;
     public float Bullet_Damage;
 
     LayerMask EnemyMask;
@@ -18,7 +19,7 @@ public class Tesla_Turret : MonoBehaviour{
     float timeUntilFire=0;
     GameObject nowLightning;
     float damageBuff=1;
-    float damageBuffRate=1.05f;
+    float damageBuffRate=1.1f;
     [SerializeField] float damageBuffLimit;
     [SerializeField] GameObject slowImage;
 
@@ -36,7 +37,7 @@ public class Tesla_Turret : MonoBehaviour{
         timeUntilFire -= Time.deltaTime;
         if(target == null){
             nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,transform.position,Bullet_speed*Time.deltaTime);
-            damageBuff = 1;
+            if(!keepBuff) damageBuff = 1;
             FindTarget();
             return;
         }//這裡很重要 以前的bug原因:他被判定在攻擊範圍內 可是判斷不在範圍內

@@ -838,11 +838,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightning: {fileID: 1264781525559932590, guid: e877841f9ff565d48a0bb421ecd5161d, type: 3}
   Bullet_speed: 12
-  Bullet_Damage: 2000
+  keepBuff: 0
+  Bullet_Damage: 3000
   AttackRange: 12
   reload: 1
   sellValue: 18600
-  damageBuffLimit: 10
+  damageBuffLimit: 3
   slowImage: {fileID: 131834091091808349}
   brokenImage: {fileID: 6683523712773743312}
 --- !u!114 &2549813068709215598

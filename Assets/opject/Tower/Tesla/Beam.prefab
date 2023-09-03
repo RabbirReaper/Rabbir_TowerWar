@@ -706,7 +706,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 0.7529412, g: 0.18431373, b: 0, a: 1}
   m_FlipX: 0
@@ -922,11 +922,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightning: {fileID: 1264781525559932590, guid: e877841f9ff565d48a0bb421ecd5161d, type: 3}
   Bullet_speed: 12
-  Bullet_Damage: 3000
+  keepBuff: 0
+  Bullet_Damage: 200
   AttackRange: 16
   reload: 1
   sellValue: 18500
-  damageBuffLimit: 3
+  damageBuffLimit: 10
   slowImage: {fileID: 835661947752181328}
   brokenImage: {fileID: 5274259292594853090}
 --- !u!114 &2549813068709215598
