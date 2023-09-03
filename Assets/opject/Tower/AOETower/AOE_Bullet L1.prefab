@@ -104,7 +104,8 @@ MonoBehaviour:
   Bullet_Damage: 75
   fireRate: 0
   fireTime: 0
-  splashRange: 3
+  splashRange: 2
+  stun: 0
 --- !u!58 &1236226568314399909
 CircleCollider2D:
   m_ObjectHideFlags: 0
