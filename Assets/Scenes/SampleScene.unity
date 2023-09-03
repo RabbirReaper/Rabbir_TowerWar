@@ -53885,7 +53885,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1266054347}
         m_TargetAssemblyTypeName: LevelManager_script, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: Surrender
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -53927,7 +53927,7 @@ GameObject:
   - component: {fileID: 3312291583659021351}
   - component: {fileID: 3312291583659021528}
   m_Layer: 5
-  m_Name: Quit
+  m_Name: Surrender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

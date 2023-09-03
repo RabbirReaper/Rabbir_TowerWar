@@ -94,18 +94,7 @@ public class Enemy_Script : MonoBehaviour{//
     public void UpdateMoveRotation(int x){
         moveRotation = x;
     }
-    // void FireDamage(float _fireDmg){
-    //     nowHealth-=Health*_fireDmg;
-    //     if(!isDestory && nowHealth <= 0){
-    //         isDestory=true;
-    //         LevelManager_script.main.IncreaseIncome(currencyWorth);
-    //         EnemySpawn.onEnemyDestory.Invoke();
-    //         LevelManager_script.main.UpdateEnemyStreet(ownPlayer,nowStreet,-1);
-    //         LevelManager_script.main.EnemyIsDied(ownPlayer,enemyId);
-    //         Destroy(gameObject);
-    //     }
-    //     hpUI.fillAmount = nowHealth/Health;
-    // }
+
     public void TakeDamage(float dmg){
         if(dmg > nowDefence){
             nowHealth -= dmg-nowDefence;
@@ -114,12 +103,17 @@ public class Enemy_Script : MonoBehaviour{//
             isDestory=true;
             LevelManager_script.main.IncreaseGold(currencyWorth);
             EnemySpawn.onEnemyDestory.Invoke();
-            LevelManager_script.main.UpdateEnemyStreet(ownPlayer,nowStreet,-1);
-            LevelManager_script.main.EnemyIsDied(ownPlayer,enemyId);
-            Destroy(gameObject);
+            CorrectDied();
         }
         hpUI.fillAmount = nowHealth/Health;
     }
+
+    public void CorrectDied(){
+        LevelManager_script.main.UpdateEnemyStreet(ownPlayer,nowStreet,-1);
+        LevelManager_script.main.EnemyIsDied(ownPlayer,enemyId);
+        Destroy(gameObject);
+    }
+
     public void Treat(float treat){
         nowHealth += treat;
     }
