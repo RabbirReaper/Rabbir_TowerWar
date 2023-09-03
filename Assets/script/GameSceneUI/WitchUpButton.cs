@@ -7,11 +7,14 @@ public class WitchUpButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] string _name;
     [SerializeField] GameObject tower;
     [SerializeField] int cost;
+    [SerializeField] string special;
     private string str;
 
     private void Start() {
         Witch_Turret towerScript = tower.GetComponent<Witch_Turret>();
-        str = "\n " + _name +"\n\n\n\n Damage:  " + towerScript.bulletPrefab.GetComponent<Witch_Bullet>().Bullet_Damage +"\n\n Reload:  " + towerScript.reload + "\n\n AttachRange:  " + towerScript.AttackRange + "\n\n Weakness: " + towerScript.bulletPrefab.GetComponent<Witch_Bullet>().weakRate*100 + "%\n\n Weakness Time: "+ towerScript.bulletPrefab.GetComponent<Witch_Bullet>().weakTime + "\n\n\n\n Cost: " + cost;
+        str = "\n " + _name +"\n\n\n\n Damage:  " + towerScript.bulletPrefab.GetComponent<Witch_Bullet>().Bullet_Damage +"\n\n Reload:  " + towerScript.reload + "\n\n AttachRange:  " + towerScript.AttackRange + "\n\n Weakness: " + towerScript.bulletPrefab.GetComponent<Witch_Bullet>().weakRate*100 + "%\n\n Weakness Time: "+ towerScript.bulletPrefab.GetComponent<Witch_Bullet>().weakTime ;
+        if(special != "null") str+="\n\n\n\n special: " + special;
+        str +="\n\n\n\n Cost: " + cost;
     }
     public void OnPointerEnter(PointerEventData eventData){
         TooltipScreen.main.SetActive(true);

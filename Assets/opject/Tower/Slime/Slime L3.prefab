@@ -266,7 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bfae6def5c77849a2ff515e382a290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_over: 0
 --- !u!95 &1514277805505369140
 Animator:
   serializedVersion: 5
@@ -739,6 +738,7 @@ MonoBehaviour:
   _name: Big Slime
   tower: {fileID: 5425770091273798401, guid: e275b69429556cc4bbc0819d4fbf47d2, type: 3}
   cost: 38650
+  special: null
 --- !u!1 &6263911996526157712
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +887,7 @@ MonoBehaviour:
   _name: Sticky tower
   tower: {fileID: 5425770091273798401, guid: 26e896505616e014286cb39c8aa8631b, type: 3}
   cost: 38650
+  special: null
 --- !u!1 &8485884658484787462
 GameObject:
   m_ObjectHideFlags: 0

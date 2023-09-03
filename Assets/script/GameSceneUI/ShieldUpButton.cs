@@ -7,10 +7,13 @@ public class ShieldUpbutton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField] string _name;
     [SerializeField] float range;
     [SerializeField] int cost;
+    [SerializeField] string special;
     private string str;
 
     private void Start() {
-        str = "\n " + _name +"\n\n\n\n Range:  " + range + "\n\n\n\n Cost: " + cost;
+        str = "\n " + _name +"\n\n\n\n Range:  " + range ;
+        if(special != "null") str+="\n\n\n\n special: " + special;
+        str += "\n\n\n\n Cost: " + cost;
     }
     public void OnPointerEnter(PointerEventData eventData){
         TooltipScreen.main.SetActive(true);

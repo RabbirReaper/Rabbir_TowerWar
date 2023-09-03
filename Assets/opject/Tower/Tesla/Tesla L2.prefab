@@ -118,7 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bfae6def5c77849a2ff515e382a290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_over: 0
 --- !u!95 &4520530596122795896
 Animator:
   serializedVersion: 5
@@ -531,6 +530,7 @@ MonoBehaviour:
   _name: Tesla L3
   tower: {fileID: 6886352582088729161, guid: d18a880268f63e44e8043d018d6df5ac, type: 3}
   cost: 12000
+  special: Pierces through multiple monsters in line with a deadly laser
 --- !u!1 &6597374403178307306
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightning: {fileID: 1264781525559932590, guid: e877841f9ff565d48a0bb421ecd5161d, type: 3}
   Bullet_speed: 12
+  keepBuff: 0
   Bullet_Damage: 500
   AttackRange: 10
   reload: 1

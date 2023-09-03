@@ -296,7 +296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bfae6def5c77849a2ff515e382a290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_over: 0
 --- !u!95 &994883554727183841
 Animator:
   serializedVersion: 5
@@ -664,6 +663,7 @@ MonoBehaviour:
   _name: Magma L3
   tower: {fileID: 5425770091273798401, guid: b6ec20e5e45f7ac4cbf9cbb58f7fab00, type: 3}
   cost: 13625
+  special: null
 --- !u!1 &7605464674687664407
 GameObject:
   m_ObjectHideFlags: 0

@@ -370,6 +370,8 @@ MonoBehaviour:
   _name: Shield L2
   range: 10
   cost: 26000
+  special: Prevent nearby towers to be affected by bad effects +10% speed for nearby
+    towers
 --- !u!1 &4337030550970467282
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bfae6def5c77849a2ff515e382a290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_over: 0
 --- !u!95 &5410602076744038360
 Animator:
   serializedVersion: 5

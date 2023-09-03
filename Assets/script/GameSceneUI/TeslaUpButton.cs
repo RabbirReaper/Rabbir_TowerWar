@@ -7,10 +7,13 @@ public class TeslaUpButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] string _name;
     [SerializeField] GameObject tower;
     [SerializeField] int cost;
+    [SerializeField] string special;
     private string str;
     private void Start() {
         Tesla_Turret towerScript = tower.GetComponent<Tesla_Turret>();
-        str ="\n " + _name +"\n\n\n\n Damage:  " + towerScript.Bullet_Damage +"\n\n Reload:  " + towerScript.reload + "\n\n AttachRange:  " + towerScript.AttackRange +"\n\n\n\n Cost: " + cost;
+        str ="\n " + _name +"\n\n\n\n Damage:  " + towerScript.Bullet_Damage +"\n\n Reload:  " + towerScript.reload + "\n\n AttachRange:  " + towerScript.AttackRange ;
+        if(special != "null") str+="\n\n\n\n special: " + special;
+        str +="\n\n\n\n Cost: " + cost;
     }
     public void OnPointerEnter(PointerEventData eventData){
         TooltipScreen.main.SetActive(true);

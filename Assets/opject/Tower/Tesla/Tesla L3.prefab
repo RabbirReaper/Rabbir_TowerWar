@@ -232,6 +232,8 @@ MonoBehaviour:
   _name: Beam
   tower: {fileID: 6886352582088729161, guid: ef986ab465e4b5140a037e86e69b68c5, type: 3}
   cost: 37000
+  special: Damage increases with each attack on the same target up to a maximum of 
+    1000%
 --- !u!1 &1102693025586611486
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bfae6def5c77849a2ff515e382a290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_over: 0
 --- !u!95 &1309321490269473308
 Animator:
   serializedVersion: 5
@@ -987,6 +988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightning: {fileID: 1264781525559932590, guid: e877841f9ff565d48a0bb421ecd5161d, type: 3}
   Bullet_speed: 12
+  keepBuff: 0
   Bullet_Damage: 2000
   AttackRange: 12
   reload: 1
@@ -1194,6 +1196,8 @@ MonoBehaviour:
   _name: Lightning
   tower: {fileID: 6886352582088729161, guid: d23d2e7c95af04a4a8b343eece48ea90, type: 3}
   cost: 37000
+  special: Damage increases with each attack on the same target up to a maximum of
+    300%
 --- !u!1001 &558191170102490758
 PrefabInstance:
   m_ObjectHideFlags: 0

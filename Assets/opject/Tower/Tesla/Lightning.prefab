@@ -117,7 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bfae6def5c77849a2ff515e382a290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_over: 0
 --- !u!95 &4520530596122795896
 Animator:
   serializedVersion: 5
@@ -842,7 +841,7 @@ MonoBehaviour:
   Bullet_Damage: 3000
   AttackRange: 12
   reload: 1
-  sellValue: 18600
+  sellValue: 18500
   damageBuffLimit: 3
   slowImage: {fileID: 131834091091808349}
   brokenImage: {fileID: 6683523712773743312}

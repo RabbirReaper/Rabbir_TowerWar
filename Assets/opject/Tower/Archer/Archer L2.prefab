@@ -148,6 +148,7 @@ MonoBehaviour:
   _name: Archer L3
   tower: {fileID: 6886352582088729161, guid: 7c5702c3ba189fe4884ace603b4b3401, type: 3}
   cost: 1340
+  special: null
 --- !u!1 &2527887398834315687
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bfae6def5c77849a2ff515e382a290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_over: 0
 --- !u!95 &7664231597096630777
 Animator:
   serializedVersion: 5

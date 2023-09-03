@@ -714,6 +714,7 @@ MonoBehaviour:
   _name: Witch L2
   tower: {fileID: 5425770091273798401, guid: 010ce135bb178c948a223fbf67363e13, type: 3}
   cost: 5250
+  special: Will target mobs that are no weakened
 --- !u!1 &8700665696282261676
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bfae6def5c77849a2ff515e382a290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_over: 0
 --- !u!95 &1276994205577433270
 Animator:
   serializedVersion: 5

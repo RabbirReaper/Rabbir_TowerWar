@@ -19,9 +19,8 @@ public class TooltipScreen : MonoBehaviour,IPointerExitHandler{
     }
 
     private void Update() {
-        // rectTransform.position = new Vector3(Input.mousePosition.x , Input.mousePosition.y +backGround.sizeDelta.y/2, 0); 
         rectTransform.anchoredPosition = Input.mousePosition / canvasRectTransform.localScale.x;
-        rectTransform.transform.position = new Vector3(rectTransform.transform.position.x + 40f,rectTransform.transform.position.y + 5f,0);
+        rectTransform.transform.position = new Vector3(rectTransform.transform.position.x + 20f,rectTransform.transform.position.y,0);
         if(!UIManager.main.IsHoveringUI()) SetActive(false);
     }
 

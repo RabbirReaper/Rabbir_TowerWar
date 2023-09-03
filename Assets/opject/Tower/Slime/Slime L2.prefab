@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bfae6def5c77849a2ff515e382a290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_over: 0
 --- !u!95 &3327978649026898662
 Animator:
   serializedVersion: 5
@@ -394,6 +393,7 @@ MonoBehaviour:
   _name: Slime L3
   tower: {fileID: 5425770091273798401, guid: 4f80fff76c5ca5b4693a5a7bf38e25a4, type: 3}
   cost: 8650
+  special: null
 --- !u!1 &3297874763142598029
 GameObject:
   m_ObjectHideFlags: 0
