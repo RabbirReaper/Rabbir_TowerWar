@@ -385,6 +385,9 @@ MonoBehaviour:
   enemySpeed: 4
   cost: 1000
   income: 150
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &12494827
 MonoBehaviour:
@@ -4675,6 +4678,9 @@ MonoBehaviour:
   enemySpeed: 3
   cost: 10
   income: 2
+  special: null
+  textHigh: 200
+  textWidth: 180
   unlock: 1000
 --- !u!1001 &157040396
 PrefabInstance:
@@ -6597,6 +6603,9 @@ MonoBehaviour:
   enemySpeed: 4
   cost: 200
   income: 22
+  special: Shoots webs onto towers
+  textHigh: 260
+  textWidth: 180
   unlock: 20000
 --- !u!1001 &214282317
 PrefabInstance:
@@ -16665,6 +16674,9 @@ MonoBehaviour:
   enemySpeed: 3.5
   cost: 30000
   income: 1900
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &652791969
 MonoBehaviour:
@@ -17112,6 +17124,9 @@ MonoBehaviour:
   enemySpeed: 3
   cost: 75
   income: 12
+  special: Zombie spawns three mini zombies upon death
+  textHigh: 270
+  textWidth: 180
   unlock: 10000
 --- !u!1001 &657297549
 PrefabInstance:
@@ -18323,6 +18338,9 @@ MonoBehaviour:
   enemySpeed: 6
   cost: 40000
   income: 2200
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &722786088
 MonoBehaviour:
@@ -21033,6 +21051,9 @@ MonoBehaviour:
   enemySpeed: 7
   cost: 2000
   income: 200
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &886271744
 MonoBehaviour:
@@ -22836,6 +22857,9 @@ MonoBehaviour:
   enemySpeed: 3
   cost: 2000
   income: 200
+  special: null
+  textHigh: 200
+  textWidth: 180
   unlock: 80000
 --- !u!1001 &967090154
 PrefabInstance:
@@ -23361,6 +23385,9 @@ MonoBehaviour:
   enemySpeed: 5
   cost: 60000
   income: 2800
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &973239581
 MonoBehaviour:
@@ -25749,6 +25776,9 @@ MonoBehaviour:
   enemySpeed: 6
   cost: 5000
   income: 450
+  special: null
+  textHigh: 200
+  textWidth: 180
   unlock: 100000
 --- !u!1001 &1093082391
 PrefabInstance:
@@ -26111,6 +26141,9 @@ MonoBehaviour:
   enemySpeed: 4
   cost: 500
   income: 50
+  special: null
+  textHigh: 200
+  textWidth: 180
   unlock: 40000
 --- !u!1 &1101457986
 GameObject:
@@ -26898,6 +26931,12 @@ MonoBehaviour:
   enemySpeed: 8
   cost: 500000
   income: 0
+  special: Boss mobs are super expensive late game mobs with high hitpoints. In exchange
+    for their "boss" nature, they do not grant ANY income at all, so are only useful
+    for stealing lives. All boss mobs, if they reach the end, will not just steal
+    a life but will also teleport back to the start.
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &1129052045
 MonoBehaviour:
@@ -33924,6 +33963,9 @@ MonoBehaviour:
   enemySpeed: 3
   cost: 500
   income: 50
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &1443445560
 MonoBehaviour:
@@ -34077,6 +34119,9 @@ MonoBehaviour:
   enemySpeed: 5
   cost: 15000
   income: 1300
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &1444405419
 MonoBehaviour:
@@ -35124,6 +35169,9 @@ MonoBehaviour:
   enemySpeed: 4
   cost: 10000
   income: 900
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &1506073056
 MonoBehaviour:
@@ -35877,6 +35925,9 @@ MonoBehaviour:
   enemySpeed: 4.5
   cost: 5000
   income: 450
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &1536768377
 MonoBehaviour:
@@ -37228,6 +37279,12 @@ MonoBehaviour:
   enemySpeed: 2.5
   cost: 50000
   income: 0
+  special: Boss mobs are super expensive late game mobs with high hitpoints. In exchange
+    for their "boss" nature, they do not grant ANY income at all, so are only useful
+    for stealing lives. All boss mobs, if they reach the end, will not just steal
+    a life but will also teleport back to the start
+  textHigh: 350
+  textWidth: 340
   unlock: 500000
 --- !u!1001 &1583990035
 PrefabInstance:
@@ -38265,6 +38322,9 @@ MonoBehaviour:
   enemySpeed: 3
   cost: 350
   income: 37
+  special: null
+  textHigh: 200
+  textWidth: 180
   unlock: 30000
 --- !u!1001 &1620962734
 PrefabInstance:
@@ -40210,6 +40270,9 @@ MonoBehaviour:
   enemySpeed: 3.5
   cost: 50
   income: 8
+  special: null
+  textHigh: 200
+  textWidth: 180
   unlock: 5000
 --- !u!1001 &1669147097
 PrefabInstance:
@@ -41640,6 +41703,9 @@ MonoBehaviour:
   enemySpeed: 3
   cost: 1000
   income: 100
+  special: Heals wounded mobs around it
+  textHigh: 270
+  textWidth: 180
   unlock: 60000
 --- !u!1 &1715190664
 GameObject:
@@ -42605,6 +42671,9 @@ MonoBehaviour:
   enemySpeed: 5
   cost: 20000
   income: 1500
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &1742177632
 MonoBehaviour:
@@ -42758,6 +42827,9 @@ MonoBehaviour:
   enemySpeed: 8
   cost: 100000
   income: 3500
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &1747681264
 MonoBehaviour:
@@ -43080,6 +43152,9 @@ MonoBehaviour:
   enemySpeed: 4
   cost: 10000
   income: 850
+  special: Causes nearby towers to malfunction upon death
+  textHigh: 270
+  textWidth: 180
   unlock: 130000
 --- !u!1 &1753937563
 GameObject:
@@ -50364,6 +50439,9 @@ MonoBehaviour:
   enemySpeed: 2.5
   cost: 22
   income: 4
+  special: null
+  textHigh: 200
+  textWidth: 180
   unlock: 2000
 --- !u!1001 &2022560964
 PrefabInstance:
@@ -51318,6 +51396,9 @@ MonoBehaviour:
   enemySpeed: 2
   cost: 5
   income: 1
+  special: null
+  textHigh: 200
+  textWidth: 180
   unlock: 500
 --- !u!1001 &2061161656
 PrefabInstance:
@@ -52045,6 +52126,9 @@ MonoBehaviour:
   enemySpeed: 4
   cost: 100
   income: 14
+  special: null
+  textHigh: 200
+  textWidth: 180
   unlock: 15000
 --- !u!1001 &2089725414
 PrefabInstance:
@@ -52303,6 +52387,9 @@ MonoBehaviour:
   enemySpeed: 5
   cost: 80000
   income: 3200
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &2094666625
 MonoBehaviour:
@@ -52754,6 +52841,9 @@ MonoBehaviour:
   enemySpeed: 7
   cost: 130000
   income: 3800
+  special: 
+  textHigh: 0
+  textWidth: 0
   unlock: 0
 --- !u!114 &2102112183
 MonoBehaviour:

@@ -12,19 +12,17 @@ public class EnemyButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] float enemySpeed;
     [SerializeField] int cost;
     [SerializeField] int income;
+    [SerializeField] string special;
+    [SerializeField] int textHigh;
+    [SerializeField] int textWidth;
     public int unlock;
 
     private Image spawnedImage;
     private TMP_Text text;
-    // private RectTransform uiRectTransform;
-
-    private void Start(){
-        // uiRectTransform = GetComponent<RectTransform>();
-    }
-
+    
     private void Update(){
         if (spawnedImage != null){
-            spawnedImage.transform.position = new Vector3(Input.mousePosition.x + spawnedImage.rectTransform.rect.width*0.5f + 0.1f,Input.mousePosition.y - spawnedImage.rectTransform.rect.height*0.5f-0.1f,0);
+            spawnedImage.transform.position = new Vector3(Input.mousePosition.x + spawnedImage.rectTransform.rect.width*0.5f + 0.1f,Input.mousePosition.y + spawnedImage.rectTransform.rect.height*0.5f-0.1f,0);
         }
     }
 
@@ -32,8 +30,11 @@ public class EnemyButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         spawnedImage = Instantiate(imagePrefab,new Vector3(0,0,0),Quaternion.identity);
         text = spawnedImage.GetComponentInChildren<TMP_Text>();
         spawnedImage.transform.SetParent(transform.parent.parent.parent); // 設定父物件
-        // spawnedImage.rectTransform.sizeDelta = new Vector2(50, 50); // 設定大小
-        text.text = button.name +"\n\nHealth:  " + enemyHp +"\nSpeed:  " + enemySpeed + "\n\nCost:  " + cost + "\nIncome:  +" + income + "\n\nReach " + unlock + " income to unlock next enemy";
+        spawnedImage.rectTransform.sizeDelta = new Vector2(textWidth, textHigh); // 設定大小
+        text.text = button.name +"\n\nHealth:  " + enemyHp +"\nSpeed:  " + enemySpeed + "\n\nCost:  " + cost + "\nIncome:  +" + income ;
+        if(special != "null") text.text = text.text + "\n\nSpecial: " + special;
+        text.text =text.text + "\n\nReach " + unlock + " income to unlock next enemy";
+        
     }
 
     public void OnPointerExit(PointerEventData eventData){
