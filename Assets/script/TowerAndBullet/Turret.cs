@@ -41,7 +41,7 @@ public class Turret : MonoBehaviour{
             if(timeUntilFire <= 0){
                 if(brokenCount == 0) Shoot();
                 else{
-                    Debug.Log("Is Broken");
+                    // Debug.Log("Is Broken");
                     brokenCount--;
                     if(brokenCount == 0) brokenImage.SetActive(false);
                 } 
@@ -52,7 +52,7 @@ public class Turret : MonoBehaviour{
                     timeUntilFire = reload*(1 + slowRate);
                     if(slowCount == 0) slowImage.SetActive(false);
                 }else timeUntilFire=reload;
-                Debug.Log(timeUntilFire);
+                // Debug.Log(timeUntilFire);
             }
         }
     }

@@ -51,7 +51,7 @@ public class Tesla_Turret : MonoBehaviour{
                     damageBuff*=damageBuffRate;
                     if(damageBuff > damageBuffLimit) damageBuff = damageBuffLimit;
                 }else{
-                    Debug.Log("Is Broken");
+                    // Debug.Log("Is Broken");
                     brokenCount--;
                     if(brokenCount == 0) brokenImage.SetActive(false);
                 } 
@@ -62,7 +62,7 @@ public class Tesla_Turret : MonoBehaviour{
                     timeUntilFire = reload*(1 + slowRate);
                     if(slowCount == 0) slowImage.SetActive(false);
                 }else timeUntilFire=reload;
-                Debug.Log(timeUntilFire);
+                // Debug.Log(timeUntilFire);
             }
         }
     }
