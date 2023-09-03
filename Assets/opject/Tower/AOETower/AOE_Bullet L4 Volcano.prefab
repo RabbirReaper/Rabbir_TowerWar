@@ -105,6 +105,7 @@ MonoBehaviour:
   fireRate: 0
   fireTime: 0
   splashRange: 6
+  stun: 1
 --- !u!58 &1236226568314399909
 CircleCollider2D:
   m_ObjectHideFlags: 0

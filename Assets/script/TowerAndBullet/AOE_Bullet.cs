@@ -11,6 +11,7 @@ public class AOE_Bullet : MonoBehaviour{
     [SerializeField] float fireTime;
     public float splashRange;
     Transform Target;
+    [SerializeField] bool stun;
     bool isDestory = false;
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy");
@@ -32,6 +33,9 @@ public class AOE_Bullet : MonoBehaviour{
             for(int i=0;i<(int)inRange.Length;i++){
                 if(inRange[i] == null) continue;
                 inRange[i].gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
+                if(stun && Random.Range(1,100) <= 5){
+                    inRange[i].gameObject.GetComponent<Enemy_Script>().UpdateSpeed(100,100);
+                }
                 if(fireTime != 0) inRange[i].gameObject.GetComponent<Enemy_Script>().UpdateFire(fireRate,fireTime);
             }
             Destroy(gameObject);

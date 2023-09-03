@@ -92,6 +92,10 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         lostUI.transform.Find("Text").GetComponent<TMP_Text>().text = "Income: "+Income+"\nSummon: "+this.GetComponent<EnemySpawn>().Summon.ToString()+"\nKill enemy: "+this.GetComponent<EnemySpawn>().EnemiesDied.ToString()+"\nRank: "+alivePLayer.ToString();
         alivePLayer--;
         Destroy(EnemyParent);
+        StartCoroutine(DisGame());
+    }
+    private IEnumerator DisGame(){
+        yield return new WaitForSeconds(1);
         PhotonNetwork.Disconnect();
     }
     public void YouWin(){

@@ -119,7 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bfae6def5c77849a2ff515e382a290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_over: 0
 --- !u!95 &6574038935444322410
 Animator:
   serializedVersion: 5
@@ -320,6 +319,7 @@ MonoBehaviour:
   _name: Volcano
   tower: {fileID: 5425770091273798401, guid: 5a68704ccd434484ab5c7e42c2fbebcd, type: 3}
   cost: 63625
+  special: Low chance to stun monsters Stunned monsters can't move
 --- !u!1 &2548643384667442638
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +741,7 @@ MonoBehaviour:
   _name: Inferna
   tower: {fileID: 5425770091273798401, guid: d551897abf3707741aefb62c306c8df4, type: 3}
   cost: 63625
+  special: Burning monsters lose 0.5% HP per second
 --- !u!1 &7382548907381633445
 GameObject:
   m_ObjectHideFlags: 0
