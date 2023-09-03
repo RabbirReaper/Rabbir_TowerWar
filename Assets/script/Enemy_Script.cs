@@ -38,6 +38,7 @@ public class Enemy_Script : MonoBehaviour{//
     public int nowStreet = 0;
     List<(float,float)> slowSchedule = new();
     int enemyId;
+    float moveDistence=0;
     public void SetEnemyId(int x){
         enemyId = x;
     }
@@ -56,6 +57,7 @@ public class Enemy_Script : MonoBehaviour{//
         else if(moveRotation == 2) transform.position = new Vector3(transform.position.x,transform.position.y-nowSpeed*Time.deltaTime,transform.position.z);
         else if(moveRotation == 3) transform.position = new Vector3(transform.position.x-nowSpeed*Time.deltaTime,transform.position.y,transform.position.z);
         else if(moveRotation == 4) transform.position = new Vector3(transform.position.x,transform.position.y+nowSpeed*Time.deltaTime,transform.position.z);
+        moveDistence += nowSpeed * Time.deltaTime;
         // if(Vector2.Distance(transform.position,target.position) < 2.5f){
         //     if(WayPointidx<LevelManager_script.main.WayPoints_list.Length-1){
         //         target=LevelManager_script.main.WayPoints_list[++WayPointidx];
@@ -172,5 +174,8 @@ public class Enemy_Script : MonoBehaviour{//
     }
     public float GetNowHealth(){
         return nowHealth;
+    }
+    public float GetMoveDistance(){
+        return moveDistence;
     }
 }

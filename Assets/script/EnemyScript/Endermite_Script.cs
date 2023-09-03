@@ -40,6 +40,6 @@ public class Endermite_Script : MonoBehaviour{
         this.GetComponent<Renderer>().material.color = _tempColor;
         tempSpeed = thisScript.GetNowSpeed();
         thisScript.SetNowSpeed(teleportationSpeed);
-        timer = 0.1f;
+        timer = 0.2f;
     }
 }

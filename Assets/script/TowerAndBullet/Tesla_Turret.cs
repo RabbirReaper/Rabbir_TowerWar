@@ -77,8 +77,16 @@ public class Tesla_Turret : MonoBehaviour{
     }
 
     void FindTarget(){
-        RaycastHit2D hits = Physics2D.CircleCast(transform.position,AttackRange,transform.position,0f,EnemyMask);
-        target = hits.transform;
+        // RaycastHit2D hits = Physics2D.CircleCast(transform.position,AttackRange,transform.position,0f,EnemyMask);
+        // target = hits.transform;
+        Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,AttackRange,EnemyMask);
+        if(inRange.Length != 0) target = inRange[0].transform;
+        for(int i=1;i<(int)inRange.Length;i++){
+            if(inRange[i] == null) continue;
+            if(target.GetComponent<Enemy_Script>().GetMoveDistance() > inRange[i].GetComponent<Enemy_Script>().GetMoveDistance()){
+                target = inRange[i].transform;
+            }
+        }
     }
 
     
