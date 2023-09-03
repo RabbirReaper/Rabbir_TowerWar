@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
+using Photon.Realtime;
 public class LoadSceneManager : MonoBehaviourPunCallbacks{
     [SerializeField] TMP_Text roomCurrentPlayerText;
 
@@ -21,9 +22,12 @@ public class LoadSceneManager : MonoBehaviourPunCallbacks{
     }
     public void QuitGame(){
         PhotonNetwork.Disconnect();
-        SceneManager.LoadScene("BeginScene");
+        
 
         // StartCoroutine(WaitForLeaveAndLoadScene());
+    }
+    public override void OnDisconnected(DisconnectCause cause){
+        SceneManager.LoadScene("BeginScene");
     }
     // public override void OnJoinedRoom(){
     //     roomCurrentPlayerText.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();

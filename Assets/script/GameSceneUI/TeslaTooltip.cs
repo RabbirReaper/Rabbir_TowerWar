@@ -23,9 +23,9 @@ public class TeslaTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         spawnedImage = Instantiate(imagePrefab);
         text = spawnedImage.GetComponentInChildren<TMP_Text>();
         spawnedImage.transform.SetParent(transform.parent.parent); // 設定父物件
-        // spawnedImage.rectTransform.sizeDelta = new Vector2(50, 50); // 設定大小
+        spawnedImage.rectTransform.sizeDelta = new Vector2(200, 310); // 設定大小
         Tesla_Turret towerScript = tower.GetComponent<Tesla_Turret>();
-        text.text = tower.name +"\n\nDamage:  " + towerScript.Bullet_Damage +"\nReload:  " + towerScript.reload + "\nAttachRange:  " + towerScript.AttackRange + "\n\nCost: " + cost;
+        text.text = tower.name +"\n\nDamage:  " + towerScript.Bullet_Damage +"\nReload:  " + towerScript.reload + "\nAttachRange:  " + towerScript.AttackRange+"\n\nScecial: Targets the monster which is farthest from exit until it leaves its range.\nDamage increases with each attack on the same target up to a maximum of 200%." + "\n\nCost: " + cost;
     }
 
     public void OnPointerExit(PointerEventData eventData){

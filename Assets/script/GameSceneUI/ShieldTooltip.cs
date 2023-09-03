@@ -23,9 +23,9 @@ public class ShieldTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         spawnedImage = Instantiate(imagePrefab);
         text = spawnedImage.GetComponentInChildren<TMP_Text>();
         spawnedImage.transform.SetParent(transform.parent.parent); // 設定父物件
-        spawnedImage.rectTransform.sizeDelta = new Vector2(150, 150); // 設定大小
+        spawnedImage.rectTransform.sizeDelta = new Vector2(150, 200); // 設定大小
         Villager_Turret towerScript = tower.GetComponent<Villager_Turret>();
-        text.text = tower.name +"\n\nRange:  " + towerScript.protectRange + "\n\nCost: " + cost;
+        text.text = tower.name +"\n\nRange:  " + towerScript.protectRange + "\n\nSpecial: Prevent nearby towers to be affected by bad effects" +"\n\nCost: " + cost;
     }
 
     public void OnPointerExit(PointerEventData eventData){

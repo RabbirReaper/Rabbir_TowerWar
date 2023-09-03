@@ -23,9 +23,9 @@ public class SlimeTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         spawnedImage = Instantiate(imagePrefab);
         text = spawnedImage.GetComponentInChildren<TMP_Text>();
         spawnedImage.transform.SetParent(transform.parent.parent); // 設定父物件
-        // spawnedImage.rectTransform.sizeDelta = new Vector2(50, 50); // 設定大小
+        spawnedImage.rectTransform.sizeDelta = new Vector2(200, 210); // 設定大小
         Slime_Turret towerScript = tower.GetComponent<Slime_Turret>();
-        text.text = tower.name +"\n\nDamage:  " + towerScript.bulletPrefab.GetComponent<Slime_Bullet>().Bullet_Damage +"\nReload:  " + towerScript.reload + "\nAttachRange:  " + towerScript.AttackRange + "\nSplash: " +towerScript.bulletPrefab.GetComponent<Slime_Bullet>().slowRange +"\n\nCost: " + cost;
+        text.text = tower.name +"\n\nDamage:  " + towerScript.bulletPrefab.GetComponent<Slime_Bullet>().Bullet_Damage +"\nReload:  " + towerScript.reload + "\nAttachRange:  " + towerScript.AttackRange + "\nSplash: " +towerScript.bulletPrefab.GetComponent<Slime_Bullet>().slowRange+ "\n\nSpecial: Splash Damage and Slow down monsters" +"\n\nCost: " + cost;
     }
 
     public void OnPointerExit(PointerEventData eventData){

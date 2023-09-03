@@ -23,9 +23,9 @@ public class MagmaTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         spawnedImage = Instantiate(imagePrefab);
         text = spawnedImage.GetComponentInChildren<TMP_Text>();
         spawnedImage.transform.SetParent(transform.parent.parent); // 設定父物件
-        // spawnedImage.rectTransform.sizeDelta = new Vector2(50, 50); // 設定大小
+        spawnedImage.rectTransform.sizeDelta = new Vector2(200, 200); // 設定大小
         AOE_Turret towerScript = tower.GetComponent<AOE_Turret>();
-        text.text = tower.name +"\n\nDamage:  " + towerScript.bulletPrefab.GetComponent<AOE_Bullet>().Bullet_Damage +"\nReload:  " + towerScript.reload + "\nAttachRange:  " + towerScript.AttackRange + "\nSplash: " + towerScript.bulletPrefab.GetComponent<AOE_Bullet>().splashRange + "\n\nCost: " + cost;
+        text.text = tower.name +"\n\nDamage:  " + towerScript.bulletPrefab.GetComponent<AOE_Bullet>().Bullet_Damage +"\nReload:  " + towerScript.reload + "\nAttachRange:  " + towerScript.AttackRange + "\nSplash: " + towerScript.bulletPrefab.GetComponent<AOE_Bullet>().splashRange + "\n\nSpecial: Splash damage" +"\n\nCost: " + cost;
     }
 
     public void OnPointerExit(PointerEventData eventData){
