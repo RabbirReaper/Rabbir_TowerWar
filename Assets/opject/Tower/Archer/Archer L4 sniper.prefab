@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4531542335940674625}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Turret, Assembly-CSharp
         m_MethodName: SellingTower
         m_Mode: 1
@@ -347,7 +347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5721783999316987178}
-  - component: {fileID: 4531542335940674625}
+  - component: {fileID: 2925832987948903444}
   - component: {fileID: -3936533003070748790}
   - component: {fileID: 2596795430276517139}
   m_Layer: 10
@@ -376,7 +376,7 @@ Transform:
   - {fileID: 6496026782433341532}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4531542335940674625
+--- !u!114 &2925832987948903444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6886352582088729161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7297ac9cc61be419851f72dcc35f3c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f26915b8de86ff4ba9e613750e967dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   barrel: {fileID: 2527887398834315687}
@@ -566,7 +566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bfae6def5c77849a2ff515e382a290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouse_over: 0
 --- !u!95 &5554335413752324619
 Animator:
   serializedVersion: 5
