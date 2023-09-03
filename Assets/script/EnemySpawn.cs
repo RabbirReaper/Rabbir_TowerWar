@@ -50,6 +50,7 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
         tempEnemy.transform.SetParent(EnemyParent.transform);
         tempEnemy.GetComponent<Enemy_Script>().ownPlayer = Info.Sender;
         tempEnemy.GetComponent<Enemy_Script>().SetEnemyId(id);
+         tempEnemy.GetComponent<Enemy_Script>().hpUI.color = color[Info.Sender.ActorNumber-1];
         LevelManager_script.main.UpdateEnemyStreet(Info.Sender,0,1);
     }
 

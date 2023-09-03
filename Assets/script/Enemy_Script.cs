@@ -13,7 +13,7 @@ public class Enemy_Script : MonoBehaviour{//
     public int cost; 
     public int currencyWorth;
     [SerializeField] float speed;
-    [SerializeField] Image hpUI;
+    public Image hpUI;
 
 
     public bool isDestory = false;
