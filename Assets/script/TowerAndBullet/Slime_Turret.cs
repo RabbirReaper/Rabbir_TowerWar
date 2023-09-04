@@ -28,7 +28,7 @@ public class Slime_Turret : MonoBehaviour{
     float timeUntilFire;
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy","Ghost");
-        shieldMask = LayerMask.GetMask("shield");
+        shieldMask = LayerMask.GetMask("Shield");
         float temp = AttackRange*2;
         attackRangeImage.transform.localScale = new Vector3(temp,temp,temp);
     }

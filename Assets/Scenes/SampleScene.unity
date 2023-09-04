@@ -49967,7 +49967,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 812090998}
         m_TargetAssemblyTypeName: SettingUI_Script, Assembly-CSharp
         m_MethodName: TurnSettingUI
         m_Mode: 1
