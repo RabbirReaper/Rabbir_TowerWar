@@ -14,8 +14,7 @@ public class EndTrigger_Script : MonoBehaviour{
                 LevelManager_script.main.UpdateEnemyStreet(_player,4,-1);
                 LevelManager_script.main.UpdateEnemyStreet(_player,0,1);
             }else{
-                LevelManager_script.main.UpdateEnemyStreet(other.GetComponent<Enemy_Script>().ownPlayer,4,-1);
-                Destroy(other);
+                other.GetComponent<Enemy_Script>().CorrectDied();
             }
         }
         

@@ -43,6 +43,7 @@ public class Menu_Script : MonoBehaviour{
         IncomeGI.text = LevelManager_script.main.Income.ToString();
         if(LevelManager_script.main.Income >= incomeLevel[nowIncomeLevel]){  
             EnemyUI[nowIncomeLevel*2].SetActive(false);
+            EnemyUI[nowIncomeLevel*2].GetComponent<EnemyButtonUI>().OnPointerExit(null);
             EnemyUI[nowIncomeLevel*2+1].SetActive(true);
             nowIncomeLevel++;
         }
