@@ -19,6 +19,7 @@ public class Zombie_Script : MonoBehaviour{
             _smellZombie.ownPlayer = thisEnemy_Script.ownPlayer;
             _smellZombie.moveRotation = thisEnemy_Script.moveRotation;
             _smellZombie.nowStreet = thisEnemy_Script.nowStreet;
+            _smellZombie.GetComponent<Enemy_Script>().hpUI.color = thisEnemy_Script.hpUI.color;
             _smellZombie.SetEnemyId(0);
             LevelManager_script.main.UpdateEnemyStreet(thisEnemy_Script.ownPlayer,thisEnemy_Script.nowStreet,1);
         }
