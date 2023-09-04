@@ -24870,13 +24870,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2067158302}
-  - {fileID: 1051938617}
+  - {fileID: 466315650}
   - {fileID: 620137531}
-  - {fileID: 264607719}
   - {fileID: 251949559}
+  - {fileID: 1051938617}
+  - {fileID: 264607719}
   - {fileID: 430951987}
   - {fileID: 1318116508}
-  - {fileID: 466315650}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1013478489
@@ -31195,7 +31195,7 @@ MonoBehaviour:
   - {fileID: 2084795376}
   Interval: 10
   Income: 5
-  Gold: 100
+  Gold: 100000
   Next_Income: 0
   teamColor: {fileID: 1314175617}
   lostUI: {fileID: 1596922425}

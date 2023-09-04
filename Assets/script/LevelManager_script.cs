@@ -99,15 +99,6 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         // Destroy(EnemyParent);
         StartCoroutine(DisGame());
     }
-
-    // [PunRPC]
-    // public void RPCalivePLayerUpdate(){
-    //     alivePLayer--;
-    //     if(alivePLayer == 1){
-    //         isEnd = true;
-    //         YouWin();
-    //     }
-    // }
     public void Surrender(){
         YouLose();
     }
@@ -115,6 +106,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         StartCoroutine(LeavingGame());
     }
     private IEnumerator LeavingGame(){
+        if(PhotonNetwork.IsConnected) PhotonNetwork.Disconnect();;
         while(PhotonNetwork.IsConnected){
             yield return null;
         }
@@ -125,7 +117,11 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         foreach (Transform item in EnemyParent.transform){
             item.GetComponent<Enemy_Script>().CorrectDied();
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
+        foreach (Transform item in EnemyParent.transform){
+            item.GetComponent<Enemy_Script>().CorrectDied();
+        }
+        yield return new WaitForSeconds(1);
         PhotonNetwork.Disconnect();
     }
     public void YouWin(){
@@ -165,6 +161,16 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     
     public override void OnPlayerLeftRoom(Player otherPlayer){
         alivePLayer--;
+        foreach (Transform item in EnemyParent.transform){
+            if(item.GetComponent<Enemy_Script>().ownPlayer.IsInactive){
+                item.GetComponent<Enemy_Script>().CorrectDied();
+            }
+        }
+        foreach (Transform item in EnemyParent.transform){
+            if(item.GetComponent<Enemy_Script>().ownPlayer.IsInactive){
+                item.GetComponent<Enemy_Script>().CorrectDied();
+            }
+        }
         if(alivePLayer == 1){
             isEnd = true;
             YouWin();
@@ -207,7 +213,6 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     [PunRPC]
     private void RPCEnemyIsDied(int _enemyId){
         enemyIdArray[_enemyId]--;
-        Debug.Log(_enemyId + "-> "+enemyIdArray[_enemyId]);
         if(enemyIdArray[_enemyId] == _enemyIdArray[_enemyId]-2){
             enemySpawnLimit++;
             enemySpawnLimitUI.text = enemySpawnLimit.ToString();

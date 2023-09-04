@@ -11,8 +11,8 @@ public class Zombie_Script : MonoBehaviour{
     
     private void OnDestroy() {
         for(int i=0;i<3;i++){
-            GameObject smellZombieOBJ = Instantiate(smellZombie,new Vector3(Random.Range(transform.position.x-1,transform.position.x+1),Random.Range(transform.position.y-1,transform.position.y+1),0 ),Quaternion.identity);
             if(LevelManager_script.main.isEnd) return;
+            GameObject smellZombieOBJ = Instantiate(smellZombie,new Vector3(Random.Range(transform.position.x-1,transform.position.x+1),Random.Range(transform.position.y-1,transform.position.y+1),0 ),Quaternion.identity);
             smellZombieOBJ.transform.SetParent(EnemyParent.transform);
             Enemy_Script thisEnemy_Script = this.GetComponent<Enemy_Script>();
             Enemy_Script _smellZombie = smellZombieOBJ.GetComponent<Enemy_Script>();
