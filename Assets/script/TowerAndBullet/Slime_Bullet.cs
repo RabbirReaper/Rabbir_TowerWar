@@ -13,7 +13,7 @@ public class Slime_Bullet : MonoBehaviour{
     Transform Target;
     bool isDestory = false;
     private void Start() {
-        EnemyMask = LayerMask.GetMask("Enemy");
+        EnemyMask = LayerMask.GetMask("Enemy","Ghost");
     }
     public void SetTarget(Transform _Target){
         Target =_Target;

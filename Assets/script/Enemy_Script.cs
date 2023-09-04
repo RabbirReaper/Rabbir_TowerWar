@@ -39,6 +39,7 @@ public class Enemy_Script : MonoBehaviour{//
     List<(float,float)> slowSchedule = new();
     int enemyId;
     float moveDistence=0;
+    bool inEndTrigger = false;
     public void SetEnemyId(int x){
         enemyId = x;
     }
@@ -172,5 +173,11 @@ public class Enemy_Script : MonoBehaviour{//
     }
     public float GetMoveDistance(){
         return moveDistence;
+    }
+    public void SetinEndTrigger(bool x){
+        inEndTrigger = x;
+    }
+    public bool GetinEndTrigger(){
+        return inEndTrigger;
     }
 }

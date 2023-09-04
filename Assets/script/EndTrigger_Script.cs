@@ -4,7 +4,6 @@ using Photon.Realtime;
 using UnityEngine;
 
 public class EndTrigger_Script : MonoBehaviour{
-    const int INF = 2147483647;
     private void OnTriggerExit2D(Collider2D other) {
         if(other == null ||  other.GetComponent<Enemy_Script>().isDestory) return;
         if(other.gameObject.layer == LayerMask.NameToLayer("Ghost")){
@@ -16,6 +15,5 @@ public class EndTrigger_Script : MonoBehaviour{
             other.GetComponent<Enemy_Script>().CorrectDied();
         }
         LevelManager_script.main.HpUpdate(-1,other.GetComponent<Enemy_Script>().ownPlayer);
-        
     }
 }

@@ -26,15 +26,22 @@ public class EnemySpawn : MonoBehaviourPunCallbacks{
     void EnemyDestoryed(){
         EnemiesDied++;
     }
-    public void SpawnEnemy(int x){
+    public void SpawnEnemy(int x){//13 27 is boss
         if(LevelManager_script.main.isEnd) return;
         if(Enemy_list[x].GetComponent<Enemy_Script>().cost > LevelManager_script.main.Gold) return;
-        int temp = LevelManager_script.main.GetEnemyId();
-        if(temp == -1) return; // enemySpawnLimit <= 0
-        LevelManager_script.main.SpendCurrency(Enemy_list[x].GetComponent<Enemy_Script>().cost);
-        LevelManager_script.main.IncreaseIncome(Enemy_list[x].GetComponent<Enemy_Script>().currencyWorth);
-        Summon++;
-        _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x,temp);
+        if(x == 13 || x == 27){
+            LevelManager_script.main.SpendCurrency(Enemy_list[x].GetComponent<Enemy_Script>().cost);
+            LevelManager_script.main.IncreaseIncome(Enemy_list[x].GetComponent<Enemy_Script>().currencyWorth);
+            Summon++;
+            _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x,0);
+        }else{
+            int temp = LevelManager_script.main.GetEnemyId();
+            if(temp == -1) return; // enemySpawnLimit <= 0
+            LevelManager_script.main.SpendCurrency(Enemy_list[x].GetComponent<Enemy_Script>().cost);
+            LevelManager_script.main.IncreaseIncome(Enemy_list[x].GetComponent<Enemy_Script>().currencyWorth);
+            Summon++;
+            _pV.RPC("RPCSpawnEnemy",RpcTarget.Others,x,temp);
+        }
     }
     
     // public void SpawnEnemy(int x){ //test
