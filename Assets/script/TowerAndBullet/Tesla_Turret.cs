@@ -30,7 +30,7 @@ public class Tesla_Turret : MonoBehaviour{
     int brokenCount = 0;
 
     private void Start() {
-        EnemyMask = LayerMask.GetMask("Enemy","Ghost");
+        EnemyMask = LayerMask.GetMask("Enemy","Ghost","Rider");
         shieldMask = LayerMask.GetMask("Shield");
         nowLightning = Instantiate(lightning,this.transform);
         float temp = AttackRange*2;
