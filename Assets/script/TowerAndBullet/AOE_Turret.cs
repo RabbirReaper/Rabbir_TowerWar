@@ -20,6 +20,7 @@ public class AOE_Turret : MonoBehaviour{
     [SerializeField] GameObject brokenImage;
     int brokenCount = 0;
     [SerializeField] GameObject slowImage;
+    [SerializeField] GameObject attackRangeImage;
 
     int slowCount = 0;
     float slowRate;
@@ -30,6 +31,8 @@ public class AOE_Turret : MonoBehaviour{
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy","Ghost");
         shieldMask = LayerMask.GetMask("shield");
+        float temp = AttackRange*2;
+        attackRangeImage.transform.localScale = new Vector3(temp,temp,temp);
     }
     private void Update() {
         timeUntilFire -= Time.deltaTime;

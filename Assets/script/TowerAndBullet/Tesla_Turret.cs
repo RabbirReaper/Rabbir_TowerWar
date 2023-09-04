@@ -22,6 +22,7 @@ public class Tesla_Turret : MonoBehaviour{
     float damageBuffRate=1.1f;
     [SerializeField] float damageBuffLimit;
     [SerializeField] GameObject slowImage;
+    [SerializeField] GameObject attackRangeImage;
 
     int slowCount = 0;
     float slowRate;
@@ -32,6 +33,8 @@ public class Tesla_Turret : MonoBehaviour{
         EnemyMask = LayerMask.GetMask("Enemy","Ghost");
         shieldMask = LayerMask.GetMask("Shield");
         nowLightning = Instantiate(lightning,this.transform);
+        float temp = AttackRange*2;
+        attackRangeImage.transform.localScale = new Vector3(temp,temp,temp);
     }
     private void Update() {
         timeUntilFire -= Time.deltaTime;

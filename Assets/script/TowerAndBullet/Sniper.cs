@@ -20,6 +20,7 @@ public class Sniper : MonoBehaviour{
     float timeUntilFire=0;
     [SerializeField] GameObject slowImage;
     [SerializeField] GameObject brokenImage;
+    [SerializeField] GameObject attackRangeImage;
     int slowCount = 0;
     float slowRate;
     int brokenCount = 0;
@@ -28,6 +29,8 @@ public class Sniper : MonoBehaviour{
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy","Ghost");
         shieldMask = LayerMask.GetMask("Shield");
+        float temp = AttackRange*2;
+        attackRangeImage.transform.localScale = new Vector3(temp,temp,temp);
     }
     private void Update() {
         timeUntilFire -= Time.deltaTime;
