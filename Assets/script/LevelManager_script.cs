@@ -37,6 +37,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     }
     private void Start() {
         _enemyIdArray[0] = 10;
+        enemyIdArray[0] = -1;
         for(int i=1999;i>=1;i--){
             enemyIdStack.Push(i);
         }

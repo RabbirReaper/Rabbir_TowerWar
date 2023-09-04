@@ -19,6 +19,7 @@ public class Slime_Turret : MonoBehaviour{
     Transform target;
     [SerializeField] GameObject slowImage;
     [SerializeField] GameObject brokenImage;
+    [SerializeField] GameObject attackRangeImage;
     int brokenCount = 0;
 
     int slowCount = 0;
@@ -28,6 +29,8 @@ public class Slime_Turret : MonoBehaviour{
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy","Ghost");
         shieldMask = LayerMask.GetMask("shield");
+        float temp = AttackRange*2;
+        attackRangeImage.transform.localScale = new Vector3(temp,temp,temp);
     }
     private void Update() {
         timeUntilFire -= Time.deltaTime;
