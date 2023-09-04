@@ -8,9 +8,11 @@ using UnityEngine.SceneManagement;
 public class StartPlayGame : MonoBehaviourPunCallbacks{
     [SerializeField] Button startGameButton;
     [SerializeField] byte maxPlayers;
+    [SerializeField] AudioClip buttonClip;
 
     public void JoinRandRoom(){
         if(PhotonNetwork.IsConnectedAndReady){
+            SoundManager.main.PlaySound(buttonClip);
             PhotonNetwork.JoinRandomRoom();
         }
     }

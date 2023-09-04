@@ -637,6 +637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomCurrentPlayerText: {fileID: 941161849}
+  buttonClip: {fileID: 8300000, guid: 568984f9b1ced284b86c9bbed973f5d4, type: 3}
 --- !u!1 &1322069361
 GameObject:
   m_ObjectHideFlags: 0

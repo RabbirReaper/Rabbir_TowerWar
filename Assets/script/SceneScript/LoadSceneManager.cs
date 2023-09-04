@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using Photon.Realtime;
 public class LoadSceneManager : MonoBehaviourPunCallbacks{
     [SerializeField] TMP_Text roomCurrentPlayerText;
+    [SerializeField] AudioClip buttonClip;
 
     private void Start() {
         roomCurrentPlayerText.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
@@ -21,9 +22,8 @@ public class LoadSceneManager : MonoBehaviourPunCallbacks{
         
     }
     public void QuitGame(){
+         SoundManager.main.PlaySound(buttonClip);
         PhotonNetwork.Disconnect();
-        
-
         // StartCoroutine(WaitForLeaveAndLoadScene());
     }
     public override void OnDisconnected(DisconnectCause cause){

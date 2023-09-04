@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class LobbySceneScript : MonoBehaviourPunCallbacks{
     [SerializeField] TMP_Text offlineOrOnline;
     [SerializeField] TMP_Text connectPlayerCount;
+    [SerializeField] GameObject optionMenu;
+    bool optionMenuIsOpen = false;
     
     private void Start() {
         if(PhotonNetwork.IsConnected == false){
@@ -31,6 +33,11 @@ public class LobbySceneScript : MonoBehaviourPunCallbacks{
         // if(PhotonNetwork.IsConnectedAndReady) Debug.Log("I am ready");
         // else if(PhotonNetwork.IsConnected) Debug.Log("I am not ready");
         // else Debug.Log("I am not connect");
+    }
+
+    public void SwitchOptionMenu(){
+        optionMenuIsOpen = !optionMenuIsOpen;
+        optionMenu.SetActive(optionMenuIsOpen);
     }
     public void OuitGame(){
         Application.Quit();
