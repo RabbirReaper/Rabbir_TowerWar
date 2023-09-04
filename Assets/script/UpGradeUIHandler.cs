@@ -15,8 +15,8 @@ public class UpGradeUIHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnPointerExit(PointerEventData eventData){
         mouse_over=false;
         UIManager.main.SetHoveringStatie(false);
-        attackRangeImage.SetActive(false);
         gameObject.SetActive(false);
+        attackRangeImage.SetActive(false);
     }
     
 
