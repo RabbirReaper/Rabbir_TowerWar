@@ -31248,7 +31248,7 @@ MonoBehaviour:
   - {fileID: 2084795376}
   Interval: 10
   Income: 5
-  Gold: 100
+  Gold: 1000000
   Next_Income: 0
   teamColor: {fileID: 1314175617}
   lostUI: {fileID: 1596922425}
