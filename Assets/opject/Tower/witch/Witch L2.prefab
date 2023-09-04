@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7645419958237979238}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8608080938823796562}
   - component: {fileID: 275502253258531149}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4687608216872414451}
   - component: {fileID: 6032358684572884476}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 9066098894970318772}
   - component: {fileID: 753357232913506003}
   - component: {fileID: 4421348148791857952}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Witch L2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 6583285004993422025}
   - component: {fileID: 9179878343262904065}
   - component: {fileID: 7830019868029663587}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: UpGradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 8663902838996718463}
   - component: {fileID: 5594580812159864718}
   - component: {fileID: 6726055759035765990}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 8356575135409162354}
   - component: {fileID: 309125467930814174}
   - component: {fileID: 2045709059246400810}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -683,7 +683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2699942511703847135}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: RotateCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5294570023373092392}
   - component: {fileID: 2693211857812209322}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: AttackRangeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,6 +808,10 @@ PrefabInstance:
       value: spider-web
       objectReference: {fileID: 0}
     - target: {fileID: 4183015516659624473, guid: c5f810e0e1c62fe42807be3c0829894e, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183015516659624473, guid: c5f810e0e1c62fe42807be3c0829894e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -877,6 +881,10 @@ PrefabInstance:
     - target: {fileID: 6802315808198275090, guid: 8af64a674e64d20418ccb6ca85067dc6, type: 3}
       propertyPath: m_Name
       value: explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802315808198275090, guid: 8af64a674e64d20418ccb6ca85067dc6, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6802315808198275090, guid: 8af64a674e64d20418ccb6ca85067dc6, type: 3}
       propertyPath: m_IsActive

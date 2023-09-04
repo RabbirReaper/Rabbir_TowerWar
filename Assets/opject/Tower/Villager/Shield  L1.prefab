@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1172435585574558035}
   - component: {fileID: 7852596335578021967}
   - component: {fileID: 1209687215726069526}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 788390820400829874}
   - component: {fileID: 2727016334251394067}
   - component: {fileID: 6244602621070004637}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2518423666368255283}
   - component: {fileID: 786091069256581452}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: AttackRangeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 5261468878512011890}
   - component: {fileID: 1964527595955324706}
   - component: {fileID: 6517127376441462685}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: UpGrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 2318612679707125296}
   - component: {fileID: 2870207553082384112}
   - component: {fileID: 5410602076744038360}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: UpGradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4457472299956369265}
   - component: {fileID: 4501389732569342017}
   - component: {fileID: 4520530596122795896}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: UpGradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 242875911472927548}
   - component: {fileID: 5667625343857220306}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: towerpicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3010072955284839285}
   - component: {fileID: 980611852606363184}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: AttackRangeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 6688539615103995374}
   - component: {fileID: 2558275650980598035}
   - component: {fileID: 4115577905513417532}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4158264148134828056}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Firingpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 7686769945914730474}
   - component: {fileID: 7701376229736240225}
   - component: {fileID: 6763691437416734383}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: UpGrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 2371980913208512509}
   - component: {fileID: 5098860034949139960}
   - component: {fileID: 1128238791497286521}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 4531542335940674625}
   - component: {fileID: 2549813068709215598}
   - component: {fileID: 9169765587353614844}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Archer L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,6 +837,10 @@ PrefabInstance:
       value: explosion
       objectReference: {fileID: 0}
     - target: {fileID: 6802315808198275090, guid: 8af64a674e64d20418ccb6ca85067dc6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802315808198275090, guid: 8af64a674e64d20418ccb6ca85067dc6, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -918,6 +922,10 @@ PrefabInstance:
     - target: {fileID: 4183015516659624473, guid: c5f810e0e1c62fe42807be3c0829894e, type: 3}
       propertyPath: m_Name
       value: spider-web
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183015516659624473, guid: c5f810e0e1c62fe42807be3c0829894e, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4183015516659624473, guid: c5f810e0e1c62fe42807be3c0829894e, type: 3}
       propertyPath: m_IsActive

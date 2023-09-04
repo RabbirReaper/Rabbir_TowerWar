@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7645419958237979238}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2324162302035563035}
   - component: {fileID: 4354551452567131142}
   - component: {fileID: 3327978649026898662}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: UpGradeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 1206724576348680048}
   - component: {fileID: 1082855574199173038}
   - component: {fileID: 4236510308902123304}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 3792063083727098673}
   - component: {fileID: 6182212094213649341}
   - component: {fileID: 8296192916038667487}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: UpGrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 6629628839241057496}
   - component: {fileID: 7024046630078948405}
   - component: {fileID: 791392984507202976}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9092613242057320071}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: RotateCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5553711328732621576}
   - component: {fileID: 8560503367197309957}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: AttackRangeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4687608216872414451}
   - component: {fileID: 6032358684572884476}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 5630527622020842355}
   - component: {fileID: 121738703451113332}
   - component: {fileID: 1047474858646736017}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Slime L2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -867,7 +867,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8814255822497523707}
   - component: {fileID: 1275303489276519438}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -958,6 +958,10 @@ PrefabInstance:
       value: spider-web
       objectReference: {fileID: 0}
     - target: {fileID: 4183015516659624473, guid: c5f810e0e1c62fe42807be3c0829894e, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183015516659624473, guid: c5f810e0e1c62fe42807be3c0829894e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1027,6 +1031,10 @@ PrefabInstance:
     - target: {fileID: 6802315808198275090, guid: 8af64a674e64d20418ccb6ca85067dc6, type: 3}
       propertyPath: m_Name
       value: explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802315808198275090, guid: 8af64a674e64d20418ccb6ca85067dc6, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6802315808198275090, guid: 8af64a674e64d20418ccb6ca85067dc6, type: 3}
       propertyPath: m_IsActive
