@@ -14,7 +14,7 @@ public class Enemy_Script : MonoBehaviour{//
     public int currencyWorth;
     [SerializeField] float speed;
     public Image hpUI;
-
+    [SerializeField] GameObject FireUI;
 
     public bool isDestory = false;
     public bool isSlowed = false;
@@ -82,7 +82,10 @@ public class Enemy_Script : MonoBehaviour{//
                 // FireDamage(fireRate);
                 TimerTemp=0;
             }
-            if(timer_fire < 0) isFire=false;
+            if(timer_fire < 0){
+                FireUI.SetActive(false);
+                isFire=false;
+            } 
         }
         if(isWeak){
             timer_weak-=Time.deltaTime;
@@ -147,6 +150,7 @@ public class Enemy_Script : MonoBehaviour{//
     public void UpdateFire(float _fireRate,float continuedFiretime){
         fireRate = _fireRate;
         timer_fire = continuedFiretime;
+        FireUI.SetActive(true);
         isFire = true;
     }
     public void UpdateWeak(float _weakRate,float continueTime){
