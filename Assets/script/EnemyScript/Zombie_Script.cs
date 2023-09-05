@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 public class Zombie_Script : MonoBehaviour{
@@ -10,8 +12,10 @@ public class Zombie_Script : MonoBehaviour{
     }
     
     private void OnDestroy() {
+        if(LevelManager_script.main.isEnd) return;
+        Player[] playersInRoom = PhotonNetwork.PlayerList;
+        if(!System.Array.Exists(playersInRoom, player => player == this.GetComponent<Enemy_Script>().ownPlayer)) return;
         for(int i=0;i<3;i++){
-            if(LevelManager_script.main.isEnd) return;
             GameObject smellZombieOBJ = Instantiate(smellZombie,new Vector3(Random.Range(transform.position.x-1,transform.position.x+1),Random.Range(transform.position.y-1,transform.position.y+1),0 ),Quaternion.identity);
             smellZombieOBJ.transform.SetParent(EnemyParent.transform);
             Enemy_Script thisEnemy_Script = this.GetComponent<Enemy_Script>();

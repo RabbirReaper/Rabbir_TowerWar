@@ -6,6 +6,7 @@ using Photon.Pun;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LevelManager_script : MonoBehaviourPunCallbacks{
     public static LevelManager_script main;
@@ -117,11 +118,12 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         foreach (Transform item in EnemyParent.transform){
             item.GetComponent<Enemy_Script>().CorrectDied();
         }
-        yield return new WaitForSeconds(1f);
-        foreach (Transform item in EnemyParent.transform){
-            item.GetComponent<Enemy_Script>().CorrectDied();
-        }
-        yield return new WaitForSeconds(1);
+        // yield return new WaitForSeconds(1f);
+        // foreach (Transform item in EnemyParent.transform){
+        //     item.GetComponent<Enemy_Script>().CorrectDied();
+        // }
+        // yield return new WaitForSeconds(1);
+        yield return null;
         PhotonNetwork.Disconnect();
     }
     public void YouWin(){
@@ -161,13 +163,9 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     
     public override void OnPlayerLeftRoom(Player otherPlayer){
         alivePLayer--;
+        Player[] playersInRoom = PhotonNetwork.PlayerList;
         foreach (Transform item in EnemyParent.transform){
-            if(item.GetComponent<Enemy_Script>().ownPlayer.IsInactive){
-                item.GetComponent<Enemy_Script>().CorrectDied();
-            }
-        }
-        foreach (Transform item in EnemyParent.transform){
-            if(item.GetComponent<Enemy_Script>().ownPlayer.IsInactive){
+            if(!Array.Exists(playersInRoom, player => player == item.GetComponent<Enemy_Script>().ownPlayer)){
                 item.GetComponent<Enemy_Script>().CorrectDied();
             }
         }
