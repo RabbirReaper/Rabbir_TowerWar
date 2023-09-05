@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour{
 
     [SerializeField] Rigidbody2D Rb;
-    [SerializeField] float Bullet_speed;
+    public float Bullet_speed;
     public float Bullet_Damage;
     Transform Target;
     bool isDestory = false;

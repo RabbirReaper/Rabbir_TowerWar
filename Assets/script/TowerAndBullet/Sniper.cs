@@ -21,6 +21,7 @@ public class Sniper : MonoBehaviour{
     [SerializeField] GameObject slowImage;
     [SerializeField] GameObject brokenImage;
     [SerializeField] GameObject attackRangeImage;
+    [SerializeField] AudioClip shootClip;
     int slowCount = 0;
     float slowRate;
     int brokenCount = 0;
@@ -63,8 +64,11 @@ public class Sniper : MonoBehaviour{
 
     void Shoot(){
         GameObject bulletobj = Instantiate(bulletPrefab,firingPoint.position,Quaternion.identity);
+        SoundManager.main.PlaySound(shootClip);
         Bullet bulletScript = bulletobj.GetComponent<Bullet>();
         bulletScript.Bullet_Damage*=buff;
+        bulletScript.Bullet_speed = Vector2.Distance(target.position,transform.position)/2;
+        if(bulletScript.Bullet_speed < 12) bulletScript.Bullet_speed = 12;
         bulletScript.SetTarget(target);
         buff = 1;
     }

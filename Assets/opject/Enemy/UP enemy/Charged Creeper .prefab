@@ -413,6 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionRange: 8
   brokenCount: 10
+  bombClip: {fileID: 8300000, guid: 08022744c92411e4fb7d4e3960b38aba, type: 3}
 --- !u!58 &1569181874396882892
 CircleCollider2D:
   m_ObjectHideFlags: 0

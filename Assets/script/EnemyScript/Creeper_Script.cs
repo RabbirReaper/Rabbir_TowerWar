@@ -6,6 +6,7 @@ using UnityEngine;
 public class Creeper_Script : MonoBehaviour{
     [SerializeField] float explosionRange;
     [SerializeField] int brokenCount;
+    [SerializeField] AudioClip bombClip;
 
     LayerMask layerMask;
     private void Start() {
@@ -14,6 +15,7 @@ public class Creeper_Script : MonoBehaviour{
 
     private void OnDestroy() {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRange, layerMask);
+        SoundManager.main.PlaySound(bombClip);
         foreach (Collider2D collider in colliders) {
             if(collider.GetComponent<Turret>() != null){
                 collider.GetComponent<Turret>().UpdateIsborken(brokenCount);

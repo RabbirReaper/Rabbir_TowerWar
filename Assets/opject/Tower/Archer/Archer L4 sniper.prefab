@@ -399,6 +399,7 @@ MonoBehaviour:
   slowImage: {fileID: 6661381988769199725}
   brokenImage: {fileID: 5681882333841097245}
   attackRangeImage: {fileID: 6944587624743837938}
+  shootClip: {fileID: 8300000, guid: 5313bfa1b28e77f4e9806aabf449a7f8, type: 3}
 --- !u!114 &-3936533003070748790
 MonoBehaviour:
   m_ObjectHideFlags: 0
