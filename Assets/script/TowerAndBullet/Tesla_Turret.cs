@@ -97,6 +97,7 @@ public class Tesla_Turret : MonoBehaviour{
     public void SellingTower(){
         LevelManager_script.main.IncreaseGold(sellValue);
         UIManager.main.SetHoveringStatie(false);
+        LevelManager_script.main.towerCountLimit++;
         Destroy(this.gameObject);
     }
 

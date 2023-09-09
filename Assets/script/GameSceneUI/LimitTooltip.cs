@@ -22,7 +22,7 @@ public class LimitTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         text = spawnedImage.GetComponentInChildren<TMP_Text>();
         spawnedImage.transform.SetParent(transform.parent); // 設定父物件
         spawnedImage.rectTransform.sizeDelta = new Vector2(200, 100); // 設定大小
-        text.text = "You can only build 60 tower. \n next to your limit for summoning Enemy";
+        text.text = "You can only build 30 tower. \n next to your limit for summoning Enemy";
     }
 
     public void OnPointerExit(PointerEventData eventData){
