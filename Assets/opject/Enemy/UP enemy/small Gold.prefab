@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 7038830147595451391}
   - component: {fileID: 3584529269216053176}
   m_Layer: 8
-  m_Name: 'small Gold Zombie '
+  m_Name: small Gold
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
