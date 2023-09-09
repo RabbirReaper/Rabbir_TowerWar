@@ -26,7 +26,8 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     private int[] EnemyInStreetVal = new int[5];
     private int alivePLayer;
     public bool isEnd = false;
-    public int towerCountLimit;
+    [SerializeField] int towerCountLimit;
+    [SerializeField] TextMeshProUGUI towerLimitUI;
     public int enemySpawnLimit;
     [SerializeField] TMP_Text enemySpawnLimitUI;
     private Stack<int> enemyIdStack = new();
@@ -218,7 +219,15 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         if(enemyIdArray[_enemyId] == 0){
             enemyIdStack.Push(_enemyId);
         } 
-    } 
+    }
+
+    public void TowerLimitAdd(int x){
+        towerCountLimit += x;
+        towerLimitUI.text = towerCountLimit.ToString();
+    }
+    public int GetTowerLimit(){
+        return towerCountLimit;
+    }
 
 
     // public void UpdateEnemyStreet(Player _player,int idx,int val){
