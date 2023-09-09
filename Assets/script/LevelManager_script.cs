@@ -124,7 +124,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         //     item.GetComponent<Enemy_Script>().CorrectDied();
         // }
         // yield return new WaitForSeconds(1);
-        yield return null;
+        yield return new WaitForSeconds(0.3f);
         PhotonNetwork.Disconnect();
     }
     public void YouWin(){

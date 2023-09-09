@@ -33,8 +33,8 @@ public class AOE_Bullet : MonoBehaviour{
             for(int i=0;i<(int)inRange.Length;i++){
                 if(inRange[i] == null) continue;
                 inRange[i].gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
-                if(stun && Random.Range(1,100) <= 1){
-                    inRange[i].gameObject.GetComponent<Enemy_Script>().UpdateSpeed(100,50);
+                if(stun && other.gameObject.GetComponent<Enemy_Script>().GetNowSpeed()!=0  &&Random.Range(1,100) <= 1){
+                    inRange[i].gameObject.GetComponent<Enemy_Script>().UpdateSpeed(100,30);
                 }
                 if(fireTime != 0) inRange[i].gameObject.GetComponent<Enemy_Script>().UpdateFire(fireRate,fireTime);
             }
