@@ -114,9 +114,9 @@ public class Enemy_Script : MonoBehaviour{//
     }
 
     public void CorrectDied(){
-        if(inCorrectDied) return;
-        inCorrectDied = true;
-        isDestory=true;
+        // if(inCorrectDied) return;
+        // inCorrectDied = true;
+        // isDestory=true;
         LevelManager_script.main.UpdateEnemyStreet(ownPlayer,nowStreet,-1);//
         LevelManager_script.main.EnemyIsDied(ownPlayer,enemyId);
         Destroy(gameObject);
