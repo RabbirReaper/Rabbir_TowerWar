@@ -126,8 +126,8 @@ public class Enemy_Script : MonoBehaviour{//
         nowHealth += treat;
     }
 
-    public void UpdateSpeed(float x,float waitTime){
-        slowSchedule.Add((x,waitTime+timer_slow_all));
+    public void UpdateSpeed(float rate,float waitTime){
+        slowSchedule.Add((rate,waitTime+timer_slow_all));
         slowSchedule.Sort(Cmp);
         nowSpeed = speed*(1 - slowSchedule[0].Item1/100);
         timer_slow=slowSchedule[0].Item2;
@@ -169,7 +169,7 @@ public class Enemy_Script : MonoBehaviour{//
     }
     public float GetNowSpeed(){
         isSlowed = false;
-        timer_slow_all += 10000;
+        // timer_slow_all += 10000;
         return nowSpeed;
     }
     public void SetNowSpeed(float _Speed){
