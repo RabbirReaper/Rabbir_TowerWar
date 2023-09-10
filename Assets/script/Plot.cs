@@ -35,6 +35,7 @@ public class Plot : MonoBehaviour{
         LevelManager_script.main.SpendCurrency(tempTower.cost);
         towerObj = Instantiate(tempTower.towerPrefab,transform.position,Quaternion.identity);
         LevelManager_script.main.TowerLimitAdd(-1);
+        LevelManager_script.main.UpdateOpponentBuildCount(buildManager.main.GetSelectTowerIdx(),1);
         UpGrade_Script = towerObj.GetComponent<UpGradeUpdateTower>(); //
         towerObj.transform.SetParent(transform);
     }

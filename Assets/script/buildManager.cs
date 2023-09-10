@@ -8,7 +8,7 @@ public class buildManager : MonoBehaviour{
 
     [Header("References")]
     [SerializeField] private Tower[] towers;
-    public GameObject towerPoint;
+    [SerializeField] GameObject towerPoint;
     int SelectTower = 0;
     float pointY;
     private void Awake() {
@@ -24,5 +24,8 @@ public class buildManager : MonoBehaviour{
     public void SetSelectedTower(int _SetSelectedTower){
         towerPoint.transform.position = new Vector3(towerPoint.transform.position.x,pointY + _SetSelectedTower*(-70),0);
         SelectTower = _SetSelectedTower;
+    }
+    public int GetSelectTowerIdx(){
+        return SelectTower;
     }
 }

@@ -102,6 +102,7 @@ public class Sniper : MonoBehaviour{
         LevelManager_script.main.IncreaseGold(sellValue);
         UIManager.main.SetHoveringStatie(false);
         LevelManager_script.main.TowerLimitAdd(1);
+        LevelManager_script.main.UpdateOpponentBuildCount(0,-1);
         Destroy(this.gameObject);
     }
 

@@ -33,6 +33,10 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     private Stack<int> enemyIdStack = new();
     private int[] enemyIdArray = new int[2000];
     private int[] _enemyIdArray = new int[2000];
+    [SerializeField] TextMeshProUGUI[]  opponentBuildCountText;
+    
+    private int[] opponentBuildCount = new int[6];
+
     private void Awake() {
         main = this;
         
@@ -229,6 +233,16 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         return towerCountLimit;
     }
 
+
+
+    public void UpdateOpponentBuildCount(int idx,int x){
+        _pV.RPC("RPCUpdateOpponentBuildCount",RpcTarget.Others,idx,x);
+    }
+    [PunRPC]
+    private void RPCUpdateOpponentBuildCount(int idx,int x){
+        opponentBuildCount[idx] += x;
+        opponentBuildCountText[idx].text = opponentBuildCount[idx].ToString();
+    }
 
     // public void UpdateEnemyStreet(Player _player,int idx,int val){
     //     _pV.RPC("RPCUpdateEnemyStreet",_player,idx,val);

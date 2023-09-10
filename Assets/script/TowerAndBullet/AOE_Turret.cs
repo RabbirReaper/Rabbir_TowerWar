@@ -89,6 +89,7 @@ public class AOE_Turret : MonoBehaviour{
         LevelManager_script.main.IncreaseGold(sellValue);
         UIManager.main.SetHoveringStatie(false);
         LevelManager_script.main.TowerLimitAdd(1);
+        LevelManager_script.main.UpdateOpponentBuildCount(2,-1);
         Destroy(this.gameObject);
     }
 
