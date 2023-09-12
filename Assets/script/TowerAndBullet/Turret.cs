@@ -24,6 +24,7 @@ public class Turret : MonoBehaviour{
     int slowCount = 0;
     float slowRate;
     int brokenCount = 0;
+    [SerializeField] ParticleSystem shootParticle;
 
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy","Ghost","Rider");
@@ -64,6 +65,12 @@ public class Turret : MonoBehaviour{
         GameObject bulletobj = Instantiate(bulletPrefab,firingPoint.position,Quaternion.identity);
         Bullet bulletScript = bulletobj.GetComponent<Bullet>();
         bulletScript.SetTarget(target);
+        StartCoroutine(BeginShootParticle());
+    }
+    IEnumerator BeginShootParticle(){
+        shootParticle.Play();
+        yield return new WaitForSeconds(0.2f);
+        shootParticle.Stop();
     }
 
     bool CheckTargetinRange(){
