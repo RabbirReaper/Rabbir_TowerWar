@@ -7,8 +7,8 @@ public class Trigger_Script : MonoBehaviour{
     [SerializeField] int rotation;
     [SerializeField] int streetNumber;
     private void OnTriggerEnter2D(Collider2D other) {
+        if(other.GetComponent<Enemy_Script>().isDestory || LevelManager_script.main.isEnd) return;
         if(other.CompareTag("Enemy")){
-            if(other.GetComponent<Enemy_Script>().isDestory) return;
             other.GetComponent<Enemy_Script>().UpdateMoveRotation(rotation);
             if(streetNumber != -1 && streetNumber != other.GetComponent<Enemy_Script>().nowStreet){
                 other.GetComponent<Enemy_Script>().nowStreet = streetNumber;
