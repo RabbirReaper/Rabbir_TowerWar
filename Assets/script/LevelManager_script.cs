@@ -7,6 +7,7 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
 using System;
+using Unity.VisualScripting;
 
 public class LevelManager_script : MonoBehaviourPunCallbacks{
     public static LevelManager_script main;
@@ -121,7 +122,8 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
     private IEnumerator DisGame(){
         isEnd = true;
         foreach (Transform item in EnemyParent.transform){
-            item.GetComponent<Enemy_Script>().CorrectDied();
+            if(!item.GetComponent<Enemy_Script>().isDestory)
+                item.GetComponent<Enemy_Script>().CorrectDied();
         }
         // yield return new WaitForSeconds(1f);
         // foreach (Transform item in EnemyParent.transform){

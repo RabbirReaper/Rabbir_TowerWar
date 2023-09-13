@@ -401,6 +401,7 @@ MonoBehaviour:
   brokenImage: {fileID: 5681882333841097245}
   attackRangeImage: {fileID: 6944587624743837938}
   shootClip: {fileID: 8300000, guid: 5313bfa1b28e77f4e9806aabf449a7f8, type: 3}
+  shootParticle: {fileID: 3717666994449463397}
 --- !u!114 &-3936533003070748790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,6 +825,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6e59a78fa6f732408bf167f0c98b30b, type: 3}
+--- !u!198 &3717666994449463397 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1631596086525521084, guid: e6e59a78fa6f732408bf167f0c98b30b, type: 3}
+  m_PrefabInstance: {fileID: 2680584679150572761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7728403927532168800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5653029069799174841, guid: e6e59a78fa6f732408bf167f0c98b30b, type: 3}
