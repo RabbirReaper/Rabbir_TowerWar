@@ -22,6 +22,8 @@ public class Sniper : MonoBehaviour{
     [SerializeField] GameObject brokenImage;
     [SerializeField] GameObject attackRangeImage;
     [SerializeField] AudioClip shootClip;
+    [SerializeField] ParticleSystem shootParticle;
+
     int slowCount = 0;
     float slowRate;
     int brokenCount = 0;
@@ -67,10 +69,17 @@ public class Sniper : MonoBehaviour{
         SoundManager.main.PlaySound(shootClip);
         Bullet bulletScript = bulletobj.GetComponent<Bullet>();
         bulletScript.Bullet_Damage*=buff;
-        bulletScript.Bullet_speed = Vector2.Distance(target.position,transform.position)/2;
+        bulletScript.Bullet_speed = Vector2.Distance(target.position,transform.position);
         if(bulletScript.Bullet_speed < 12) bulletScript.Bullet_speed = 12;
         bulletScript.SetTarget(target);
         buff = 1;
+        StartCoroutine(BeginShootParticle());
+    }
+
+    IEnumerator BeginShootParticle(){
+        shootParticle.Play();
+        yield return new WaitForSeconds(0.2f);
+        shootParticle.Stop();
     }
 
     bool CheckTargetinRange(){
