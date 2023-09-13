@@ -29,6 +29,10 @@ public class LobbySceneScript : MonoBehaviourPunCallbacks{
             offlineOrOnline.text = "Online";
             offlineOrOnline.color = Color.green;
             connectPlayerCount.text = PhotonNetwork.CountOfPlayers.ToString();
+        }else{
+            offlineOrOnline.text = "Offline";
+            offlineOrOnline.color = Color.red;
+            connectPlayerCount.text = "0";
         }
         // if(PhotonNetwork.IsConnectedAndReady) Debug.Log("I am ready");
         // else if(PhotonNetwork.IsConnected) Debug.Log("I am not ready");

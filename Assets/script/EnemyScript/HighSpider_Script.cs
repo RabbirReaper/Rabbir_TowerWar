@@ -7,8 +7,10 @@ public class HighSpider_Script : MonoBehaviour{
     [SerializeField] float slowRange;
     [SerializeField] int slowCount;
     [SerializeField] float slowRate;
+    [SerializeField] ParticleSystem shootWebParticle;
+
     LayerMask layerMask;
-    float reload = 0.5f;
+    float reload = 1f;
     float timer=0;
     private void Start() {
         layerMask = LayerMask.GetMask("Turret");
@@ -16,9 +18,17 @@ public class HighSpider_Script : MonoBehaviour{
     private void Update(){
         timer -= Time.deltaTime;
         if(timer < 0){
+            var main = shootWebParticle.main;
+            main.startSize = slowRange*2;
+            StartCoroutine(PlayWebParticle());
             InRangeSlow();
             timer = reload;
         }
+    }
+    IEnumerator PlayWebParticle(){
+        shootWebParticle.Play();
+        yield return new WaitForSeconds(0.5f);
+        shootWebParticle.Stop();
     }
 
     void InRangeSlow(){
