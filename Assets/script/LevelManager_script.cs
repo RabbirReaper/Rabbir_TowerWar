@@ -97,7 +97,6 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
 
 
     public void YouLose(){
-        isEnd = true;
         lostUI.SetActive(true);
         lostUI.transform.Find("You Lose").gameObject.SetActive(true);
         // _pV.RPC("RPCalivePLayerUpdate",RpcTarget.Others);
@@ -107,6 +106,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         StartCoroutine(DisGame());
     }
     public void Surrender(){
+        isEnd = true;
         YouLose();
     }
     public void QuitGame(){
@@ -151,6 +151,7 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         _pV.RPC("RPCHpUpdate",_ownPlayer,-x);
         if(hp <= 0){
             team_text[PhotonNetwork.LocalPlayer.ActorNumber-1].text = "0";
+            isEnd = true;
             YouLose();
         }
     }

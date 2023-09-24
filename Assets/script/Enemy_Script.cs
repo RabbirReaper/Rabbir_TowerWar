@@ -44,7 +44,7 @@ public class Enemy_Script : MonoBehaviour{//
     public void SetEnemyId(int x){
         enemyId = x;
     }
-
+    
     private void Start() {
         // target = LevelManager_script.main.WayPoints_list[1];
         isDestory = false;
