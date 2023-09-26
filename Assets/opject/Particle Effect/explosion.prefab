@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2597624388409883201}
   - component: {fileID: 1111021162897089969}
   - component: {fileID: 8466489940277140821}
-  - component: {fileID: 3044006538799931434}
+  - component: {fileID: 6003841017521050163}
   m_Layer: 0
   m_Name: explosion
   m_TagString: Untagged
@@ -51,7 +51,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4856,7 +4856,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4887,7 +4887,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &3044006538799931434
+--- !u!114 &6003841017521050163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4899,5 +4899,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4f86c95b23add49bdec3f17e16c891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyGameObject: 0
+  destroyGameObject: 1
   lifetime: 1

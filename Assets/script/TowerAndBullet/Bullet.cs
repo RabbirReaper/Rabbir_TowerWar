@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour{
         if(!isDestory){
             isDestory=true;
             if(other == null) Destroy(gameObject);
-            boomParticle.Play();
+            Instantiate(boomParticle,transform.position,boomParticle.transform.rotation);
             other.gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
             Destroy(gameObject);
         }
