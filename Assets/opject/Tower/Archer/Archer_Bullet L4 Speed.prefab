@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rb: {fileID: 590622883776554821}
-  boomParticle: {fileID: 0}
+  boomParticle: {fileID: 1111021162897089969, guid: 34f524bfd2d624a479aff1ddcfd451d9, type: 3}
   Bullet_speed: 10
   Bullet_Damage: 2400
 --- !u!50 &590622883776554821
