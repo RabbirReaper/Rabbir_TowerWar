@@ -447,7 +447,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -473,13 +473,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   Defence: 50
+  cost: 0
   currencyWorth: 5
   speed: 2
-  hpUI: {fileID: 1849589872041958391}
-  defenceUI: {fileID: 7756444303148913509}
+  hpUI: {fileID: 0}
+  FireUI: {fileID: 0}
+  isDestory: 0
   isSlowed: 0
   isFire: 0
   isWeak: 0
+  moveRotation: 1
+  nowStreet: 0
 --- !u!58 &1569181874396882892
 CircleCollider2D:
   m_ObjectHideFlags: 0

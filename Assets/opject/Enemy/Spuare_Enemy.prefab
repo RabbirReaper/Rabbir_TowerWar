@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,13 +102,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 1000
   Defence: 0
+  cost: 0
   currencyWorth: 5
   speed: 3
-  hpUI: {fileID: 4619375591294877547}
-  defenceUI: {fileID: 8686017536906244654}
+  hpUI: {fileID: 0}
+  FireUI: {fileID: 0}
+  isDestory: 0
   isSlowed: 0
   isFire: 0
   isWeak: 0
+  moveRotation: 1
+  nowStreet: 0
 --- !u!61 &5073523086006352601
 BoxCollider2D:
   m_ObjectHideFlags: 0

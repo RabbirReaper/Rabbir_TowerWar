@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour{
 
     [SerializeField] Rigidbody2D Rb;
+    [SerializeField] ParticleSystem boomParticle;
     public float Bullet_speed;
     public float Bullet_Damage;
     Transform Target;
@@ -23,6 +24,7 @@ public class Bullet : MonoBehaviour{
         if(!isDestory){
             isDestory=true;
             if(other == null) Destroy(gameObject);
+            boomParticle.Play();
             other.gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
             Destroy(gameObject);
         }
