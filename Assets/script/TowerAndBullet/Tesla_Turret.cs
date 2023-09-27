@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 public class Tesla_Turret : MonoBehaviour{
+    [SerializeField] ParticleSystem boomParticle;
     [SerializeField] GameObject lightning;
-    [SerializeField] float Bullet_speed;
+    float Bullet_speed;
     [SerializeField] bool keepBuff;
     public float Bullet_Damage;
 
@@ -39,7 +40,7 @@ public class Tesla_Turret : MonoBehaviour{
     private void Update() {
         timeUntilFire -= Time.deltaTime;
         if(target == null){
-            nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,transform.position,Bullet_speed*Time.deltaTime);
+            nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,transform.position,12*Time.deltaTime);
             if(!keepBuff) damageBuff = 1;
             FindTarget();
             return;
@@ -47,6 +48,7 @@ public class Tesla_Turret : MonoBehaviour{
         if(!CheckTargetinRange()){
             target=null;
         }else{
+            UpdateBulletSpeed();
             nowLightning.transform.position=Vector2.MoveTowards(nowLightning.transform.position,target.position,Bullet_speed*Time.deltaTime);
             if(timeUntilFire <= 0){
                 if(brokenCount == 0){
@@ -72,6 +74,7 @@ public class Tesla_Turret : MonoBehaviour{
 
     void Shoot(){
         target.gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage * damageBuff);
+        Instantiate(boomParticle,target.transform.position,boomParticle.transform.rotation);
         Debug.Log(Bullet_Damage * damageBuff);
     }
 
@@ -125,6 +128,13 @@ public class Tesla_Turret : MonoBehaviour{
         if(ShieldL2InRange()) return;
         brokenImage.SetActive(true);
         brokenCount = _brokenCount;
+    }
+
+    void UpdateBulletSpeed(){
+        float temp = timeUntilFire;
+        if(temp <= 0) temp = 0.1f;
+        Bullet_speed = Vector2.Distance(target.position,transform.position)/temp;
+        if(Bullet_speed < 12) Bullet_speed = 12;
     }
     // private void OnDrawGizmosSelected() {
     //     Handles.color=Color.blue;

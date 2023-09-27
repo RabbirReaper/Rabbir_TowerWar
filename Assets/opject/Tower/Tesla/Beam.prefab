@@ -211,7 +211,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 0, g: 1, b: 0.92156863, a: 1}
   m_FlipX: 0
@@ -295,7 +295,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 0, g: 1, b: 0.92156863, a: 1}
   m_FlipX: 0
@@ -379,7 +379,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 0, g: 1, b: 0.92156863, a: 1}
   m_FlipX: 0
@@ -538,7 +538,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.09803922}
   m_FlipX: 0
@@ -622,7 +622,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -706,7 +706,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 0, g: 1, b: 0.92156863, a: 1}
   m_FlipX: 0
@@ -790,7 +790,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 0.7529412, g: 0.18431373, b: 0, a: 1}
   m_FlipX: 0
@@ -1005,6 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0ac5223ee347843b5e037c444017c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boomParticle: {fileID: 1111021162897089969, guid: d89f041a480154a41ba643d881f84d61, type: 3}
   lightning: {fileID: 1264781525559932590, guid: e877841f9ff565d48a0bb421ecd5161d, type: 3}
   Bullet_speed: 12
   keepBuff: 0
