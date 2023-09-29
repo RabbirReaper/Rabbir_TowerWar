@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AOE_Bullet : MonoBehaviour{
+    [SerializeField] ParticleSystem boomParticle;
     [SerializeField] Rigidbody2D Rb;
     LayerMask EnemyMask;
     [SerializeField] float Bullet_speed;
@@ -28,9 +29,10 @@ public class AOE_Bullet : MonoBehaviour{
         if(!isDestory){
             isDestory=true;
             gameObject.SetActive(false);
+            Instantiate(boomParticle,transform.position,boomParticle.transform.rotation);
             // other.gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
             Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,splashRange,EnemyMask);
-            for(int i=0;i<(int)inRange.Length;i++){
+            for(int i=0;i<inRange.Length;i++){
                 if(inRange[i] == null) continue;
                 inRange[i].gameObject.GetComponent<Enemy_Script>().TakeDamage(Bullet_Damage);
                 if(stun && other.gameObject.GetComponent<Enemy_Script>().GetNowSpeed()!=0  &&Random.Range(1,100) <= 1){
