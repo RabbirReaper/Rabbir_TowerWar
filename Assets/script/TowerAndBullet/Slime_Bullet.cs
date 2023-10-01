@@ -20,7 +20,7 @@ public class Slime_Bullet : MonoBehaviour{
 
     }
     private void FixedUpdate() {
-        if(!Target) return;
+        if(!Target) Destroy(gameObject);
         Vector2 direction = (Target.position - transform.position).normalized;
         Rb.velocity = direction * Bullet_speed; 
     }

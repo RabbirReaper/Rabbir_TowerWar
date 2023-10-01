@@ -12,10 +12,9 @@ public class Bullet : MonoBehaviour{
     bool isDestory = false;
     public void SetTarget(Transform _Target){
         Target =_Target;
-
     }
     private void FixedUpdate() {
-        if(!Target) return;
+        if(!Target) Destroy(gameObject);
         Vector2 direction = (Target.position - transform.position).normalized;
         Rb.velocity = direction * Bullet_speed; 
     }

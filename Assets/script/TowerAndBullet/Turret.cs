@@ -43,7 +43,7 @@ public class Turret : MonoBehaviour{
             target=null;
         }else{
             if(timeUntilFire <= 0){
-                if(brokenCount == 0) if(target != null)Shoot();
+                if(brokenCount == 0) Shoot();
                 else{
                     // Debug.Log("Is Broken");
                     brokenCount--;
