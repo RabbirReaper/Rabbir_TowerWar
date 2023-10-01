@@ -51,6 +51,10 @@ public class Turret : MonoBehaviour{
                 } 
                 if(ShieldL2InRange()){
                     timeUntilFire= reload*0.9f;
+                    if(slowCount != 0){
+                        slowCount = 0;
+                        slowImage.SetActive(false);
+                    }
                 }else if(slowCount != 0){
                     slowCount--;
                     timeUntilFire = reload*(1 + slowRate);
