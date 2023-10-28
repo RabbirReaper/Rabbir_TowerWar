@@ -8,14 +8,17 @@ public class Bullet : MonoBehaviour{
     [SerializeField] ParticleSystem boomParticle;
     public float Bullet_speed;
     public float Bullet_Damage;
+    Vector2 direction;
     Transform Target;
     bool isDestory = false;
-    public void SetTarget(Transform _Target){
+
+    public void SetTarget(Transform _Target,Vector2 _direction){
         Target =_Target;
+        Rb.velocity = _direction * Bullet_speed; 
     }
     private void FixedUpdate() {
-        if(!Target) Destroy(gameObject);
-        Vector2 direction = (Target.position - transform.position).normalized;
+        if(!Target) return;
+        direction = (Target.position - transform.position).normalized;
         Rb.velocity = direction * Bullet_speed; 
     }
 

@@ -17,6 +17,7 @@ public class Slime_Turret : MonoBehaviour{
     public int sellValue;
 
     Transform target;
+    Vector2 bulletDirection;
     [SerializeField] GameObject slowImage;
     [SerializeField] GameObject brokenImage;
     [SerializeField] GameObject attackRangeImage;
@@ -64,7 +65,7 @@ public class Slime_Turret : MonoBehaviour{
     void Shoot(){
         GameObject bulletobj = Instantiate(bulletPrefab,firingPoint.position,Quaternion.identity);
         Slime_Bullet bulletScript = bulletobj.GetComponent<Slime_Bullet>();
-        bulletScript.SetTarget(target);
+        bulletScript.SetTarget(target,bulletDirection);
     }
 
     bool CheckTargetinRange(){
@@ -75,6 +76,7 @@ public class Slime_Turret : MonoBehaviour{
     void FindTarget(){
         RaycastHit2D hits = Physics2D.CircleCast(transform.position,AttackRange,(Vector2)transform.position,0f,EnemyMask);
         target = hits.transform;
+        if(target!=null) bulletDirection = (target.position - transform.position).normalized;
     }
 
     void RotateTowards(){

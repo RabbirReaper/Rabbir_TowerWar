@@ -9,13 +9,15 @@ public class Witch_Bullet : MonoBehaviour{
     public float weakRate;
     public float weakTime;
     Transform Target;
+    Vector2 direction;
     bool isDestory = false;
-    public void SetTarget(Transform _Target){
+    public void SetTarget(Transform _Target,Vector2 _direction){
         Target =_Target;
+        Rb.velocity = _direction * Bullet_speed; 
     }
     private void FixedUpdate() {
-        if(!Target) Destroy(gameObject);
-        Vector2 direction = (Target.position - transform.position).normalized;
+        if(!Target) return;
+        direction = (Target.position - transform.position).normalized;
         Rb.velocity = direction * Bullet_speed; 
     }
     private void OnCollisionEnter2D(Collision2D other) {

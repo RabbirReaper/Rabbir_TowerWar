@@ -11,17 +11,18 @@ public class Slime_Bullet : MonoBehaviour{
     public float slowTime;
     public float slowRange;
     Transform Target;
+    Vector2 direction;
     bool isDestory = false;
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy","Ghost");
     }
-    public void SetTarget(Transform _Target){
+    public void SetTarget(Transform _Target,Vector2 _direction){
         Target =_Target;
-
+        Rb.velocity = _direction * Bullet_speed; 
     }
     private void FixedUpdate() {
-        if(!Target) Destroy(gameObject);
-        Vector2 direction = (Target.position - transform.position).normalized;
+        if(!Target) return;
+        direction = (Target.position - transform.position).normalized;
         Rb.velocity = direction * Bullet_speed; 
     }
     private void OnCollisionEnter2D(Collision2D other) {

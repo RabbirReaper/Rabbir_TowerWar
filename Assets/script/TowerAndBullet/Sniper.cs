@@ -17,6 +17,7 @@ public class Sniper : MonoBehaviour{
     public float reload;
     public int sellValue;
     Transform target;
+    Vector2 bulletDirection;
     float timeUntilFire=0;
     [SerializeField] GameObject slowImage;
     [SerializeField] GameObject brokenImage;
@@ -71,7 +72,7 @@ public class Sniper : MonoBehaviour{
         bulletScript.Bullet_Damage*=buff;
         bulletScript.Bullet_speed = Vector2.Distance(target.position,transform.position);
         if(bulletScript.Bullet_speed < 12) bulletScript.Bullet_speed = 12;
-        bulletScript.SetTarget(target);
+        bulletScript.SetTarget(target,bulletDirection);
         buff = 1;
         StartCoroutine(BeginShootParticle());
     }
@@ -91,14 +92,16 @@ public class Sniper : MonoBehaviour{
         // target = hits.transform;
         Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position,AttackRange,EnemyMask);
         if(inRange.Length != 0) target = inRange[0].transform;
+        if(target!=null) bulletDirection = (target.position - transform.position).normalized;
         for(int i=0;i<(int)inRange.Length;i++){
             if(inRange[i] == null) continue;
             if(inRange[i].GetComponent<Enemy_Script>().GetNowHealth() / inRange[i].GetComponent<Enemy_Script>().Health > 0.5){
                 buff = 2;
                 target = inRange[i].transform;
+                if(target!=null) bulletDirection = (target.position - transform.position).normalized;
                 return;
             }
-        }
+        }  
     }
 
     void RotateTowards(){

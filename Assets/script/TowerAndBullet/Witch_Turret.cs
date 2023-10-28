@@ -23,6 +23,7 @@ public class Witch_Turret : MonoBehaviour{
     int brokenCount = 0;
 
     Transform target;
+    Vector2 bulletDirection;
     float timeUntilFire=0;
     private void Start() {
         EnemyMask = LayerMask.GetMask("Enemy","Ghost","Rider");
@@ -74,7 +75,7 @@ public class Witch_Turret : MonoBehaviour{
     void Shoot(){
         GameObject bulletobj = Instantiate(bulletPrefab,firingPoint.position,Quaternion.identity);
         Witch_Bullet bulletScript = bulletobj.GetComponent<Witch_Bullet>();
-        bulletScript.SetTarget(target);
+        bulletScript.SetTarget(target,bulletDirection);
     }
 
     bool CheckTargetinRange(){
@@ -84,9 +85,11 @@ public class Witch_Turret : MonoBehaviour{
     void FindTarget(){
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position,AttackRange,(Vector2)transform.position,0f,EnemyMask);
         if(hits.Length != 0) target = hits[0].transform;
+        if(target!=null) bulletDirection = (target.position - transform.position).normalized;
         for(int i=0;i<hits.Length;i++){
             if(!hits[i].transform.GetComponent<Enemy_Script>().isWeak){
                 target = hits[i].transform;
+                if(target!=null) bulletDirection = (target.position - transform.position).normalized;
                 break;
             }
         }

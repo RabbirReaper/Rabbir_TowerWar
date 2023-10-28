@@ -17,6 +17,7 @@ public class Turret : MonoBehaviour{
     public float reload;
     public int sellValue;
     Transform target;
+    Vector2 bulletDirection;
     float timeUntilFire=0;
     [SerializeField] GameObject slowImage;
     [SerializeField] GameObject brokenImage;
@@ -68,7 +69,7 @@ public class Turret : MonoBehaviour{
     void Shoot(){
         GameObject bulletobj = Instantiate(bulletPrefab,firingPoint.position,Quaternion.identity);
         Bullet bulletScript = bulletobj.GetComponent<Bullet>();
-        bulletScript.SetTarget(target);
+        bulletScript.SetTarget(target,bulletDirection);
         StartCoroutine(BeginShootParticle());
     }
     IEnumerator BeginShootParticle(){
@@ -84,6 +85,7 @@ public class Turret : MonoBehaviour{
     void FindTarget(){
         RaycastHit2D hits = Physics2D.CircleCast(transform.position,AttackRange,(Vector2)transform.position,0f,EnemyMask);
         target = hits.transform;
+        if(target!=null) bulletDirection = (target.position - transform.position).normalized;
     }
 
     void RotateTowards(){

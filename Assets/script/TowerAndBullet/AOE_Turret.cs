@@ -15,6 +15,7 @@ public class AOE_Turret : MonoBehaviour{
     public int sellValue;
 
     Transform target;
+    Vector2 bulletDirection;
     LayerMask EnemyMask;
     LayerMask shieldMask;
     [SerializeField] GameObject brokenImage;
@@ -66,7 +67,7 @@ public class AOE_Turret : MonoBehaviour{
     void Shoot(){
         GameObject bulletobj = Instantiate(bulletPrefab,firingPoint.position,Quaternion.identity);
         AOE_Bullet bulletScript = bulletobj.GetComponent<AOE_Bullet>();
-        bulletScript.SetTarget(target);
+        bulletScript.SetTarget(target,bulletDirection);
     }
 
     bool CheckTargetinRange(){
@@ -77,6 +78,7 @@ public class AOE_Turret : MonoBehaviour{
     void FindTarget(){
         RaycastHit2D hits = Physics2D.CircleCast(transform.position,AttackRange,(Vector2)transform.position,0f,EnemyMask);
         target = hits.transform;
+        if(target!=null) bulletDirection = (target.position - transform.position).normalized;
     }
 
     void RotateTowards(){
