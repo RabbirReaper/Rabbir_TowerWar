@@ -271,7 +271,7 @@ MonoBehaviour:
   barrel: {fileID: 7605464674687664407}
   bulletPrefab: {fileID: 2757682174209815250, guid: 1c8bee6049f9ee54c86d43f141309dd9, type: 3}
   firingPoint: {fileID: 7645419958237979238}
-  AttackRange: 10
+  AttackRange: 12
   RotationSpeed: 250
   reload: 0.75
   sellValue: 2625
@@ -779,7 +779,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.09803922}
   m_FlipX: 0
