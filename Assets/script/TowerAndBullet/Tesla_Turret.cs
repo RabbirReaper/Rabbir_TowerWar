@@ -20,7 +20,7 @@ public class Tesla_Turret : MonoBehaviour{
     float timeUntilFire=0;
     GameObject nowLightning;
     float damageBuff=1;
-    float damageBuffRate=1.1f;
+    const float damageBuffRate=1.15f;
     [SerializeField] float damageBuffLimit;
     [SerializeField] GameObject slowImage;
     [SerializeField] GameObject attackRangeImage;
