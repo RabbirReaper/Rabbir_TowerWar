@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 8000
-  Defence: 40
+  Defence: 322
   cost: 2000
   currencyWorth: 200
   speed: 3

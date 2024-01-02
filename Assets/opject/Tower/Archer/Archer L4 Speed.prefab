@@ -480,7 +480,7 @@ MonoBehaviour:
   firingPoint: {fileID: 4158264148134828056}
   AttackRange: 10
   RotationSpeed: 300
-  reload: 0.75
+  reload: 0.45
   sellValue: 10670
   slowImage: {fileID: 6442290032705352342}
   brokenImage: {fileID: 2856194363226606910}

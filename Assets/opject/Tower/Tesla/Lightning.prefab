@@ -928,7 +928,7 @@ MonoBehaviour:
   AttackRange: 12
   reload: 1
   sellValue: 18500
-  damageBuffLimit: 3
+  damageBuffLimit: 4
   slowImage: {fileID: 131834091091808349}
   attackRangeImage: {fileID: 2410835743138627166}
   brokenImage: {fileID: 6683523712773743312}
