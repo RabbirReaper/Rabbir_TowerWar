@@ -247,6 +247,10 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         opponentBuildCountText[idx].text = opponentBuildCount[idx].ToString();
     }
 
+     public override void OnDisconnected(DisconnectCause cause){
+        if(isEnd == true) return;
+        YouLose();
+    }
     // public void UpdateEnemyStreet(Player _player,int idx,int val){
     //     _pV.RPC("RPCUpdateEnemyStreet",_player,idx,val);
     // }
