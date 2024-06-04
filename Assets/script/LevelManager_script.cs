@@ -165,7 +165,6 @@ public class LevelManager_script : MonoBehaviourPunCallbacks{
         Hashtable table = new();
         table.Add("hp",hp);
         PhotonNetwork.LocalPlayer.SetCustomProperties(table);
-        // Debug.Log(x);
     }
     
     

@@ -14564,7 +14564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -12.999939}
+  m_AnchoredPosition: {x: 0, y: -13}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468063680
@@ -29532,7 +29532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -12.999939}
+  m_AnchoredPosition: {x: 0, y: -13}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102767351
@@ -34051,7 +34051,7 @@ MonoBehaviour:
   - {fileID: 2084795376}
   Interval: 10
   Income: 5
-  Gold: 1000000
+  Gold: 1147483640
   Next_Income: 0
   teamColor: {fileID: 1314175617}
   lostUI: {fileID: 1596922425}
@@ -43295,7 +43295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 20, y: -12.999939}
+  m_AnchoredPosition: {x: 20, y: -13}
   m_SizeDelta: {x: -640, y: -600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648869872
@@ -45629,7 +45629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 1711437040}
   imagePrefab: {fileID: 1710161070809483650, guid: c604f78913d6f08458b4d163b4df481c, type: 3}
-  enemyHp: 40000
+  enemyHp: 4000
   enemySpeed: 3
   cost: 1000
   income: 100
